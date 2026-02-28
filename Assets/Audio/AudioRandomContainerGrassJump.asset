@@ -1,0 +1,82 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1233149941 &-845688224649153473
+AudioContainerElement:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Footsteps_Grass_Jump_Land_09_{-845688224649153473}
+  m_AudioClip: {fileID: 8300000, guid: 54cd8769272b7ca4c9a1386d106f621d, type: 3}
+  m_Volume: 0
+  m_Enabled: 1
+--- !u!1233149941 &617415693741332781
+AudioContainerElement:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Footsteps_Grass_Jump_Land_06_{617415693741332781}
+  m_AudioClip: {fileID: 8300000, guid: ccfb18eb53b37384b9632ae00f725881, type: 3}
+  m_Volume: 0
+  m_Enabled: 1
+--- !u!1233149941 &1141553284184116305
+AudioContainerElement:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Footsteps_Grass_Jump_Land_05_{1141553284184116305}
+  m_AudioClip: {fileID: 8300000, guid: 09226248e570c904a900ec2ecb767a68, type: 3}
+  m_Volume: 0
+  m_Enabled: 1
+--- !u!1233149941 &2841847341359725784
+AudioContainerElement:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Footsteps_Grass_Jump_Land_07_{2841847341359725784}
+  m_AudioClip: {fileID: 8300000, guid: 8e0c586341010324fadd73453569f0aa, type: 3}
+  m_Volume: 0
+  m_Enabled: 1
+--- !u!1307931743 &6418180475301049370
+AudioRandomContainer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: AudioRandomContainerGrassJump
+  m_Volume: 0
+  m_Pitch: 0
+  m_AutomaticTriggerTime: 0
+  m_LoopCount: 1
+  m_VolumeRandomizationRange: {x: 0, y: 0}
+  m_PitchRandomizationRange: {x: 0, y: 0}
+  m_AutomaticTriggerTimeRandomizationRange: {x: 0, y: 0}
+  m_LoopCountRandomizationRange: {x: 0, y: 0}
+  m_Elements:
+  - {fileID: 8435277729525956570}
+  - {fileID: 1141553284184116305}
+  - {fileID: 617415693741332781}
+  - {fileID: 2841847341359725784}
+  - {fileID: -845688224649153473}
+  m_AvoidRepeatingLast: 0
+  m_PlaybackMode: 0
+  m_TriggerMode: 0
+  m_AutomaticTriggerMode: 1
+  m_LoopMode: 2
+  m_VolumeRandomizationEnabled: 0
+  m_PitchRandomizationEnabled: 0
+  m_AutomaticTriggerTimeRandomizationEnabled: 0
+  m_LoopCountRandomizationEnabled: 0
+--- !u!1233149941 &8435277729525956570
+AudioContainerElement:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Footsteps_Grass_Jump_Land_04_{8435277729525956570}
+  m_AudioClip: {fileID: 8300000, guid: f2bc9c36f73ea50419060ec6eb40c246, type: 3}
+  m_Volume: 0
+  m_Enabled: 1
