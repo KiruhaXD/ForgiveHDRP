@@ -8,6 +8,7 @@ namespace Scripts.PlayerScripts
         [SerializeField] Animator animator;
         //[SerializeField] PlayerMovement playerMovement;
         [SerializeField] CharacterController characterController;
+        [SerializeField] DrivingPlayer drivingPlayer;
         [SerializeField] float speedCrouch = 0.5f;
 
         public int countPressKeyC = 0;
@@ -19,7 +20,8 @@ namespace Scripts.PlayerScripts
 
         private void Update()
         {
-            CheckCrouch();
+            if(drivingPlayer.isInCar == false)
+                CheckCrouch();
         }
 
         public void CheckCrouch()

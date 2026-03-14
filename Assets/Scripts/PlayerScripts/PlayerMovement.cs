@@ -9,6 +9,7 @@ namespace Scripts.PlayerScripts
         [SerializeField] StaminaSliderController staminaSliderController;
         //[SerializeField] TerrainLayersController terrainLayersController;
         [SerializeField] AudioManager audioManager;
+        [SerializeField] DrivingPlayer drivingPlayer;
 
         [SerializeField] CharacterController characterController;
         [SerializeField] float speedWalk = 2f;
@@ -26,7 +27,8 @@ namespace Scripts.PlayerScripts
 
         private void Update()
         {
-            CheckMovementWalkAndRun();
+            if(drivingPlayer.isInCar == false)
+                CheckMovementWalkAndRun();
         }
 
         public void CheckMovementWalkAndRun()

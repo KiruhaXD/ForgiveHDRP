@@ -9,6 +9,7 @@ namespace Scripts.PlayerScripts
     {
         [SerializeField] StaminaSliderController staminaSliderController;
         [SerializeField] AudioManager audioManager;
+        [SerializeField] DrivingPlayer drivingPlayer;
         
         [SerializeField] Animator animator;
         [SerializeField] float jumpForce = 2f;
@@ -17,13 +18,17 @@ namespace Scripts.PlayerScripts
 
         private void Update()
         {
-            CheckJumping();
-            CheckGravity();
+            if (drivingPlayer.isInCar == false) 
+            {
+                CheckJumping();
+                CheckGravity();
+            }
+
         }
 
         public void CheckJumping()
         {
-            if (IsGrounded == true && staminaSliderController.sliderStamina.value == 100)
+            if (IsGrounded == true && staminaSliderController.sliderStamina.value > 50)
             {
                 if (Input.GetKeyDown(KeyCode.Space))
                 {

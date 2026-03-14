@@ -17,7 +17,7 @@ namespace Scripts.InteractScripts
             if (Input.GetKeyDown(KeyCode.F))
             {
                 // Dialogue system
-                dialogue.StartDialogue(); // при повторном взаимодействии с продавцом происходит баг - накладываются кнопки выбора на друг друга и индекс диалога вместо 2 меняется на 1
+                dialogue.StartDialogue();
                 
                 Debug.Log("Interact with saler");
             }

@@ -13,28 +13,35 @@ public class CompilationShaders : MonoBehaviour
 
     private void Update()
     {
-        StartCoroutine(CompilationShadersCoroutine());
+        CompilationShadersCoroutine();
     }
 
-    public IEnumerator CompilationShadersCoroutine() 
+    public void CompilationShadersCoroutine() 
     {
         AsyncOperation asyncOperation = new AsyncOperation();
 
-        if (ShaderUtil.anythingCompiling == true) // ничего не происходит, так что придется еще искать способ как проверить комплицию шейдеров
+        /*if (ShaderUtil.anythingCompiling == true) // ничего не происходит, так что придется еще искать способ как проверить комплицию шейдеров
         {
             compilationShadersPanel.SetActive(true);
+            compilationProgressText.gameObject.SetActive(true);
 
             while (!asyncOperation.isDone)
             {
-                progress = asyncOperation.progress;   
+                progress = asyncOperation.progress;
                 compilationProgressText.text = progress.ToString() + "%";
 
                 Debug.Log("Компиляция шейдеров началась!" + progress);
-                yield return null;
             }
         }
 
         else
+        {
             compilationShadersPanel.SetActive(false);
+            compilationProgressText.gameObject.SetActive(false);
+        }
+
+        */
+
+
     }
 }

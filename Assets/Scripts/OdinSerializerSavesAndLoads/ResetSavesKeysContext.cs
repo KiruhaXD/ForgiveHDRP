@@ -12,6 +12,8 @@ public class ResetSavesKeysContext : MonoBehaviour
         PlayerPrefs.DeleteKey(CheckpointController.CheckpointActiveKey);
 
         PlayerPrefs.DeleteKey(CheckpointManager.NonActiveCheckpointKey);
+        //PlayerPrefs.DeleteKey(CheckpointManager.CheckpointListKey);
+        PlayerPrefs.DeleteKey(CheckpointManager.CheckpointsListCountKey);
 
         //PlayerPrefs.DeleteKey(ShowTextLoadButtons.LoadButtonsKeys.DateTimeTextKey);
         //PlayerPrefs.DeleteKey(ShowTextLoadButtons.LoadButtonsKeys.GameTimeTextKey);

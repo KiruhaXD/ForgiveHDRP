@@ -11,6 +11,7 @@ public class CommonAwakeForLoadSettings : MonoBehaviour
     [SerializeField] SettingsVolumeCascadedShadowMaps settingsVolumeShadowsQuality;
     [SerializeField] SettingVolumeMicroShadows settingsVolumeMicroShadows;
     [SerializeField] SettingsVolumeLensFlare settingsVolumeLensFlare;
+    [SerializeField] SettingsRain settingsRain;
 
     private void Awake()
     {
@@ -28,6 +29,8 @@ public class CommonAwakeForLoadSettings : MonoBehaviour
             settingsVolumeShadowsQuality.LoadCascadedShadowMapShowOrHide();
             settingsVolumeMicroShadows.LoadMicroShadowsShowOrHide();
             settingsVolumeLensFlare.LoadLensFlareShowOrHide();
+
+            settingsRain.LoadSettingsRainONAndOFF();
         }
 
         else if (SceneManager.GetActiveScene().name == "MainMenuSceneDay")
@@ -44,6 +47,8 @@ public class CommonAwakeForLoadSettings : MonoBehaviour
             settingsVolumeShadowsQuality.LoadCascadedShadowMapShowOrHide();
             settingsVolumeMicroShadows.LoadMicroShadowsShowOrHide();
             settingsVolumeLensFlare.LoadLensFlareShowOrHide();
+
+            settingsRain.LoadSettingsRainONAndOFF();
         }
     }
 }

@@ -12,7 +12,7 @@ namespace Scripts.InterfaceScripts
         [SerializeField] float speedStaminaSlider = 1;
 
         internal bool endStamina = false;
-        int maxStaminaForJumping = 100;
+        int mediumCountStaminaForJumping = 50;
 
         private void Start()
         {
@@ -45,7 +45,7 @@ namespace Scripts.InterfaceScripts
             sliderStamina.gameObject.SetActive(true);
             sliderStamina.value += speedStaminaSlider / 4f;
         }
-        public void DecreasedStaminaFromJump() => sliderStamina.value -= maxStaminaForJumping;
+        public void DecreasedStaminaFromJump() => sliderStamina.value -= mediumCountStaminaForJumping;
     }
 }
 

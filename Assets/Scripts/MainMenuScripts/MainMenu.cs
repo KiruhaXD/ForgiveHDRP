@@ -40,6 +40,7 @@ namespace Scripts.MainMenuScripts
         [SerializeField] SettingsVolumeCascadedShadowMaps postProcessShadowsQuality;
         [SerializeField] SettingVolumeMicroShadows postProcessMicroShadows;
         [SerializeField] SettingsVolumeLensFlare postProcessLensFlare;
+        [SerializeField] SettingsRain settingsRain;
 
         public bool isPressEscInMainMenuForExitGame = true;
         public bool isPressEscForReturnInMainMenu = false;
@@ -81,7 +82,8 @@ namespace Scripts.MainMenuScripts
                     postProcess.isHasEditAmbientOcclusionQuality == true || settingsGraphics.isHasEditSettingsAnisotropicFiltering == true || postProcessFogQuality.isHasEditSettingsFogQuality == true ||
                     postProcessShadowsQuality.isHasEditCascadedShadowMapsSettings == true || postProcessMicroShadows.isHasEditSettingsMicroShadows == true || 
                     postProcessLensFlare.isHasEditSettingsLensFlare == true || settingsGraphics.isHasEditSettingsAntiAliazing == true || 
-                    settingsShadowMapQuality.isHasEditSetgginsShadowMapQuality == true || settingsContactShadows.isHasEditSettingsContactShadows == true)
+                    settingsShadowMapQuality.isHasEditSetgginsShadowMapQuality == true || settingsContactShadows.isHasEditSettingsContactShadows == true ||
+                    settingsRain.isHasEditSettingsRain == true)
                     {
                         panelConfirmationWindowForSaves.SetActive(true);
                     }
@@ -91,7 +93,8 @@ namespace Scripts.MainMenuScripts
                     postProcess.isHasEditAmbientOcclusionQuality == false || settingsGraphics.isHasEditSettingsAnisotropicFiltering == false || postProcessFogQuality.isHasEditSettingsFogQuality == false ||
                     postProcessShadowsQuality.isHasEditCascadedShadowMapsSettings == false || postProcessMicroShadows.isHasEditSettingsMicroShadows == false || 
                     postProcessLensFlare.isHasEditSettingsLensFlare == false || settingsGraphics.isHasEditSettingsAntiAliazing == false || 
-                    settingsShadowMapQuality.isHasEditSetgginsShadowMapQuality == false || settingsContactShadows.isHasEditSettingsContactShadows == false) 
+                    settingsShadowMapQuality.isHasEditSetgginsShadowMapQuality == false || settingsContactShadows.isHasEditSettingsContactShadows == false ||
+                    settingsRain.isHasEditSettingsRain == false) 
                     {
                         settingsWindow.SetActive(false);
                         SetBaseColor();

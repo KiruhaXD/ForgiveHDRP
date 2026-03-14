@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using Scripts.TextScripts;
 using TMPro;
@@ -7,6 +8,8 @@ namespace Scripts.DialogueSystem.DialogueWithSalerScripts
 {
     public class DialogueWithSaler : DisableAndEnableMovementAndCursorController
     {
+        [SerializeField] Rigidbody rbPlayer;
+
         [SerializeField] TypingText typingText;
         
         [Header("Dialogue Window")]
@@ -18,11 +21,27 @@ namespace Scripts.DialogueSystem.DialogueWithSalerScripts
 
         internal bool isStartDialogue = false;
         int currentDialogueIndex = 1;
-        
+
+        /*private (string, Action) GetCurrentDialogue(string namePeson, int currentDialogue)
+            => currentDialogue switch 
+            {
+                1 => ("SALER: ", FirstDialogue),
+                2 => ("SALER: ", SecondDialogue),
+                3 => ("SALER: ", ThirdDialogueStageFirst),
+                4 => ("SALER: ", FourthDialogue),
+                5 => ("SALER: ", FifthDialogue),
+                6 => ("SALER: ", SixthDialogue),
+                7 => ("SALER: ", SeventhDialogue),
+            };*/
+
         public void StartDialogue()
         {
+            rbPlayer.isKinematic = true;
+
             isStartDialogue = true;
             dialogueWindow.SetActive(true);
+
+            //GetCurrentDialogue(namePerson.text, currentDialogueIndex);
 
             switch (currentDialogueIndex)
             {
@@ -56,6 +75,8 @@ namespace Scripts.DialogueSystem.DialogueWithSalerScripts
 
         public void FirstDialogue()
         {
+            isDialogueWithSalerActive = true;
+
             DisableMovementAndShowCursor();
             DisableButtonsForAnswers();
 
@@ -70,6 +91,8 @@ namespace Scripts.DialogueSystem.DialogueWithSalerScripts
         {
             currentDialogueIndex = 2;
 
+            isDialogueWithSalerActive = true;
+
             DisableMovementAndShowCursor();
             DisableButtonsForAnswers();
 
@@ -83,6 +106,8 @@ namespace Scripts.DialogueSystem.DialogueWithSalerScripts
         public void ThirdDialogueStageFirst()
         {
             currentDialogueIndex = 3;
+
+            isDialogueWithSalerActive = true;
 
             DisableMovementAndShowCursor();
             DisableButtonsForAnswers();
@@ -117,6 +142,8 @@ namespace Scripts.DialogueSystem.DialogueWithSalerScripts
         {
             currentDialogueIndex = 4;
 
+            isDialogueWithSalerActive = true;
+
             DisableMovementAndShowCursor();
             DisableButtonsForAnswers();
 
@@ -131,6 +158,8 @@ namespace Scripts.DialogueSystem.DialogueWithSalerScripts
         public void FifthDialogue() 
         {
             currentDialogueIndex = 5;
+
+            isDialogueWithSalerActive = true;
 
             DisableMovementAndShowCursor();
             DisableButtonsForAnswers();
@@ -147,6 +176,8 @@ namespace Scripts.DialogueSystem.DialogueWithSalerScripts
         {
             currentDialogueIndex = 6;
 
+            isDialogueWithSalerActive = true;
+
             DisableMovementAndShowCursor();
             DisableButtonsForAnswers();
 
@@ -161,6 +192,8 @@ namespace Scripts.DialogueSystem.DialogueWithSalerScripts
         public void SeventhDialogue()
         {
             currentDialogueIndex = 7;
+
+            isDialogueWithSalerActive = true;
 
             DisableMovementAndShowCursor();
             DisableButtonsForAnswers();
@@ -196,52 +229,63 @@ namespace Scripts.DialogueSystem.DialogueWithSalerScripts
 
         public void DisableButtonsForAnswers() 
         {
-            switch (currentDialogueIndex) 
+            for (int i = 0; i < currentDialogueIndex; i++) 
             {
-                case 1:
-                    choiseAnswers.windowChoiseAnswer.SetActive(false);
-                    choiseAnswers.answersButtons[0].gameObject.SetActive(false);
-                    break;
+                switch (currentDialogueIndex)
+                {
+                    case 1: case 2:
+                        choiseAnswers.windowChoiseAnswer.SetActive(false);
+                        choiseAnswers.answersButtons[0].gameObject.SetActive(false);
+                        break;
 
-                case 2:
-                    choiseAnswers.windowChoiseAnswer.SetActive(false);
-                    choiseAnswers.answersButtons[0].gameObject.SetActive(false);
-                    break;
+                    case 3:
+                        choiseAnswers.windowChoiseAnswer.SetActive(false);
 
-                case 3:
-                    choiseAnswers.windowChoiseAnswer.SetActive(false);
-                    choiseAnswers.answersButtons[0].gameObject.SetActive(false);
-                    choiseAnswers.answersButtons[1].gameObject.SetActive(false);
-                    break;
+                        choiseAnswers.answersButtons[currentDialogueIndex - 3].gameObject.SetActive(false);
 
-                case 4:
-                    choiseAnswers.windowChoiseAnswer.SetActive(false);
-                    choiseAnswers.answersButtons[0].gameObject.SetActive(false);
-                    choiseAnswers.answersButtons[1].gameObject.SetActive(false);
-                    choiseAnswers.answersButtons[2].gameObject.SetActive(false);
-                    break;
+                        //choiseAnswers.answersButtons[0].gameObject.SetActive(false);
+                        //choiseAnswers.answersButtons[1].gameObject.SetActive(false);
+                        break;
 
-                case 5:
-                    choiseAnswers.windowChoiseAnswer.SetActive(false);
-                    choiseAnswers.answersButtons[0].gameObject.SetActive(false);
-                    choiseAnswers.answersButtons[1].gameObject.SetActive(false);
-                    choiseAnswers.answersButtons[2].gameObject.SetActive(false);
-                    choiseAnswers.answersButtons[3].gameObject.SetActive(false);
-                    break;
+                    case 4:
+                        choiseAnswers.windowChoiseAnswer.SetActive(false);
 
-                case 6:
-                    choiseAnswers.windowChoiseAnswer.SetActive(false);
-                    choiseAnswers.answersButtons[0].gameObject.SetActive(false);
-                    choiseAnswers.answersButtons[1].gameObject.SetActive(false);
-                    choiseAnswers.answersButtons[2].gameObject.SetActive(false);
-                    choiseAnswers.answersButtons[3].gameObject.SetActive(false);
-                    choiseAnswers.answersButtons[4].gameObject.SetActive(false);
-                    break;
+                        choiseAnswers.answersButtons[currentDialogueIndex - 2].gameObject.SetActive(false);
 
-                case 7:
-                    choiseAnswers.windowChoiseAnswer.SetActive(false);
-                    break;
+                        /*choiseAnswers.answersButtons[0].gameObject.SetActive(false);
+                        choiseAnswers.answersButtons[1].gameObject.SetActive(false);
+                        choiseAnswers.answersButtons[2].gameObject.SetActive(false);*/
+                        break;
+
+                    case 5:
+                        choiseAnswers.windowChoiseAnswer.SetActive(false);
+
+                        choiseAnswers.answersButtons[currentDialogueIndex - 1].gameObject.SetActive(false);
+                        /*choiseAnswers.answersButtons[0].gameObject.SetActive(false);
+                        choiseAnswers.answersButtons[1].gameObject.SetActive(false);
+                        choiseAnswers.answersButtons[2].gameObject.SetActive(false);
+                        choiseAnswers.answersButtons[3].gameObject.SetActive(false);*/
+                        break;
+
+                    case 6:
+                        choiseAnswers.windowChoiseAnswer.SetActive(false);
+
+                        choiseAnswers.answersButtons[currentDialogueIndex].gameObject.SetActive(false);
+
+                        /*choiseAnswers.answersButtons[0].gameObject.SetActive(false);
+                        choiseAnswers.answersButtons[1].gameObject.SetActive(false);
+                        choiseAnswers.answersButtons[2].gameObject.SetActive(false);
+                        choiseAnswers.answersButtons[3].gameObject.SetActive(false);
+                        choiseAnswers.answersButtons[4].gameObject.SetActive(false);*/
+                        break;
+
+                    case 7:
+                        choiseAnswers.windowChoiseAnswer.SetActive(false);
+                        break;
+                }
             }
         }
+
+            
     }
 }

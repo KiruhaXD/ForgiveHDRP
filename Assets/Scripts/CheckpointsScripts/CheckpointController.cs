@@ -6,6 +6,9 @@ public class CheckpointController : MonoBehaviour
     public const string CanContinueGameKey = "can_continue_game";
     public const string CheckpointActiveKey = "active_checkpoint";
 
+    [SerializeField] SaveDataInfo saveDataInfo;
+    [SerializeField] CheckpointManager checkpointManager;
+
     public static int continueGame = 0; // 1 (isCanContinueGame) - true, 0 (isCanContinueGame) - false
 
     public static int checkpointActive = 1;
@@ -20,6 +23,13 @@ public class CheckpointController : MonoBehaviour
             PlayerPrefs.SetInt(CheckpointActiveKey, checkpointActive);
 
             odinSerializerControllerSaveAndLoad.SaveData();
+
+            checkpointManager.checkpointsListCount++;
+            PlayerPrefs.SetInt(CheckpointManager.CheckpointsListCountKey, checkpointManager.checkpointsListCount);
+
+            saveDataInfo.InfoActive();
+
+            saveDataInfo.InfoNonActive();
 
             continueGame = 1;
             PlayerPrefs.SetInt(CanContinueGameKey, continueGame);

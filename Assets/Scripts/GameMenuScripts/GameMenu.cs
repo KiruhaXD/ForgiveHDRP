@@ -25,6 +25,7 @@ namespace Scripts.GameMenuScripts
         [SerializeField] SettingsVolumeCascadedShadowMaps postProcessShadowsQuality;
         [SerializeField] SettingVolumeMicroShadows postProcessMicroShadows;
         [SerializeField] SettingsVolumeLensFlare postProcessLensFlare;
+        [SerializeField] SettingsRain settingsRain;
         //[SerializeField] MainMenu mainMenu;
 
         private int pressKeyESC = 0;
@@ -39,6 +40,8 @@ namespace Scripts.GameMenuScripts
                         pressKeyESC = 1;
                         panelMenuButtons.SetActive(true);
 
+                        isGameMenuActive = true;
+
                         DisableMovementAndShowCursor();
 
                         break;
@@ -46,6 +49,8 @@ namespace Scripts.GameMenuScripts
                     case 1: // закрыть игровое меню в игре
                         pressKeyESC = 0;
                         panelMenuButtons.SetActive(false);
+
+                        isGameMenuActive = false;
 
                         EnableMovementAndHideCursor();
 
@@ -66,6 +71,8 @@ namespace Scripts.GameMenuScripts
             {
                 pressKeyESC = 1;
 
+                isGameMenuActive = true;
+
                 DisableMovementAndShowCursor();
 
                 if (settingsGraphics.isHasEditSettingDisplay == true || settingsGraphics.isHasEditSettingResolution == true ||
@@ -73,7 +80,8 @@ namespace Scripts.GameMenuScripts
                     postProcess.isHasEditAmbientOcclusionQuality == true || settingsGraphics.isHasEditSettingsAnisotropicFiltering == true || postProcessFogQuality.isHasEditSettingsFogQuality == true ||
                     postProcessShadowsQuality.isHasEditCascadedShadowMapsSettings == true || postProcessMicroShadows.isHasEditSettingsMicroShadows == true || 
                     postProcessLensFlare.isHasEditSettingsLensFlare == true || settingsGraphics.isHasEditSettingsAntiAliazing == true || 
-                    settingShadowMapQuality.isHasEditSetgginsShadowMapQuality == true || settingsContactShadows.isHasEditSettingsContactShadows == true)
+                    settingShadowMapQuality.isHasEditSetgginsShadowMapQuality == true || settingsContactShadows.isHasEditSettingsContactShadows == true ||
+                    settingsRain.isHasEditSettingsRain == true)
                 {
                     panelConfirmationWindowForSaves.SetActive(true);
                 }
@@ -83,7 +91,8 @@ namespace Scripts.GameMenuScripts
                     postProcess.isHasEditAmbientOcclusionQuality == false || settingsGraphics.isHasEditSettingsAnisotropicFiltering == false || postProcessFogQuality.isHasEditSettingsFogQuality == false ||
                     postProcessShadowsQuality.isHasEditCascadedShadowMapsSettings == false || postProcessMicroShadows.isHasEditSettingsMicroShadows == false || 
                     postProcessLensFlare.isHasEditSettingsLensFlare == false || settingsGraphics.isHasEditSettingsAntiAliazing == false || 
-                    settingShadowMapQuality.isHasEditSetgginsShadowMapQuality == false || settingsContactShadows.isHasEditSettingsContactShadows == true) 
+                    settingShadowMapQuality.isHasEditSetgginsShadowMapQuality == false || settingsContactShadows.isHasEditSettingsContactShadows == true ||
+                    settingsRain.isHasEditSettingsRain == false) 
                 {
                     panelMenuButtons.SetActive(true);
                     panelSettings.SetActive(false);

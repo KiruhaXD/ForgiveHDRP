@@ -27,13 +27,13 @@ namespace Scripts.OdinSerializerSavesAndLoads
         private FileStream fileStream;
         static BinaryFormatter binaryFormatter = new BinaryFormatter();
 
-        public List<int> commonCountFile;
-        protected int currentSaveFile;
-        protected int deleteUselessButtons = 0;
+        //public List<int> commonCountFile;
+        //protected int currentSaveFile;
+        //protected int deleteUselessButtons = 0;
 
-        [SerializeField] List<Button> buttonList;
-        [SerializeField] Button buttonLoadGame;
-        [SerializeField] protected GameObject contentScrollView;
+        //[SerializeField] List<Button> buttonList;
+        //[SerializeField] Button buttonLoadGame;
+        //[SerializeField] protected GameObject contentScrollView;
         //[SerializeField] protected ShowTextLoadButtons showTextLoadButtons;
 
         //private static Vector3 _playerPosition;
@@ -99,7 +99,7 @@ namespace Scripts.OdinSerializerSavesAndLoads
         public void SaveData()
         {
             countFile++;
-            commonCountFile.Add(countFile);
+            //commonCountFile.Add(countFile);
 
             CommonSaveData();
 
@@ -115,10 +115,6 @@ namespace Scripts.OdinSerializerSavesAndLoads
             //ShowLoadGameButton();
             PlayerPrefs.SetInt(CountFileKey, countFile);
             //showTextLoadButtons.SaveTextForLoadButtons();
-
-            Debug.Log("Сохранение файла под номером: " + countFile);
-
-            Debug.Log("кнопка добавлена");
         }
 
         public void LoadData()

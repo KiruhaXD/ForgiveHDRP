@@ -44,5 +44,8 @@ public static class CommonSettingsData
         /// <summary> Micro Shadows Settings </summary>
         public const string ShowMicroShadowsKey = "show_micro_shadows";
         public const string HideMicroShadowsKey = "hide_micro_shadows";
+
+        public const string ShowRainKey = "show_rain";
+        public const string HideRainKey = "hide_rain";
     }
 }

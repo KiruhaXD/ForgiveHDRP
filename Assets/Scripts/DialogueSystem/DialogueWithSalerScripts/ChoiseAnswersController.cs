@@ -73,7 +73,9 @@ namespace Scripts.DialogueSystem.DialogueWithSalerScripts
         {
             StartCoroutine(dialogue.StopDialogueCoroutine());
             dialogue.EnableMovementAndHideCursor();
-                
+
+            dialogue.isDialogueWithSalerActive = false;
+
             Debug.Log("Press Exit button");
         }
         
@@ -118,6 +120,8 @@ namespace Scripts.DialogueSystem.DialogueWithSalerScripts
             yield return new WaitForSeconds(2);
             dialogue.StopDialogue();
             dialogue.EnableMovementAndHideCursor();
+
+            dialogue.isDialogueWithSalerActive = false;
         }
     }
 }
