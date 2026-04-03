@@ -4,7 +4,7 @@ using UnityEngine.UI;
 
 namespace Scripts.InteractScripts.ItemsInteractionForSurvivalScripts
 {
-    public class CannedFoodInteraction : MonoBehaviour, IInteractable
+    public class CannedFoodInteraction : CommonInteractionItems, IInteractable
     {
         [SerializeField] Toggle toggleInNotepadForCannedFoodMission;
         //[SerializeField] GameObject interfaceMissionForCannedFood;
@@ -12,20 +12,13 @@ namespace Scripts.InteractScripts.ItemsInteractionForSurvivalScripts
         [SerializeField] TMP_Text tmpTextTakeItem;
         public void Interact()
         {
-            if (Input.GetKeyDown(KeyCode.F))
-            {
-                Debug.Log("Interact with a canned food"); // active toggle in a notepad and disable mission
-                toggleInNotepadForCannedFoodMission.isOn = true;
-                //interfaceMissionForCannedFood.SetActive(false);
-                this.gameObject.SetActive(false);
-            }
+            Debug.Log("Interact with a canned food"); // active toggle in a notepad and disable mission
+            CommonInteractItem(toggleInNotepadForCannedFoodMission);
+
+            //interfaceMissionForCannedFood.SetActive(false);
         }
 
-        public string Description()
-        {
-            tmpTextTakeItem.text = "Take a canned food";
-            return tmpTextTakeItem.text;
-        }
+        public void Description() => CommonDescriptionItem(tmpTextTakeItem, "Take a canned food");
     }
 }
 

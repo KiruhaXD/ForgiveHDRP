@@ -5,9 +5,10 @@ using UnityEngine.UI;
 
 namespace Scripts.DialogueSystem.DialogueWithSalerScripts
 {
-    public class ChoiseAnswersController : MonoBehaviour
+    public class ChoiseAnswersController : ChoiseAnswerContollerCommon
     {
         [SerializeField] DialogueWithSaler dialogue;
+        [SerializeField] DisableAndEnableMovementAndCursorController disableAndEnableMovementAndCursorController;
         [SerializeField] TypingText typingText;
         [SerializeField] public GameObject windowChoiseAnswer;
         
@@ -15,48 +16,6 @@ namespace Scripts.DialogueSystem.DialogueWithSalerScripts
         [SerializeField] public Button[] answersButtons;
         [SerializeField] public Button answerForExitDialogueBtn;
         
-        public void ChoiseFirstAnswer()
-        {
-            windowChoiseAnswer.SetActive(true);
-            answersButtons[0].gameObject.SetActive(true);
-            answerForExitDialogueBtn.gameObject.SetActive(true);
-        }
-
-        public void ChoiseSecondAnswer()
-        {
-            windowChoiseAnswer.SetActive(true);
-            answersButtons[1].gameObject.SetActive(true);
-            answerForExitDialogueBtn.gameObject.SetActive(true);
-        }
-
-        public void ChoiseThirdAnswer()
-        {
-            windowChoiseAnswer.SetActive(true);
-            answersButtons[2].gameObject.SetActive(true);
-            answerForExitDialogueBtn.gameObject.SetActive(true);
-        }
-
-        public void ChoiseFourthAnswer() 
-        {
-            windowChoiseAnswer.SetActive(true);
-            answersButtons[3].gameObject.SetActive(true);
-            answerForExitDialogueBtn.gameObject.SetActive(true);
-        }
-
-        public void ChoiseFifthAnswer() 
-        {
-            windowChoiseAnswer.SetActive(true);
-            answersButtons[4].gameObject.SetActive(true);
-            answerForExitDialogueBtn.gameObject.SetActive(true);
-        }
-
-        public void ChoiseSixthAnswer() 
-        {
-            windowChoiseAnswer.SetActive(true);
-            answersButtons[5].gameObject.SetActive(true);
-            answerForExitDialogueBtn.gameObject.SetActive(true);
-        }
-
         public void FirstAnswerClickButton() => dialogue.SecondDialogue();
         
         public void SecondAnswerClickButton() => dialogue.ThirdDialogueStageFirst();
@@ -72,9 +31,9 @@ namespace Scripts.DialogueSystem.DialogueWithSalerScripts
         public void StopDialogueClickButton()
         {
             StartCoroutine(dialogue.StopDialogueCoroutine());
-            dialogue.EnableMovementAndHideCursor();
+            disableAndEnableMovementAndCursorController.EnableMovementAndHideCursor();
 
-            dialogue.isDialogueWithSalerActive = false;
+            disableAndEnableMovementAndCursorController.isDialogueWithSalerActive = false;
 
             Debug.Log("Press Exit button");
         }
@@ -82,46 +41,46 @@ namespace Scripts.DialogueSystem.DialogueWithSalerScripts
         public IEnumerator ChoiseFirstAnswerCoroutine()
         {
             yield return new WaitForSeconds(5);
-            ChoiseFirstAnswer();   
+            ChoiseAnswer(windowChoiseAnswer, answersButtons, 0, answerForExitDialogueBtn);
         }
         
         public IEnumerator ChoiseSecondAnswerCoroutine()
         {
             yield return new WaitForSeconds(8);
-            ChoiseSecondAnswer();
+            ChoiseAnswer(windowChoiseAnswer, answersButtons, 1, answerForExitDialogueBtn);
         }
         
         public IEnumerator ChoiseThirdAnswerCoroutine()
         {
             yield return new WaitForSeconds(3);
-            ChoiseThirdAnswer(); 
+            ChoiseAnswer(windowChoiseAnswer, answersButtons, 2, answerForExitDialogueBtn);
         }
 
         public IEnumerator ChoiseFourthAnswerCoroutine() 
         {
             yield return new WaitForSeconds(2);
-            ChoiseFourthAnswer();
+            ChoiseAnswer(windowChoiseAnswer, answersButtons, 3, answerForExitDialogueBtn);
         }
 
         public IEnumerator ChoiseFifthAnswerCoroutine() 
         {
             yield return new WaitForSeconds(4);
-            ChoiseFifthAnswer();
+            ChoiseAnswer(windowChoiseAnswer, answersButtons, 4, answerForExitDialogueBtn);
         }
 
         public IEnumerator ChoiseSixthAnswerCoroutine() 
         {
             yield return new WaitForSeconds(4);
-            ChoiseSixthAnswer();
+            ChoiseAnswer(windowChoiseAnswer, answersButtons, 5, answerForExitDialogueBtn);
         }
 
         public IEnumerator StopAllDialogues() 
         {
             yield return new WaitForSeconds(2);
             dialogue.StopDialogue();
-            dialogue.EnableMovementAndHideCursor();
+            disableAndEnableMovementAndCursorController.EnableMovementAndHideCursor();
 
-            dialogue.isDialogueWithSalerActive = false;
+            disableAndEnableMovementAndCursorController.isDialogueWithSalerActive = false;
         }
     }
 }

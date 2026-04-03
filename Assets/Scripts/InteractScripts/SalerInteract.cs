@@ -14,21 +14,13 @@ namespace Scripts.InteractScripts
         
         public void Interact()
         {
-            if (Input.GetKeyDown(KeyCode.F))
-            {
-                // Dialogue system
-                dialogue.StartDialogue();
-                
-                Debug.Log("Interact with saler");
-            }
+            // Dialogue system
+            dialogue.StartDialogue();
 
+            Debug.Log("Interact with saler");
         }
 
-        public string Description()
-        {
-            tmpTextTalkWithSaler.text = "Talk with saler";
-            return tmpTextTalkWithSaler.text;
-        }
+        public void Description() => tmpTextTalkWithSaler.text = "Talk with saler";
     }
 }
 

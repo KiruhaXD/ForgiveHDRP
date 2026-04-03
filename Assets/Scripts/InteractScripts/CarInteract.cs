@@ -42,29 +42,22 @@ public class CarInteract : MonoBehaviour, IInteractable
 
     public void Interact() 
     {
-        if (Input.GetKeyDown(KeyCode.F)) // изменить анализ машины!!!
+        switch (countPressF)
         {
-            switch (countPressF) 
-            {
-                case 0:
-                    countPressF = 1;
-                    isStartProgressAnalysis = true;
-                    barProgressionForWriteInNotepad.gameObject.SetActive(true);
-                    break;
+            case 0:
+                countPressF = 1;
+                isStartProgressAnalysis = true;
+                barProgressionForWriteInNotepad.gameObject.SetActive(true);
+                break;
 
-                case 1:
-                    countPressF = 2;
-                    barProgressionForWriteInNotepad.gameObject.SetActive(false);
-                    break;
-            }
+            case 1:
+                countPressF = 2;
+                barProgressionForWriteInNotepad.gameObject.SetActive(false);
+                break;
         }
     }
 
-    public string Description() 
-    {
-        interactWithCarText.text = "Start analysis for repair a car";
-        return interactWithCarText.text;
-    }
+    public void Description() => interactWithCarText.text = "Start analysis for repair a car";
 
     IEnumerator ShowTextForAnalysisSuccessful() 
     {

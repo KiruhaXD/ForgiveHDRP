@@ -4,7 +4,7 @@ using UnityEngine.UI;
 
 namespace Scripts.InteractScripts.ItemsInteractionForSurvivalScripts
 {
-    public class CanOpenerInteraction : MonoBehaviour, IInteractable
+    public class CanOpenerInteraction : CommonInteractionItems, IInteractable
     {
         [SerializeField] Toggle toggleInNotepadForCanOpenerMission;
         //[SerializeField] GameObject interfaceMissionForCanOpener;
@@ -12,20 +12,13 @@ namespace Scripts.InteractScripts.ItemsInteractionForSurvivalScripts
         [SerializeField] TMP_Text tmpTextTakeItem;
         public void Interact()
         {
-            if (Input.GetKeyDown(KeyCode.F))
-            {
-                Debug.Log("Interact with a can opener"); // active toggle in a notepad and disable mission
-                toggleInNotepadForCanOpenerMission.isOn = true;
-                //interfaceMissionForCanOpener.SetActive(false);
-                this.gameObject.SetActive(false);
-            }
+            Debug.Log("Interact with a can opener"); // active toggle in a notepad and disable mission
+            CommonInteractItem(toggleInNotepadForCanOpenerMission);
+
+            //interfaceMissionForCanOpener.SetActive(false);
         }
 
-        public string Description()
-        {
-            tmpTextTakeItem.text = "Take a can opener";
-            return tmpTextTakeItem.text;
-        }
+        public void Description() => CommonDescriptionItem(tmpTextTakeItem, "Take a can opener");
     }
 }
 

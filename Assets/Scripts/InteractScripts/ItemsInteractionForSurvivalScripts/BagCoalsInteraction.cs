@@ -4,7 +4,7 @@ using UnityEngine.UI;
 
 namespace Scripts.InteractScripts.ItemsInteractionForSurvivalScripts
 {
-    public class BagCoalsInteraction : MonoBehaviour, IInteractable
+    public class BagCoalsInteraction : CommonInteractionItems, IInteractable
     {
         [SerializeField] Toggle toggleInNotepadForBagCoalsMission;
         //[SerializeField] GameObject interfaceMissionForBagCoals;
@@ -13,19 +13,12 @@ namespace Scripts.InteractScripts.ItemsInteractionForSurvivalScripts
 
         public void Interact()
         {
-            if (Input.GetKeyDown(KeyCode.F))
-            {
-                Debug.Log("Interact with a bag coals"); // active toggle in a notepad and disable mission
-                toggleInNotepadForBagCoalsMission.isOn = true;
-                //interfaceMissionForBagCoals.SetActive(false);
-                this.gameObject.SetActive(false);
-            }
+            Debug.Log("Interact with a bag coals"); // active toggle in a notepad and disable mission
+            CommonInteractItem(toggleInNotepadForBagCoalsMission);
+
+            //interfaceMissionForBagCoals.SetActive(false);
         }
 
-        public string Description()
-        {
-            tmpTextTakeItem.text = "Take a bag coals";
-            return tmpTextTakeItem.text;
-        }
+        public void Description() => CommonDescriptionItem(tmpTextTakeItem, "Take a bag coals");
     }
 }

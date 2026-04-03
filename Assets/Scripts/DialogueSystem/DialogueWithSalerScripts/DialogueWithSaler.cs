@@ -6,8 +6,11 @@ using UnityEngine;
 
 namespace Scripts.DialogueSystem.DialogueWithSalerScripts
 {
-    public class DialogueWithSaler : DisableAndEnableMovementAndCursorController
+    public class DialogueWithSaler : CommonDialogueWithSaler
     {
+        [Header("References")]
+        [SerializeField] DisableAndEnableMovementAndCursorController disableAndEnableMovementAndCursorController;
+
         [SerializeField] Rigidbody rbPlayer;
 
         [SerializeField] TypingText typingText;
@@ -22,17 +25,7 @@ namespace Scripts.DialogueSystem.DialogueWithSalerScripts
         internal bool isStartDialogue = false;
         int currentDialogueIndex = 1;
 
-        /*private (string, Action) GetCurrentDialogue(string namePeson, int currentDialogue)
-            => currentDialogue switch 
-            {
-                1 => ("SALER: ", FirstDialogue),
-                2 => ("SALER: ", SecondDialogue),
-                3 => ("SALER: ", ThirdDialogueStageFirst),
-                4 => ("SALER: ", FourthDialogue),
-                5 => ("SALER: ", FifthDialogue),
-                6 => ("SALER: ", SixthDialogue),
-                7 => ("SALER: ", SeventhDialogue),
-            };*/
+        // диалог начинается очень странно
 
         public void StartDialogue()
         {
@@ -40,8 +33,6 @@ namespace Scripts.DialogueSystem.DialogueWithSalerScripts
 
             isStartDialogue = true;
             dialogueWindow.SetActive(true);
-
-            //GetCurrentDialogue(namePerson.text, currentDialogueIndex);
 
             switch (currentDialogueIndex)
             {
@@ -75,47 +66,26 @@ namespace Scripts.DialogueSystem.DialogueWithSalerScripts
 
         public void FirstDialogue()
         {
-            isDialogueWithSalerActive = true;
+            CurrentDialogue(disableAndEnableMovementAndCursorController, choiseAnswers, 1, typingText, "SALER: ",
+    namePerson, "Здравствуй покупатель! Не ожидал что кто-то сюда приедет, в такое захолустье", dialogueText);
 
-            DisableMovementAndShowCursor();
-            DisableButtonsForAnswers();
-
-            namePerson.text = "SALER:";
-            dialogueText.text = "Здравствуй покупатель! Не ожидал что кто-то сюда приедет, в такое захолустье";
-            
-            typingText.UpdateText();
             StartCoroutine(choiseAnswers.ChoiseFirstAnswerCoroutine());
         }
 
         public void SecondDialogue()
         {
-            currentDialogueIndex = 2;
+            CurrentDialogue(disableAndEnableMovementAndCursorController, choiseAnswers, 2, typingText, "SALER: ",
+    namePerson, "Ну в прямом, здесь месяц назад начали происходить странные вещи в лесу, уже у всех это на слуху, даже полиция отказывается выяснять что здесь случилось", 
+    dialogueText);
 
-            isDialogueWithSalerActive = true;
-
-            DisableMovementAndShowCursor();
-            DisableButtonsForAnswers();
-
-            namePerson.text = "SALER:";
-            dialogueText.text = "Ну в прямом, здесь месяц назад начали происходить странные вещи в лесу, уже у всех это на слуху, даже полиция отказывается выяснять что здесь случилось";
-            
-            typingText.UpdateText();
             StartCoroutine(choiseAnswers.ChoiseSecondAnswerCoroutine());
         }
 
         public void ThirdDialogueStageFirst()
         {
-            currentDialogueIndex = 3;
-
-            isDialogueWithSalerActive = true;
-
-            DisableMovementAndShowCursor();
-            DisableButtonsForAnswers();
-
-            namePerson.text = "SALER:";
-            dialogueText.text = "Нууууу, это долгая история, ты просто знай, я тебя предупредил, а ты уже сам решай идти ли тебе туда или нет";
-
-            typingText.UpdateText();
+            CurrentDialogue(disableAndEnableMovementAndCursorController, choiseAnswers, 3, typingText, "SALER: ",
+                namePerson, "Нууууу, это долгая история, ты просто знай, я тебя предупредил, а ты уже сам решай идти ли тебе туда или нет",
+                dialogueText);
 
             StartCoroutine(ThirdDialogueStageSecond());
         }
@@ -140,68 +110,36 @@ namespace Scripts.DialogueSystem.DialogueWithSalerScripts
 
         public void FourthDialogue() 
         {
-            currentDialogueIndex = 4;
-
-            isDialogueWithSalerActive = true;
-
-            DisableMovementAndShowCursor();
-            DisableButtonsForAnswers();
-
-            namePerson.text = "SALER:";
-            dialogueText.text = "Не мало.";
-
-            typingText.UpdateText();
+            CurrentDialogue(disableAndEnableMovementAndCursorController, choiseAnswers, 4, typingText, "SALER: ",
+                            namePerson, "Не мало.",
+                            dialogueText);
 
             StartCoroutine(choiseAnswers.ChoiseFourthAnswerCoroutine());
         }
 
         public void FifthDialogue() 
         {
-            currentDialogueIndex = 5;
-
-            isDialogueWithSalerActive = true;
-
-            DisableMovementAndShowCursor();
-            DisableButtonsForAnswers();
-
-            namePerson.text = "SALER:";
-            dialogueText.text = "Нууу эм пятихатку давай и расскажу";
-
-            typingText.UpdateText();
+            CurrentDialogue(disableAndEnableMovementAndCursorController, choiseAnswers, 5, typingText, "SALER: ",
+                            namePerson, "Нууу эм пятихатку давай и расскажу",
+                            dialogueText);
 
             StartCoroutine(choiseAnswers.ChoiseFifthAnswerCoroutine());
         }
 
         public void SixthDialogue() 
         {
-            currentDialogueIndex = 6;
-
-            isDialogueWithSalerActive = true;
-
-            DisableMovementAndShowCursor();
-            DisableButtonsForAnswers();
-
-            namePerson.text = "SALER:";
-            dialogueText.text = "Ну и все тогда, давай выкладывай все что взял и оплачивай";
-
-            typingText.UpdateText();
+            CurrentDialogue(disableAndEnableMovementAndCursorController, choiseAnswers, 6, typingText, "SALER: ",
+                            namePerson, "Ну и все тогда, давай выкладывай все что взял и оплачивай",
+                            dialogueText);
 
             StartCoroutine(choiseAnswers.ChoiseSixthAnswerCoroutine());
         }
 
         public void SeventhDialogue()
         {
-            currentDialogueIndex = 7;
-
-            isDialogueWithSalerActive = true;
-
-            DisableMovementAndShowCursor();
-            DisableButtonsForAnswers();
-
-            namePerson.text = "SALER:";
-            dialogueText.text = "Благодарю";
-
-            typingText.UpdateText();
+            CurrentDialogue(disableAndEnableMovementAndCursorController, choiseAnswers, 7, typingText, "SALER: ",
+                            namePerson, "Благодарю",
+                            dialogueText);
 
             StartCoroutine(choiseAnswers.StopAllDialogues());
         }
@@ -224,65 +162,6 @@ namespace Scripts.DialogueSystem.DialogueWithSalerScripts
             {
                 yield return new WaitForSeconds(2);
                 StopDialogue();
-            }
-        }
-
-        public void DisableButtonsForAnswers() 
-        {
-            for (int i = 0; i < currentDialogueIndex; i++) 
-            {
-                switch (currentDialogueIndex)
-                {
-                    case 1: case 2:
-                        choiseAnswers.windowChoiseAnswer.SetActive(false);
-                        choiseAnswers.answersButtons[0].gameObject.SetActive(false);
-                        break;
-
-                    case 3:
-                        choiseAnswers.windowChoiseAnswer.SetActive(false);
-
-                        choiseAnswers.answersButtons[currentDialogueIndex - 3].gameObject.SetActive(false);
-
-                        //choiseAnswers.answersButtons[0].gameObject.SetActive(false);
-                        //choiseAnswers.answersButtons[1].gameObject.SetActive(false);
-                        break;
-
-                    case 4:
-                        choiseAnswers.windowChoiseAnswer.SetActive(false);
-
-                        choiseAnswers.answersButtons[currentDialogueIndex - 2].gameObject.SetActive(false);
-
-                        /*choiseAnswers.answersButtons[0].gameObject.SetActive(false);
-                        choiseAnswers.answersButtons[1].gameObject.SetActive(false);
-                        choiseAnswers.answersButtons[2].gameObject.SetActive(false);*/
-                        break;
-
-                    case 5:
-                        choiseAnswers.windowChoiseAnswer.SetActive(false);
-
-                        choiseAnswers.answersButtons[currentDialogueIndex - 1].gameObject.SetActive(false);
-                        /*choiseAnswers.answersButtons[0].gameObject.SetActive(false);
-                        choiseAnswers.answersButtons[1].gameObject.SetActive(false);
-                        choiseAnswers.answersButtons[2].gameObject.SetActive(false);
-                        choiseAnswers.answersButtons[3].gameObject.SetActive(false);*/
-                        break;
-
-                    case 6:
-                        choiseAnswers.windowChoiseAnswer.SetActive(false);
-
-                        choiseAnswers.answersButtons[currentDialogueIndex].gameObject.SetActive(false);
-
-                        /*choiseAnswers.answersButtons[0].gameObject.SetActive(false);
-                        choiseAnswers.answersButtons[1].gameObject.SetActive(false);
-                        choiseAnswers.answersButtons[2].gameObject.SetActive(false);
-                        choiseAnswers.answersButtons[3].gameObject.SetActive(false);
-                        choiseAnswers.answersButtons[4].gameObject.SetActive(false);*/
-                        break;
-
-                    case 7:
-                        choiseAnswers.windowChoiseAnswer.SetActive(false);
-                        break;
-                }
             }
         }
 

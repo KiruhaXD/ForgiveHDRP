@@ -4,7 +4,7 @@ using UnityEngine.UI;
 
 namespace Scripts.InteractScripts.ItemsInteractionForSurvivalScripts
 {
-    public class TentInteraction : MonoBehaviour, IInteractable
+    public class TentInteraction : CommonInteractionItems, IInteractable
     {
         [SerializeField] Toggle toggleInNotepadForTentMission;
         //[SerializeField] GameObject interfaceMissionForTent;
@@ -12,20 +12,13 @@ namespace Scripts.InteractScripts.ItemsInteractionForSurvivalScripts
         [SerializeField] TMP_Text tmpTextTakeItem;
         public void Interact()
         {
-            if (Input.GetKeyDown(KeyCode.F))
-            {
-                Debug.Log("Interact with a tent"); // active toggle in a notepad and disable mission
-                toggleInNotepadForTentMission.isOn = true;
-                //interfaceMissionForTent.SetActive(false);
-                this.gameObject.SetActive(false);
-            }
+            Debug.Log("Interact with a tent"); // active toggle in a notepad and disable mission
+            CommonInteractItem(toggleInNotepadForTentMission);
+
+            //interfaceMissionForTent.SetActive(false);
         }
 
-        public string Description()
-        {
-            tmpTextTakeItem.text = "Take a tent";
-            return tmpTextTakeItem.text;
-        }
+        public void Description() => CommonDescriptionItem(tmpTextTakeItem, "Take a tent");
     }
 }
 

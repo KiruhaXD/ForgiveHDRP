@@ -9,7 +9,7 @@ public class CompilationShaders : MonoBehaviour
     [SerializeField] TMP_Text compilationProgressText;
     [SerializeField] GameObject compilationShadersPanel;
 
-    float progress = 0f;
+    //float progress = 0f;
 
     private void Update()
     {

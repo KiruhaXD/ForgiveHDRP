@@ -4,7 +4,7 @@ using UnityEngine.UI;
 
 namespace Scripts.InteractScripts
 {
-    public class WheelInteract : MonoBehaviour, IInteractable
+    public class WheelInteract : CommonInteractionItems, IInteractable
     {
         [SerializeField] Toggle toggleInNotepadForWheelMission;
         [SerializeField] GameObject interfaceMissionForWheel;
@@ -13,20 +13,13 @@ namespace Scripts.InteractScripts
     
         public void Interact()
         {
-            if (Input.GetKeyDown(KeyCode.F))
-            {
-                Debug.Log("Interact with wheel"); // active toggle in a notepad and disable mission
-                toggleInNotepadForWheelMission.isOn = true;
-                interfaceMissionForWheel.SetActive(false);
-                this.gameObject.SetActive(false);
-            }
+            Debug.Log("Interact with wheel"); // active toggle in a notepad and disable mission
+            CommonInteractItem(toggleInNotepadForWheelMission);
+
+            interfaceMissionForWheel.SetActive(false);
         }
 
-        public string Description()
-        {
-            tmpTextTakeItem.text = "Take a wheel";
-            return tmpTextTakeItem.text;
-        }
+        public void Description() => CommonDescriptionItem(tmpTextTakeItem, "Take a wheel");
     }
 }
 

@@ -4,7 +4,7 @@ using UnityEngine.UI;
 
 namespace Scripts.InteractScripts.ItemsInteractionForSurvivalScripts
 {
-    public class LighterInteraction : MonoBehaviour, IInteractable
+    public class LighterInteraction : CommonInteractionItems, IInteractable
     {
         [SerializeField] Toggle toggleInNotepadForLighterMission;
         //[SerializeField] GameObject interfaceMissionForLighter;
@@ -12,20 +12,13 @@ namespace Scripts.InteractScripts.ItemsInteractionForSurvivalScripts
         [SerializeField] TMP_Text tmpTextTakeItem;
         public void Interact()
         {
-            if (Input.GetKeyDown(KeyCode.F))
-            {
-                Debug.Log("Interact with a lighter"); // active toggle in a notepad and disable mission
-                toggleInNotepadForLighterMission.isOn = true;
-                //interfaceMissionForLighter.SetActive(false);
-                this.gameObject.SetActive(false);
-            }
+            Debug.Log("Interact with a lighter"); // active toggle in a notepad and disable mission
+            CommonInteractItem(toggleInNotepadForLighterMission);
+
+            //interfaceMissionForLighter.SetActive(false);
         }
 
-        public string Description()
-        {
-            tmpTextTakeItem.text = "Take a lighter";
-            return tmpTextTakeItem.text;
-        }
+        public void Description() => CommonDescriptionItem(tmpTextTakeItem, "Take a lighter");
     }
 }
 
