@@ -2,11 +2,16 @@ using UnityEngine;
 
 namespace Scripts.FlashlightScripts 
 {
-    public class FlashlightController : MonoBehaviour
+    public class FlashlightController : MonoCache
     {
         [SerializeField] Light _spotLight;
 
         int _isKeyPressONOrOFF = 0;
+
+        public override void OnTick()
+        {
+            OnAndOffLight();
+        }
 
         public void OnAndOffLight()
         {

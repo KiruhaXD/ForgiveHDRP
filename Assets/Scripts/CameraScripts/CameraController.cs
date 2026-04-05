@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace Scripts.CameraScripts 
 {
-    public class CameraController : MonoBehaviour
+    public class CameraController : MonoCache
     {
         [SerializeField] Transform _bodyPlayer;
         [SerializeField] Transform headPlayer;
@@ -22,7 +22,7 @@ namespace Scripts.CameraScripts
         float mouseX;
         float mouseY;
 
-        private void Update()
+        public override void OnTick()
         {
             PlayerRotateCamera();
         }

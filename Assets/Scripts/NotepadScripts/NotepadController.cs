@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Scripts.NotepadScripts
 {
-    public class NotepadController : MonoBehaviour
+    public class NotepadController : MonoCache
     {
         [SerializeField] PlayerMovement playerMovement;
         [SerializeField] CameraController cameraController;
@@ -16,6 +16,11 @@ namespace Scripts.NotepadScripts
 
         [SerializeField] Animator animator;
         int keyPress = 0;
+
+        public override void OnTick()
+        {
+            OpenAndCloseNotepad();
+        }
 
         public void OpenAndCloseNotepad()
         {

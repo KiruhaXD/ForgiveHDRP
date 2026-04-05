@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Scripts
 {
-    public class DisableAndEnableMovementAndCursorController : MonoBehaviour
+    public class DisableAndEnableMovementAndCursorController : MonoCache
     {
         [SerializeField] PlayerMovement playerMovement;
         [SerializeField] CameraController cameraController;

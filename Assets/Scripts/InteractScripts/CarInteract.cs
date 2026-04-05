@@ -4,7 +4,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class CarInteract : MonoBehaviour, IInteractable
+public class CarInteract : MonoCache, IInteractable
 {
     [SerializeField] TMP_Text interactWithCarText;
     [SerializeField] Slider barProgressionForWriteInNotepad;
@@ -16,7 +16,7 @@ public class CarInteract : MonoBehaviour, IInteractable
     int countStep = 0;
     int countPressF = 0;
 
-    private void Update()
+    public override void OnTick()
     {
         if (barProgressionForWriteInNotepad.value == 50 && isHideSlider == false) 
         {

@@ -2,14 +2,14 @@ using UnityEngine;
 
 namespace Scripts.InteractScripts
 {
-    public class PlayerInteraction : MonoBehaviour
+    public class PlayerInteraction : MonoCache
     {
         [SerializeField] float interactionDistance = 15f;
         [SerializeField] Camera mainCamera;
 
         [SerializeField] GameObject interactionUI;
 
-        private void Update()
+        public override void OnTick()
         {
             InteractionRay();
         }

@@ -1,11 +1,9 @@
 using TMPro;
 using UnityEngine;
-using UnityEngine.SceneManagement;
-using UnityEngine.UI;
 
 namespace Scripts.FPSScripts
 {
-    public class FPSDisplay : MonoBehaviour
+    public class FPSDisplay : MonoCache
     {
         public TMP_Text textFPS;
         [SerializeField] FPSCounter fpsCounter;
@@ -15,7 +13,7 @@ namespace Scripts.FPSScripts
             //textFPS.gameObject.SetActive(false);
         }
 
-        private void Update()
+        public override void OnTick()
         {
             fpsCounter.FPSBufferUpdate();
             CalculateFPS();

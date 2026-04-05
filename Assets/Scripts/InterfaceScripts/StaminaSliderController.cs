@@ -4,7 +4,7 @@ using UnityEngine.UI;
 
 namespace Scripts.InterfaceScripts 
 {
-    public class StaminaSliderController : MonoBehaviour
+    public class StaminaSliderController : MonoCache
     {
         [SerializeField] PlayerMovement playerMovement;
 
@@ -17,6 +17,11 @@ namespace Scripts.InterfaceScripts
         private void Start()
         {
             sliderStamina.gameObject.SetActive(false);
+        }
+
+        public override void OnTick()
+        {
+            CheckStaminaSlider();
         }
 
         public void CheckStaminaSlider()

@@ -30,6 +30,11 @@ namespace Scripts.GameMenuScripts
 
         private int pressKeyESC = 0;
 
+        public override void OnTick()
+        {
+            ShowPanelMenuButtons();
+        }
+
         public void ShowPanelMenuButtons()
         {
             if (Input.GetKeyDown(KeyCode.Escape) && dialogue.isStartDialogue == false)
