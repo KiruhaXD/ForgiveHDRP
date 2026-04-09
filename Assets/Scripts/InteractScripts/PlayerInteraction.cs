@@ -28,7 +28,8 @@ namespace Scripts.InteractScripts
                 IInteractable interactable = hit.collider.GetComponent<IInteractable>();
             
                 if (hit.collider != null && hit.collider.tag == "ItemsInteractionForCarRepair" 
-                    || hit.collider.tag == "Saler" || hit.collider.tag == "ItemsInteractionForSurvivalInNight" || hit.collider.tag == "Car")
+                    || hit.collider.tag == "Saler" || hit.collider.tag == "ItemsInteractionForSurvivalInNight" || hit.collider.tag == "Car"
+                    || hit.collider.tag == "Door")
                 {
                     interactable.Description();
                     hitSomething = true;

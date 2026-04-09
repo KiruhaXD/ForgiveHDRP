@@ -18,7 +18,11 @@ namespace Scripts.InteractScripts.ItemsInteractionForSurvivalScripts
             //interfaceMissionForLighter.SetActive(false);
         }
 
-        public void Description() => CommonDescriptionItem(tmpTextTakeItem, "Take a lighter");
+        public string Description()
+        {
+            CommonDescriptionItem(tmpTextTakeItem, "Take a lighter");
+            return tmpTextTakeItem.text;
+        }
     }
 }
 

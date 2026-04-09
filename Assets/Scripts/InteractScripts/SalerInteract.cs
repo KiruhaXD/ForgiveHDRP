@@ -20,7 +20,11 @@ namespace Scripts.InteractScripts
             Debug.Log("Interact with saler");
         }
 
-        public void Description() => tmpTextTalkWithSaler.text = "Talk with saler";
+        public string Description() 
+        {
+            tmpTextTalkWithSaler.text = "Talk with saler";
+            return tmpTextTalkWithSaler.text;
+        } 
     }
 }
 

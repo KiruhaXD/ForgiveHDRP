@@ -57,7 +57,11 @@ public class CarInteract : MonoCache, IInteractable
         }
     }
 
-    public void Description() => interactWithCarText.text = "Start analysis for repair a car";
+    public string Description()
+    {
+        interactWithCarText.text = "Start analysis for repair a car";
+        return interactWithCarText.text;
+    }
 
     IEnumerator ShowTextForAnalysisSuccessful() 
     {

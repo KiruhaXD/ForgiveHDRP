@@ -20,7 +20,11 @@ namespace Scripts.InteractScripts
             interfaceMissionForBolts.SetActive(false);
         }
 
-        public void Description() => CommonDescriptionItem(tmpTextTakeItem, "Take bolts");
+        public string Description()
+        {
+            CommonDescriptionItem(tmpTextTakeItem, "Take bolts");
+            return tmpTextTakeItem.text;
+        }
 
     }
 }

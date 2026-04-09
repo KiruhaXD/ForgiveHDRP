@@ -18,7 +18,11 @@ namespace Scripts.InteractScripts
             interfaceMissionForLugWrench.SetActive(false);
         }
 
-        public void Description() => CommonDescriptionItem(tmpTextTakeItem, "Take a lug wrench");
+        public string Description() 
+        {
+            CommonDescriptionItem(tmpTextTakeItem, "Take a lug wrench");
+            return tmpTextTakeItem.text;
+        } 
     }
 }
 

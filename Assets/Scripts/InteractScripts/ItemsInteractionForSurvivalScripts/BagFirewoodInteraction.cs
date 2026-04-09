@@ -8,7 +8,7 @@ namespace Scripts.InteractScripts.ItemsInteractionForSurvivalScripts
     {
         [SerializeField] Toggle toggleInNotepadForBagFirewoodMission;
         //[SerializeField] GameObject interfaceMissionForBagFirewood;
-    
+
         [SerializeField] TMP_Text tmpTextTakeItem;
         public void Interact()
         {
@@ -18,7 +18,11 @@ namespace Scripts.InteractScripts.ItemsInteractionForSurvivalScripts
             //interfaceMissionForBagFirewood.SetActive(false);
         }
 
-        public void Description() => CommonDescriptionItem(tmpTextTakeItem, "Take a bag firewood");
+        public string Description()
+        {
+            CommonDescriptionItem(tmpTextTakeItem, "Take a bag firewood");
+            return tmpTextTakeItem.text;
+        }
     }
 }
 

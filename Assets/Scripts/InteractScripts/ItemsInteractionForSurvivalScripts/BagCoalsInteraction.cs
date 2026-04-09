@@ -19,6 +19,10 @@ namespace Scripts.InteractScripts.ItemsInteractionForSurvivalScripts
             //interfaceMissionForBagCoals.SetActive(false);
         }
 
-        public void Description() => CommonDescriptionItem(tmpTextTakeItem, "Take a bag coals");
+        public string Description() 
+        {
+            CommonDescriptionItem(tmpTextTakeItem, "Take a bag coals");
+            return tmpTextTakeItem.text;
+        } 
     }
 }

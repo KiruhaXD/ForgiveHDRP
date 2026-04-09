@@ -19,7 +19,11 @@ namespace Scripts.InteractScripts
             interfaceMissionForWheel.SetActive(false);
         }
 
-        public void Description() => CommonDescriptionItem(tmpTextTakeItem, "Take a wheel");
+        public string Description()
+        {
+            CommonDescriptionItem(tmpTextTakeItem, "Take a wheel");
+            return tmpTextTakeItem.text;
+        }
     }
 }
 

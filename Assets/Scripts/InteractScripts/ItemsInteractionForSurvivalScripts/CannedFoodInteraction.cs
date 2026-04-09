@@ -18,7 +18,11 @@ namespace Scripts.InteractScripts.ItemsInteractionForSurvivalScripts
             //interfaceMissionForCannedFood.SetActive(false);
         }
 
-        public void Description() => CommonDescriptionItem(tmpTextTakeItem, "Take a canned food");
+        public string Description() 
+        {
+            CommonDescriptionItem(tmpTextTakeItem, "Take a canned food");
+            return tmpTextTakeItem.text;
+        } 
     }
 }
 
