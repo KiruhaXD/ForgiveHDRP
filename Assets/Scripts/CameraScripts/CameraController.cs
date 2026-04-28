@@ -32,17 +32,22 @@ namespace Scripts.CameraScripts
             InputMouse();
 
             LimitsRotateCameraY();
-            LimitsRotateCameraX();
+
+            if(drivingPlayer.isInCar == true)
+                LimitsRotateCameraX();
 
             if (drivingPlayer.isInCar == false) 
             {
                 transform.localRotation = Quaternion.Euler(_yRotation, _xRotation, 0f);
 
-                if (limitLeftX == -30f || limitRightX == 30f) 
+                /*if (limitLeftX == -30f || limitRightX == 30f) 
                 {
                     _bodyPlayer.Rotate(Vector3.up * mouseX);
                     //AnimationRotateBody();
-                }
+                }*/
+
+                _bodyPlayer.Rotate(Vector3.up * mouseX);
+                //AnimationRotateBody();
             }
 
             CreateRayForHeadRotate();

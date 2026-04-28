@@ -12,7 +12,7 @@ public class CarTrigger : MonoBehaviour
     {
         if (other.TryGetComponent(out DrivingPlayer drivingPlayer))
         {
-            drivingPlayer.isInCar = true;
+            //drivingPlayer.isInCar = true;
 
             if (drivingPlayer.isHoldKeyF == 1)
             {

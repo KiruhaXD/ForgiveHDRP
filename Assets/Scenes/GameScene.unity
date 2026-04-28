@@ -489,10 +489,6 @@ MonoBehaviour:
   m_Script: {fileID: 851182488}
   m_Name: 
   m_EditorClassIdentifier: Unity.RenderPipelines.HighDefinition.Runtime::UnityEngine.Rendering.HighDefinition.SceneObjectIDMapSceneAsset
-  m_Entries:
-  - id: 0
-    category: 0
-    gameObject: {fileID: 0}
 --- !u!4 &18139148
 Transform:
   m_ObjectHideFlags: 19
@@ -6851,6 +6847,7 @@ Transform:
   - {fileID: 1218140819}
   - {fileID: 1725123309}
   - {fileID: 543450652375897503}
+  - {fileID: 641581672497925792}
   - {fileID: 5176741175812619101}
   m_Father: {fileID: 1815832933}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -50492,9 +50489,9 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3655956167540923143}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: 0.69905037, z: -0, w: 0.7150725}
-  m_LocalPosition: {x: 0.128, y: -0.0064466144, z: 0.344}
-  m_LocalScale: {x: 0.87132823, y: 0.87132835, z: 0.87132823}
+  m_LocalRotation: {x: -0, y: 0.99982446, z: -0, w: 0.018737346}
+  m_LocalPosition: {x: 99.949, y: 18.932602, z: 176.804}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6333020255235752000}
@@ -50512,7 +50509,7 @@ Transform:
   - {fileID: 5871079291632585564}
   - {fileID: 8955223065081325493}
   - {fileID: 7349125340750451203}
-  m_Father: {fileID: 5176741175812619101}
+  m_Father: {fileID: 278922707}
   m_LocalEulerAnglesHint: {x: 0, y: 89.104, z: 0}
 --- !u!114 &648233166594963086
 MonoBehaviour:
@@ -52971,7 +52968,7 @@ CharacterController:
   m_StepOffset: 0.1
   m_SkinWidth: 0.01
   m_MinMoveDistance: 0.001
-  m_Center: {x: -0.01, y: 0.9, z: 0.02}
+  m_Center: {x: -0.01, y: 0.86, z: 0.02}
 --- !u!1 &1478590064120283323
 GameObject:
   m_ObjectHideFlags: 0
@@ -56673,7 +56670,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::NotepadController
   playerMovement: {fileID: 5971955446751597394}
-  cameraController: {fileID: 0}
+  cameraController: {fileID: 4165521759944793353}
   crouchController: {fileID: 2312135464395040992}
   jumpController: {fileID: 2562490624827731979}
   itemsForCarRepair: {fileID: 7541068324677235265}
@@ -62642,7 +62639,7 @@ Transform:
   m_GameObject: {fileID: 538712515433522951}
   serializedVersion: 2
   m_LocalRotation: {x: 0.52507806, y: -0.4766491, z: 0.5192788, w: -0.4769153}
-  m_LocalPosition: {x: 2.5914311, y: 0.10743388, z: 5.172841}
+  m_LocalPosition: {x: 2.5914311, y: -0.054, z: 5.172841}
   m_LocalScale: {x: 100.00001, y: 100.00001, z: 100.00001}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -63158,10 +63155,10 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.19634414
-  m_Height: 1.8022099
+  m_Radius: 0.26777354
+  m_Height: 1.9603246
   m_Direction: 1
-  m_Center: {x: -0.01, y: 0.9, z: 0.02}
+  m_Center: {x: -0.0099999895, y: 0.8209426, z: -0.0020931065}
 --- !u!1 &4441848306720243929
 GameObject:
   m_ObjectHideFlags: 0
@@ -63935,7 +63932,7 @@ MonoBehaviour:
   imageInteractHold: {fileID: 261818053}
   rigBuilder: {fileID: 8513904251422565104}
   rbDriver: {fileID: 9072470669626543464}
-  isInCar: 1
+  isInCar: 0
   isHoldKeyF: 0
   rigBuilderCount: 0
 --- !u!1 &4696620394054114368
@@ -64778,8 +64775,8 @@ Transform:
   m_GameObject: {fileID: 2193423312426782292}
   serializedVersion: 2
   m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
-  m_LocalPosition: {x: -0.43486285, y: -0.021217136, z: 2.7580428}
-  m_LocalScale: {x: 100, y: 100, z: 100}
+  m_LocalPosition: {x: -0.4093, y: -0.021217136, z: 2.758}
+  m_LocalScale: {x: 97.44974, y: 100, z: 100}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 543450651661071557}
@@ -65522,11 +65519,10 @@ Transform:
   m_GameObject: {fileID: 5760172792297465260}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0.70184857, z: 0, w: 0.71232617}
-  m_LocalPosition: {x: 97.55, y: 18.94, z: 176.87}
+  m_LocalPosition: {x: 97.55, y: 18.733, z: 176.87}
   m_LocalScale: {x: 1.1476731, y: 1.147673, z: 1.1476731}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 641581672497925792}
   - {fileID: 7856925998946019129}
   - {fileID: 4333487639498620166}
   - {fileID: 1097614369465902559}
@@ -71508,7 +71504,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &7009835869194255453
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -76920,13 +76916,13 @@ MonoBehaviour:
   - m_Rig: {fileID: 8313981761914956422}
     m_Active: 1
   - m_Rig: {fileID: 2419711871143996932}
-    m_Active: 1
+    m_Active: 0
   - m_Rig: {fileID: 9098478562030973216}
-    m_Active: 1
+    m_Active: 0
   - m_Rig: {fileID: 7954255229531531893}
-    m_Active: 1
+    m_Active: 0
   - m_Rig: {fileID: 4568575777536486587}
-    m_Active: 1
+    m_Active: 0
   - m_Rig: {fileID: 4490976354163436117}
     m_Active: 0
   m_Effectors:

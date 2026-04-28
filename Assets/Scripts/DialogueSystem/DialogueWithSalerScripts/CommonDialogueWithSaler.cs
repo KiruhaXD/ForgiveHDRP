@@ -26,12 +26,7 @@ ChoiseAnswersController choiseAnswers, int currentDialogueIndex, TypingText typi
         {
             switch (currentDialogueIndex)
             {
-                case 1:
-                    choiseAnswers.windowChoiseAnswer.SetActive(false);
-                    choiseAnswers.answersButtons[0].gameObject.SetActive(false);
-                    break;
-
-                case 2:
+                case 1: case 2:
                     choiseAnswers.windowChoiseAnswer.SetActive(false);
                     choiseAnswers.answersButtons[0].gameObject.SetActive(false);
                     break;
