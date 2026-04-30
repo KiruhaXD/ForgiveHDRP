@@ -31,7 +31,6 @@ namespace Scripts.DialogueSystem.DialogueWithSalerScripts
         public void StopDialogueClickButton()
         {
             StartCoroutine(dialogue.StopDialogueCoroutine());
-            disableAndEnableMovementAndCursorController.EnableMovementAndHideCursor();
 
             disableAndEnableMovementAndCursorController.isDialogueWithSalerActive = false;
 
@@ -78,7 +77,6 @@ namespace Scripts.DialogueSystem.DialogueWithSalerScripts
         {
             yield return new WaitForSeconds(2);
             dialogue.StopDialogue();
-            disableAndEnableMovementAndCursorController.EnableMovementAndHideCursor();
 
             disableAndEnableMovementAndCursorController.isDialogueWithSalerActive = false;
         }
