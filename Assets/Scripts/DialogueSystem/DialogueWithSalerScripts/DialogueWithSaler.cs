@@ -149,6 +149,8 @@ namespace Scripts.DialogueSystem.DialogueWithSalerScripts
             dialogueWindow.SetActive(false);
             
             isStartDialogue = false;
+
+            disableAndEnableMovementAndCursorController.EnableMovementAndHideCursor();
         }
 
         public IEnumerator StopDialogueCoroutine()
