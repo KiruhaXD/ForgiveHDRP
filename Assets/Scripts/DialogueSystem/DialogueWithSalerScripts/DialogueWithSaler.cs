@@ -3,6 +3,7 @@ using System.Collections;
 using Scripts.TextScripts;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace Scripts.DialogueSystem.DialogueWithSalerScripts
 {
@@ -10,10 +11,10 @@ namespace Scripts.DialogueSystem.DialogueWithSalerScripts
     {
         [Header("References")]
         [SerializeField] DisableAndEnableMovementAndCursorController disableAndEnableMovementAndCursorController;
-
         [SerializeField] Rigidbody rbPlayer;
-
         [SerializeField] TypingText typingText;
+        [SerializeField] Image imageInteract;
+
         
         [Header("Dialogue Window")]
         [SerializeField] GameObject dialogueWindow;
@@ -23,13 +24,15 @@ namespace Scripts.DialogueSystem.DialogueWithSalerScripts
         [SerializeField] private ChoiseAnswersController choiseAnswers;
 
         internal bool isStartDialogue = false;
-        int currentDialogueIndex = 1;
+        public static int currentDialogueIndex = 1;
 
         // диалог начинается очень странно
 
         public void StartDialogue()
         {
             rbPlayer.isKinematic = true;
+
+            imageInteract.gameObject.SetActive(false);
 
             isStartDialogue = true;
             dialogueWindow.SetActive(true);
@@ -39,9 +42,11 @@ namespace Scripts.DialogueSystem.DialogueWithSalerScripts
                 case 1:
                     FirstDialogue();
                     break;
+
                 case 2:
                     SecondDialogue();
                     break;
+
                 case 3:
                     ThirdDialogueStageFirst();
                     break;
@@ -66,82 +71,122 @@ namespace Scripts.DialogueSystem.DialogueWithSalerScripts
 
         public void FirstDialogue()
         {
-            CurrentDialogue(disableAndEnableMovementAndCursorController, choiseAnswers, 1, typingText, "SALER: ",
+            currentDialogueIndex = 1;
+
+            CurrentDialogue(disableAndEnableMovementAndCursorController, choiseAnswers, currentDialogueIndex, typingText, "SALER: ",
     namePerson, "Здравствуй покупатель! Не ожидал что кто-то сюда приедет, в такое захолустье", dialogueText);
 
             StartCoroutine(choiseAnswers.ChoiseFirstAnswerCoroutine());
+
+            SaveCurrentDialogue(1);
         }
 
         public void SecondDialogue()
         {
-            CurrentDialogue(disableAndEnableMovementAndCursorController, choiseAnswers, 2, typingText, "SALER: ",
+            currentDialogueIndex = 2;
+
+            CurrentDialogue(disableAndEnableMovementAndCursorController, choiseAnswers, currentDialogueIndex, typingText, "SALER: ",
     namePerson, "Ну в прямом, здесь месяц назад начали происходить странные вещи в лесу, уже у всех это на слуху, даже полиция отказывается выяснять что здесь случилось", 
     dialogueText);
 
             StartCoroutine(choiseAnswers.ChoiseSecondAnswerCoroutine());
+
+            SaveCurrentDialogue(2);
         }
 
         public void ThirdDialogueStageFirst()
         {
-            CurrentDialogue(disableAndEnableMovementAndCursorController, choiseAnswers, 3, typingText, "SALER: ",
+            currentDialogueIndex = 3;
+
+            CurrentDialogue(disableAndEnableMovementAndCursorController, choiseAnswers, currentDialogueIndex, typingText, "SALER: ",
                 namePerson, "Нууууу, это долгая история, ты просто знай, я тебя предупредил, а ты уже сам решай идти ли тебе туда или нет",
                 dialogueText);
 
             StartCoroutine(ThirdDialogueStageSecond());
+
+            SaveCurrentDialogue(3);
         }
 
         public IEnumerator ThirdDialogueStageSecond() 
         {
             yield return new WaitForSeconds(6);
-            dialogueText.text = "хотя знаешь я могу тебе рассказать почему я тут до сих пор работаю";
-            typingText.UpdateText();
+
+            currentDialogueIndex = 3;
+
+            CurrentDialogue(disableAndEnableMovementAndCursorController, choiseAnswers, currentDialogueIndex, typingText, "SALER: ",
+                namePerson, "хотя знаешь я могу тебе рассказать почему я тут до сих пор работаю",
+                dialogueText);
 
             StartCoroutine(ThirdDialogueStageThird());
+
+            SaveCurrentDialogue(3);
         }
 
         public IEnumerator ThirdDialogueStageThird()
         {
             yield return new WaitForSeconds(4);
-            dialogueText.text = "но с тебя денюжки дружок";
-            typingText.UpdateText();
+
+            currentDialogueIndex = 3;
+
+            CurrentDialogue(disableAndEnableMovementAndCursorController, choiseAnswers, currentDialogueIndex, typingText, "SALER: ",
+                namePerson, "но с тебя денюжки дружок",
+                dialogueText);
 
             StartCoroutine(choiseAnswers.ChoiseThirdAnswerCoroutine());
+
+            SaveCurrentDialogue(3);
         }
 
         public void FourthDialogue() 
         {
-            CurrentDialogue(disableAndEnableMovementAndCursorController, choiseAnswers, 4, typingText, "SALER: ",
+            currentDialogueIndex = 4;
+
+            CurrentDialogue(disableAndEnableMovementAndCursorController, choiseAnswers, currentDialogueIndex, typingText, "SALER: ",
                             namePerson, "Не мало.",
                             dialogueText);
 
             StartCoroutine(choiseAnswers.ChoiseFourthAnswerCoroutine());
+
+            SaveCurrentDialogue(4);
         }
 
         public void FifthDialogue() 
         {
-            CurrentDialogue(disableAndEnableMovementAndCursorController, choiseAnswers, 5, typingText, "SALER: ",
+            currentDialogueIndex = 5;
+
+            CurrentDialogue(disableAndEnableMovementAndCursorController, choiseAnswers, currentDialogueIndex, typingText, "SALER: ",
                             namePerson, "Нууу эм пятихатку давай и расскажу",
                             dialogueText);
 
             StartCoroutine(choiseAnswers.ChoiseFifthAnswerCoroutine());
+
+            SaveCurrentDialogue(5);
         }
 
         public void SixthDialogue() 
         {
-            CurrentDialogue(disableAndEnableMovementAndCursorController, choiseAnswers, 6, typingText, "SALER: ",
+            currentDialogueIndex = 6;
+
+            CurrentDialogue(disableAndEnableMovementAndCursorController, choiseAnswers, currentDialogueIndex, typingText, "SALER: ",
                             namePerson, "Ну и все тогда, давай выкладывай все что взял и оплачивай",
                             dialogueText);
 
             StartCoroutine(choiseAnswers.ChoiseSixthAnswerCoroutine());
+
+            SaveCurrentDialogue(6);
         }
 
         public void SeventhDialogue()
         {
-            CurrentDialogue(disableAndEnableMovementAndCursorController, choiseAnswers, 7, typingText, "SALER: ",
+            currentDialogueIndex = 7;
+
+            CurrentDialogue(disableAndEnableMovementAndCursorController, choiseAnswers, currentDialogueIndex, typingText, "SALER: ",
                             namePerson, "Благодарю",
                             dialogueText);
 
             StartCoroutine(choiseAnswers.StopAllDialogues());
+
+            SaveCurrentDialogue(7);
         }
 
         public void StopDialogue()
