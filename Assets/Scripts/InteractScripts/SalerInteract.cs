@@ -1,4 +1,6 @@
+using Scripts.CameraScripts;
 using Scripts.DialogueSystem.DialogueWithSalerScripts;
+using Scripts.PlayerScripts;
 using Scripts.TextScripts;
 using TMPro;
 using UnityEngine;
@@ -7,6 +9,8 @@ namespace Scripts.InteractScripts
 {
     public class SalerInteract : MonoBehaviour, IInteractable
     {
+        [Header("Dialogue")]
+
         [SerializeField] DialogueWithSaler dialogue;
         [SerializeField] TypingText typingText;
         
@@ -14,6 +18,9 @@ namespace Scripts.InteractScripts
         
         public void Interact()
         {
+            if (PlayerPrefs.HasKey(CommonDialogueWithSaler.CurrentDialogueIndexKey))
+                DialogueWithSaler.currentDialogueIndex = CommonDialogueWithSaler.LoadCurrentDialogue(DialogueWithSaler.currentDialogueIndex);
+
             // Dialogue system
             dialogue.StartDialogue();
 

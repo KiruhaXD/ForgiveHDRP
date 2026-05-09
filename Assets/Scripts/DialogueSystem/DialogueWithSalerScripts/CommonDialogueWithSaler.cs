@@ -6,6 +6,11 @@ using UnityEngine;
 
 public class CommonDialogueWithSaler : MonoBehaviour
 {
+    public const string CurrentDialogueIndexKey = "current_dialogue_index";
+
+    [ContextMenu("Delete Key Dialogue (Польз.)")]
+    public void DeleteKeysDialogue() => PlayerPrefs.DeleteKey(CurrentDialogueIndexKey);
+
     protected void CurrentDialogue(DisableAndEnableMovementAndCursorController disableAndEnableMovementAndCursorController,
 ChoiseAnswersController choiseAnswers, int currentDialogueIndex, TypingText typingText, string namePerson, TMP_Text tmpNamePerson, string dialogueText, TMP_Text tmpDialogue)
     {
@@ -14,10 +19,22 @@ ChoiseAnswersController choiseAnswers, int currentDialogueIndex, TypingText typi
 
         DisableButtonsForAnswers(choiseAnswers, currentDialogueIndex);
 
+        Debug.Log(currentDialogueIndex);
+
         tmpNamePerson.text = namePerson;
         tmpDialogue.text = dialogueText;
 
         typingText.UpdateText();
+    }
+
+    public void SaveCurrentDialogue(int currentDialogueIndex) 
+    {
+        PlayerPrefs.SetInt(CurrentDialogueIndexKey, currentDialogueIndex);
+    }
+
+    public static int LoadCurrentDialogue(int currentDialogueIndex)
+    {
+        return PlayerPrefs.GetInt(CurrentDialogueIndexKey, currentDialogueIndex);
     }
 
     public void DisableButtonsForAnswers(ChoiseAnswersController choiseAnswers, int currentDialogueIndex)
@@ -26,7 +43,8 @@ ChoiseAnswersController choiseAnswers, int currentDialogueIndex, TypingText typi
         {
             switch (currentDialogueIndex)
             {
-                case 1: case 2:
+                case 1:
+                case 2:
                     choiseAnswers.windowChoiseAnswer.SetActive(false);
                     choiseAnswers.answersButtons[0].gameObject.SetActive(false);
                     break;
@@ -34,34 +52,24 @@ ChoiseAnswersController choiseAnswers, int currentDialogueIndex, TypingText typi
                 case 3:
                     choiseAnswers.windowChoiseAnswer.SetActive(false);
 
-                    choiseAnswers.answersButtons[0].gameObject.SetActive(false);
                     choiseAnswers.answersButtons[1].gameObject.SetActive(false);
                     break;
 
                 case 4:
                     choiseAnswers.windowChoiseAnswer.SetActive(false);
 
-                    choiseAnswers.answersButtons[0].gameObject.SetActive(false);
-                    choiseAnswers.answersButtons[1].gameObject.SetActive(false);
                     choiseAnswers.answersButtons[2].gameObject.SetActive(false);
                     break;
 
                 case 5:
                     choiseAnswers.windowChoiseAnswer.SetActive(false);
 
-                    choiseAnswers.answersButtons[0].gameObject.SetActive(false);
-                    choiseAnswers.answersButtons[1].gameObject.SetActive(false);
-                    choiseAnswers.answersButtons[2].gameObject.SetActive(false);
                     choiseAnswers.answersButtons[3].gameObject.SetActive(false);
                     break;
 
                 case 6:
                     choiseAnswers.windowChoiseAnswer.SetActive(false);
 
-                    choiseAnswers.answersButtons[0].gameObject.SetActive(false);
-                    choiseAnswers.answersButtons[1].gameObject.SetActive(false);
-                    choiseAnswers.answersButtons[2].gameObject.SetActive(false);
-                    choiseAnswers.answersButtons[3].gameObject.SetActive(false);
                     choiseAnswers.answersButtons[4].gameObject.SetActive(false);
                     break;
 
@@ -69,6 +77,7 @@ ChoiseAnswersController choiseAnswers, int currentDialogueIndex, TypingText typi
                     choiseAnswers.windowChoiseAnswer.SetActive(false);
                     break;
             }
+
         }
     }
 

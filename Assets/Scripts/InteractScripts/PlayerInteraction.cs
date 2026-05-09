@@ -34,9 +34,6 @@ namespace Scripts.InteractScripts
                     interactable.Description();
                     hitSomething = true;
 
-                    if(hitSomething == true)
-                        Debug.Log($"Hit {hit.collider.tag}");
-
                     if(Input.GetKeyDown(KeyCode.F))
                         interactable.Interact();
                 }

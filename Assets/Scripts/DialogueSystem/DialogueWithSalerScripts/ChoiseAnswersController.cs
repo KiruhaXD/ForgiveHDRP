@@ -15,7 +15,7 @@ namespace Scripts.DialogueSystem.DialogueWithSalerScripts
         [Header("Buttons for answers")]
         [SerializeField] public Button[] answersButtons;
         [SerializeField] public Button answerForExitDialogueBtn;
-        
+
         public void FirstAnswerClickButton() => dialogue.SecondDialogue();
         
         public void SecondAnswerClickButton() => dialogue.ThirdDialogueStageFirst();
@@ -28,13 +28,11 @@ namespace Scripts.DialogueSystem.DialogueWithSalerScripts
 
         public void SixthAnswerClickButton() => dialogue.SeventhDialogue();
         
-        public void StopDialogueClickButton()
+        public void ExitFromCurrentDialogueClickButton()
         {
             StartCoroutine(dialogue.StopDialogueCoroutine());
 
             disableAndEnableMovementAndCursorController.isDialogueWithSalerActive = false;
-
-            Debug.Log("Press Exit button");
         }
         
         public IEnumerator ChoiseFirstAnswerCoroutine()
