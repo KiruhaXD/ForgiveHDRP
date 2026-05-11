@@ -2,36 +2,30 @@ using UnityEngine;
 
 namespace Scripts.MissionsScripts
 {
-    public class ShowMissions : MonoBehaviour
+    public class ShowMissions : MonoCache
     {
+        [SerializeField] DrivingPlayer drivingPlayer;
+
+        [Header("Window Mission For Buy Items For Survival")]
+        [SerializeField] GameObject windowMissionBuyItemsForSurvival;
+
         [SerializeField] GameObject panelMissions;
-        [SerializeField] GameObject[] arrayMissions;
 
-        [SerializeField] GameObject[] arrayImagesItemsInteract;
-
-        private void Start()
+        public override void OnTick()
         {
-            panelMissions.SetActive(false);
+            if (drivingPlayer.isInCar == false) 
+                ShowMissionBuyItemsShopForSurvival();
+            
         }
 
-        public void ShowFirstMission()
+        // должна быть подсказка для открытия блокнота
+        public void ShowMissionBuyItemsShopForSurvival() 
         {
             panelMissions.SetActive(true);
-            arrayMissions[0].SetActive(true);
-            arrayImagesItemsInteract[0].SetActive(true);
-        }
+            windowMissionBuyItemsForSurvival.SetActive(true);
+        } 
+        
 
-        public void ShowSecondMission()
-        {
-            arrayMissions[1].SetActive(true);
-            arrayImagesItemsInteract[1].SetActive(true);
-        }
-
-        public void ShowThirdMission()
-        {
-            arrayMissions[2].SetActive(true);
-            arrayImagesItemsInteract[2].SetActive(true);
-        }
 
 
     }
