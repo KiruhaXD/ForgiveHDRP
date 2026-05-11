@@ -7,10 +7,10 @@ TagManager:
   - Ground
   - Ocean
   - Saler
-  - ItemsInteractionForSurvivalInNight
   - ItemsInteractionForCarRepair
   - Car
   - Door
+  - ItemsInteractionForSurvival
   layers:
   - Default
   - TransparentFX

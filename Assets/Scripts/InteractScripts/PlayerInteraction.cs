@@ -2,14 +2,14 @@ using UnityEngine;
 
 namespace Scripts.InteractScripts
 {
-    public class PlayerInteraction : MonoCache
+    public class PlayerInteraction : MonoBehaviour
     {
-        [SerializeField] float interactionDistance = 15f;
+        [SerializeField] float interactionDistance = 100f;
         [SerializeField] Camera mainCamera;
 
         [SerializeField] GameObject interactionUI;
 
-        public override void OnTick()
+        private void Update()
         {
             InteractionRay();
         }
@@ -18,18 +18,19 @@ namespace Scripts.InteractScripts
         public void InteractionRay()
         {
             RaycastHit hit;
-        
-            bool hitSomething = false;
 
             Debug.DrawRay(mainCamera.transform.position, mainCamera.transform.forward, Color.red);
 
+            bool hitSomething = false;
+
             if (Physics.Raycast(mainCamera.transform.position, mainCamera.transform.forward, out hit, interactionDistance))
             {
+
                 IInteractable interactable = hit.collider.GetComponent<IInteractable>();
             
-                if (hit.collider != null && hit.collider.tag == "ItemsInteractionForCarRepair" 
-                    || hit.collider.tag == "Saler" || hit.collider.tag == "ItemsInteractionForSurvivalInNight" || hit.collider.tag == "Car"
-                    || hit.collider.tag == "Door")
+                if (hit.collider != null && (hit.collider.tag == "ItemsInteractionForCarRepair" 
+                    || hit.collider.tag == "Saler" || hit.collider.tag == "ItemsInteractionForSurvival" || hit.collider.tag == "Car"
+                    || hit.collider.tag == "Door"))
                 {
                     interactable.Description();
                     hitSomething = true;
