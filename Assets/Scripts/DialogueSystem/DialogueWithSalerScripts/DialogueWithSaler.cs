@@ -78,7 +78,7 @@ namespace Scripts.DialogueSystem.DialogueWithSalerScripts
 
             StartCoroutine(choiseAnswers.ChoiseFirstAnswerCoroutine());
 
-            SaveCurrentDialogue(1);
+            SaveCurrentDialogue(currentDialogueIndex);
         }
 
         public void SecondDialogue()
@@ -91,7 +91,7 @@ namespace Scripts.DialogueSystem.DialogueWithSalerScripts
 
             StartCoroutine(choiseAnswers.ChoiseSecondAnswerCoroutine());
 
-            SaveCurrentDialogue(2);
+            SaveCurrentDialogue(currentDialogueIndex);
         }
 
         public void ThirdDialogueStageFirst()
@@ -104,7 +104,7 @@ namespace Scripts.DialogueSystem.DialogueWithSalerScripts
 
             StartCoroutine(ThirdDialogueStageSecond());
 
-            SaveCurrentDialogue(3);
+            SaveCurrentDialogue(currentDialogueIndex);
         }
 
         public IEnumerator ThirdDialogueStageSecond() 
@@ -119,7 +119,7 @@ namespace Scripts.DialogueSystem.DialogueWithSalerScripts
 
             StartCoroutine(ThirdDialogueStageThird());
 
-            SaveCurrentDialogue(3);
+            SaveCurrentDialogue(currentDialogueIndex);
         }
 
         public IEnumerator ThirdDialogueStageThird()
@@ -134,7 +134,7 @@ namespace Scripts.DialogueSystem.DialogueWithSalerScripts
 
             StartCoroutine(choiseAnswers.ChoiseThirdAnswerCoroutine());
 
-            SaveCurrentDialogue(3);
+            SaveCurrentDialogue(currentDialogueIndex);
         }
 
         public void FourthDialogue() 
@@ -147,7 +147,7 @@ namespace Scripts.DialogueSystem.DialogueWithSalerScripts
 
             StartCoroutine(choiseAnswers.ChoiseFourthAnswerCoroutine());
 
-            SaveCurrentDialogue(4);
+            SaveCurrentDialogue(currentDialogueIndex);
         }
 
         public void FifthDialogue() 
@@ -160,7 +160,7 @@ namespace Scripts.DialogueSystem.DialogueWithSalerScripts
 
             StartCoroutine(choiseAnswers.ChoiseFifthAnswerCoroutine());
 
-            SaveCurrentDialogue(5);
+            SaveCurrentDialogue(currentDialogueIndex);
         }
 
         public void SixthDialogue() 
@@ -173,7 +173,7 @@ namespace Scripts.DialogueSystem.DialogueWithSalerScripts
 
             StartCoroutine(choiseAnswers.ChoiseSixthAnswerCoroutine());
 
-            SaveCurrentDialogue(6);
+            SaveCurrentDialogue(currentDialogueIndex);
         }
 
         public void SeventhDialogue()
@@ -186,7 +186,7 @@ namespace Scripts.DialogueSystem.DialogueWithSalerScripts
 
             StartCoroutine(choiseAnswers.StopAllDialogues());
 
-            SaveCurrentDialogue(7);
+            SaveCurrentDialogue(currentDialogueIndex);
         }
 
         public void StopDialogue()

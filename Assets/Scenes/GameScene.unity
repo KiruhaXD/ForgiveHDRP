@@ -720,7 +720,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &43214553
 Transform:
   m_ObjectHideFlags: 0
@@ -10244,7 +10244,7 @@ GameObject:
   - component: {fileID: 510115521}
   m_Layer: 0
   m_Name: CannedFood
-  m_TagString: ItemsInteractionForSurvivalInNight
+  m_TagString: ItemsInteractionForSurvival
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10352,10 +10352,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 510115515}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 412c8cebdb21414428072cf85db15abb, type: 3}
+  m_Script: {fileID: 11500000, guid: ecb7e7e86a2e528429ffbbdf9b2d15d8, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Scripts.InteractScripts.CannedFoodInteraction
-  toggleInNotepadForCannedFoodMission: {fileID: 6988410351935144426}
+  m_EditorClassIdentifier: Assembly-CSharp::Scripts.InteractScripts.ItemsInteractionForSurvivalScripts.ItemShopInteraction
+  nameItem: Canned food
+  toggleInNotepadForItemMission: {fileID: 6988410351935144426}
   tmpTextTakeItem: {fileID: 81262074}
 --- !u!1001 &512499679
 PrefabInstance:
@@ -11612,7 +11613,7 @@ GameObject:
   - component: {fileID: 566271794}
   m_Layer: 0
   m_Name: CanOpener
-  m_TagString: ItemsInteractionForSurvivalInNight
+  m_TagString: ItemsInteractionForSurvival
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -11720,10 +11721,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 566271788}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e8b70cd95a31fad4eb95aaa136c41eaa, type: 3}
+  m_Script: {fileID: 11500000, guid: ecb7e7e86a2e528429ffbbdf9b2d15d8, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Scripts.InteractScripts.CanOpenerInteraction
-  toggleInNotepadForCanOpenerMission: {fileID: 7437242086200928687}
+  m_EditorClassIdentifier: Assembly-CSharp::Scripts.InteractScripts.ItemsInteractionForSurvivalScripts.ItemShopInteraction
+  nameItem: Can opener
+  toggleInNotepadForItemMission: {fileID: 7437242086200928687}
   tmpTextTakeItem: {fileID: 81262074}
 --- !u!1 &569579372
 GameObject:
@@ -16904,8 +16906,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ba87851ddd64684ca078ee8c4525967, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::WheelInteract
-  toggleInNotepadForWheelMission: {fileID: 4414224973517923895}
-  interfaceMissionForWheel: {fileID: 1050730936}
+  nameItemRepair: Wheel
+  toggleInNotepadItemRepairCarMission: {fileID: 4414224973517923895}
   tmpTextTakeItem: {fileID: 81262074}
 --- !u!65 &885910784
 BoxCollider:
@@ -18489,7 +18491,7 @@ GameObject:
   - component: {fileID: 959114343}
   m_Layer: 0
   m_Name: BagCoals
-  m_TagString: ItemsInteractionForSurvivalInNight
+  m_TagString: ItemsInteractionForSurvival
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -18597,10 +18599,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 959114337}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5ecaf5601ca937f4894f3a36cbb3e991, type: 3}
+  m_Script: {fileID: 11500000, guid: ecb7e7e86a2e528429ffbbdf9b2d15d8, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Scripts.InteractScripts.BagCoalsInteraction
-  toggleInNotepadForBagCoalsMission: {fileID: 8449536441251907897}
+  m_EditorClassIdentifier: Assembly-CSharp::Scripts.InteractScripts.ItemsInteractionForSurvivalScripts.ItemShopInteraction
+  nameItem: Bag coals
+  toggleInNotepadForItemMission: {fileID: 8449536441251907897}
   tmpTextTakeItem: {fileID: 81262074}
 --- !u!1001 &961796998
 PrefabInstance:
@@ -25265,11 +25268,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1356690939}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 39232f382f62c694087cb087cb9e2a20, type: 3}
+  m_Script: {fileID: 11500000, guid: 0ba87851ddd64684ca078ee8c4525967, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::BoltsInteraction
-  toggleInNotepadForBoltsMission: {fileID: 4401124612907146389}
-  interfaceMissionForBolts: {fileID: 2049389138}
+  m_EditorClassIdentifier: Assembly-CSharp::Scripts.InteractScripts.ItemRepairCarInteract
+  nameItemRepair: Bolts
+  toggleInNotepadItemRepairCarMission: {fileID: 4401124612907146389}
   tmpTextTakeItem: {fileID: 81262074}
 --- !u!1001 &1362435602
 PrefabInstance:
@@ -26629,7 +26632,7 @@ GameObject:
   - component: {fileID: 1430298229}
   m_Layer: 0
   m_Name: Lighter
-  m_TagString: ItemsInteractionForSurvivalInNight
+  m_TagString: ItemsInteractionForSurvival
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -26737,10 +26740,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1430298223}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c29404b896d7dcf448ecb1f133bad1b7, type: 3}
+  m_Script: {fileID: 11500000, guid: ecb7e7e86a2e528429ffbbdf9b2d15d8, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Scripts.InteractScripts.LighterInteraction
-  toggleInNotepadForLighterMission: {fileID: 7091913911538832943}
+  m_EditorClassIdentifier: Assembly-CSharp::Scripts.InteractScripts.ItemsInteractionForSurvivalScripts.ItemShopInteraction
+  nameItem: Lighter
+  toggleInNotepadForItemMission: {fileID: 7091913911538832943}
   tmpTextTakeItem: {fileID: 81262074}
 --- !u!1 &1437664403
 GameObject:
@@ -38494,7 +38498,7 @@ GameObject:
   - component: {fileID: 1697730085}
   m_Layer: 0
   m_Name: SleepingBag
-  m_TagString: ItemsInteractionForSurvivalInNight
+  m_TagString: ItemsInteractionForSurvival
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -38602,10 +38606,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1697730079}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1aaaf3af8871f714cace9ccdd1421c68, type: 3}
+  m_Script: {fileID: 11500000, guid: ecb7e7e86a2e528429ffbbdf9b2d15d8, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Scripts.InteractScripts.SleepingBagInteraction
-  toggleInNotepadForSleepingBagMission: {fileID: 3478506591893150893}
+  m_EditorClassIdentifier: Assembly-CSharp::Scripts.InteractScripts.ItemsInteractionForSurvivalScripts.ItemShopInteraction
+  nameItem: Sleeping bag
+  toggleInNotepadForItemMission: {fileID: 3478506591893150893}
   tmpTextTakeItem: {fileID: 81262074}
 --- !u!1001 &1699928396
 PrefabInstance:
@@ -43863,11 +43868,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1944820279}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5ae633ca04767c043a37b9a64a6645ed, type: 3}
+  m_Script: {fileID: 11500000, guid: 0ba87851ddd64684ca078ee8c4525967, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::LugWrenchInteraction
-  toggleInNotepadForLugWrenchMission: {fileID: 4029678484818291989}
-  interfaceMissionForLugWrench: {fileID: 2087112604}
+  m_EditorClassIdentifier: Assembly-CSharp::Scripts.InteractScripts.ItemRepairCarInteract
+  nameItemRepair: Lug wrench
+  toggleInNotepadItemRepairCarMission: {fileID: 4029678484818291989}
   tmpTextTakeItem: {fileID: 81262074}
 --- !u!1001 &1944988553
 PrefabInstance:
@@ -46947,7 +46952,7 @@ GameObject:
   - component: {fileID: 2071947983}
   m_Layer: 0
   m_Name: BagFirewood
-  m_TagString: ItemsInteractionForSurvivalInNight
+  m_TagString: ItemsInteractionForSurvival
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -47055,10 +47060,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 2071947977}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fc26d0fa46a2c60478e5b403a3ba77c3, type: 3}
+  m_Script: {fileID: 11500000, guid: ecb7e7e86a2e528429ffbbdf9b2d15d8, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Scripts.InteractScripts.BagFirewoodInteraction
-  toggleInNotepadForBagFirewoodMission: {fileID: 4261288829559625986}
+  m_EditorClassIdentifier: Assembly-CSharp::Scripts.InteractScripts.ItemsInteractionForSurvivalScripts.ItemShopInteraction
+  nameItem: Bag firewood
+  toggleInNotepadForItemMission: {fileID: 4261288829559625986}
   tmpTextTakeItem: {fileID: 81262074}
 --- !u!1001 &2075346428
 PrefabInstance:
@@ -48040,7 +48046,7 @@ GameObject:
   - component: {fileID: 2125735483}
   m_Layer: 0
   m_Name: Tent
-  m_TagString: ItemsInteractionForSurvivalInNight
+  m_TagString: ItemsInteractionForSurvival
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -48151,7 +48157,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ecb7e7e86a2e528429ffbbdf9b2d15d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Scripts.InteractScripts.TentInteraction
-  toggleInNotepadForTentMission: {fileID: 8573013841481468948}
+  nameItem: Tent
+  toggleInNotepadForItemMission: {fileID: 8573013841481468948}
   tmpTextTakeItem: {fileID: 81262074}
 --- !u!1001 &2126755900
 PrefabInstance:
@@ -62544,7 +62551,7 @@ Transform:
   m_GameObject: {fileID: 6495802392473974095}
   serializedVersion: 2
   m_LocalRotation: {x: 0.000000013871613, y: -4.7293724e-10, z: -2.2104124e-11, w: 1}
-  m_LocalPosition: {x: 0.037, y: 1.608, z: 1.987}
+  m_LocalPosition: {x: 0.037, y: 1.608, z: 1.219}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -77098,7 +77105,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9d4776118665334c89546d982c5066d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerInteraction
-  interactionDistance: 3
+  interactionDistance: 100
   mainCamera: {fileID: 8843733459168429163}
   interactionUI: {fileID: 1892844697}
 --- !u!114 &8573013841481468948
