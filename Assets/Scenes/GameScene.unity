@@ -5050,14 +5050,6 @@ MonoBehaviour:
   drivingPlayer: {fileID: 4682043514986208510}
   windowMissionBuyItemsForSurvival: {fileID: 1910891679}
   panelMissions: {fileID: 1437664403}
-  arrayMissions:
-  - {fileID: 1050730936}
-  - {fileID: 2049389138}
-  - {fileID: 2087112604}
-  arrayImagesItemsInteract:
-  - {fileID: 794863982}
-  - {fileID: 1039073277}
-  - {fileID: 1423974059}
 --- !u!114 &221523064
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -26631,7 +26623,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1437664404
 RectTransform:
   m_ObjectHideFlags: 0
