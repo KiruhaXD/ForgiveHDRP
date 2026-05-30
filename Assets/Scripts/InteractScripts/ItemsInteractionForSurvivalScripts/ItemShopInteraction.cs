@@ -11,6 +11,7 @@ namespace Scripts.InteractScripts.ItemsInteractionForSurvivalScripts
         [SerializeField] Toggle toggleInNotepadForItemMission;
     
         [SerializeField] TMP_Text tmpTextTakeItem;
+
         public void Interact()
         {
             Debug.Log($"Interact with a {nameItem}"); // active toggle in a notepad and disable mission

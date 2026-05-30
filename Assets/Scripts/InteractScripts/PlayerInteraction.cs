@@ -9,6 +9,8 @@ namespace Scripts.InteractScripts
 
         [SerializeField] GameObject interactionUI;
 
+        public int countPurchasesItemsFromShop = 0;
+
         public override void OnTick()
         {
             InteractionRay();
@@ -26,15 +28,15 @@ namespace Scripts.InteractScripts
             if (Physics.Raycast(mainCamera.transform.position, mainCamera.transform.forward, out hit, interactionDistance))
             {
                 IInteractable interactable = hit.collider.GetComponent<IInteractable>();
-            
-                if (hit.collider != null && 
-                    hit.collider.tag == "ItemsInteractionForCarRepair" || hit.collider.tag == "Saler" || hit.collider.tag == "ItemsInteractionForSurvival" || 
+
+                if (hit.collider != null &&
+                    hit.collider.tag == "ItemsInteractionForCarRepair" || hit.collider.tag == "Saler" || hit.collider.tag == "ItemsInteractionForSurvival" ||
                     hit.collider.tag == "Car" || hit.collider.tag == "Door")
                 {
                     interactable.Description();
                     hitSomething = true;
 
-                    if(Input.GetKeyDown(KeyCode.F))
+                    if (Input.GetKeyDown(KeyCode.F))
                         interactable.Interact();
                 }
             }
