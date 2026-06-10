@@ -1,0 +1,435 @@
+fileFormatVersion: 2
+guid: 4f3ac97a93e86ef4c8d20fb7134764b6
+ModelImporter:
+  serializedVersion: 24200
+  internalIDToNameTable: []
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: UV Texture 1
+    second: {fileID: 2100000, guid: eb528e1c29dca23448039cde64ce2852, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: UV Texture 10
+    second: {fileID: 2100000, guid: 41f7eea04ac7c7b40aee4a3033fd842e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: UV Texture 3
+    second: {fileID: 2100000, guid: 3afbba89982d5f84e8f2e11fd5fce613, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: UV Texture 4
+    second: {fileID: 2100000, guid: e35aff78b2243f24189a289bc4aeadcb, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: UV Texture 5
+    second: {fileID: 2100000, guid: 9bac7ba8972b04b459b3079ea82840bd, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: UV Texture 6 Low
+    second: {fileID: 2100000, guid: c581037db5ba08f44910054e4bac117c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: UV Texture 6 Low.001
+    second: {fileID: 2100000, guid: e146a4bff06768643a60979d1cee6b93, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: UV Texture 6 Low.002
+    second: {fileID: 2100000, guid: d4d92ec3fd5b8e041b892fa37fe3ff91, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: UV Texture 7
+    second: {fileID: 2100000, guid: a46aea12bf73beb4fb518f900d3bda83, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: UV Texture 8
+    second: {fileID: 2100000, guid: 34163978a616d2b44b208d19e1770794, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: UV Texture 9
+    second: {fileID: 2100000, guid: a64937b51049d3a42b98660065153465, type: 2}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: UV Texture 10_Alpha
+    second: {fileID: 2800000, guid: d559ebaa65368a143ab860ebad744739, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: UV Texture 10_BaseColor
+    second: {fileID: 2800000, guid: 44f5fe35c5582374bb777c3c671cf4e5, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: UV Texture 10_Emission
+    second: {fileID: 2800000, guid: b1d3876e8dcb8cc4783b3b65650cc91f, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: UV Texture 10_Metallic
+    second: {fileID: 2800000, guid: d2ac910d228f8334d8cb1303348445d0, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: UV Texture 10_Normal
+    second: {fileID: 2800000, guid: 5e5f9ee8ec5c4fe43b0abb3ed3def2f8, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: UV Texture 10_Roughness
+    second: {fileID: 2800000, guid: 5ce3b09fd1dd23740b3495b33fadac02, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: UV Texture 1_Alpha
+    second: {fileID: 2800000, guid: 0bb42a719350cba4f96933b422568a16, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: UV Texture 1_BaseColor
+    second: {fileID: 2800000, guid: 50ba171f90f258041bde0d0958de71b4, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: UV Texture 1_Emission
+    second: {fileID: 2800000, guid: 51f1adf6819b1404b9b3b1de68559e8d, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: UV Texture 1_Metallic
+    second: {fileID: 2800000, guid: c7ecb4b6ddfcff445b55df63bffce985, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: UV Texture 1_Normal
+    second: {fileID: 2800000, guid: f40696c5b14f8b04b8ad2aec7d0cbf04, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: UV Texture 1_Roughness
+    second: {fileID: 2800000, guid: fcdc6e7db1afb414abc52b2a0b57b6fb, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: UV Texture 3_Alpha
+    second: {fileID: 2800000, guid: e810e74362dc21c4db2a343a02cc3703, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: UV Texture 3_BaseColor
+    second: {fileID: 2800000, guid: 2708a8e57fed84b4eb46403d74f21e06, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: UV Texture 3_Emission
+    second: {fileID: 2800000, guid: 615f368e6d205e34a853eb952bc1a358, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: UV Texture 3_Metallic
+    second: {fileID: 2800000, guid: 6ba9b42e8cf6f12498c8c8437d969281, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: UV Texture 3_Normal
+    second: {fileID: 2800000, guid: 313d37b9c3483344aa24767fc27c1631, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: UV Texture 3_Roughness
+    second: {fileID: 2800000, guid: 5773b7e1e5002ac449236e7db86d240d, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: UV Texture 4_Alpha
+    second: {fileID: 2800000, guid: 2548eef39133dad4cb5a87ea7e38b7c5, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: UV Texture 4_BaseColor
+    second: {fileID: 2800000, guid: 52dde05ff1b611d45bffb5cff8137d9f, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: UV Texture 4_Emission
+    second: {fileID: 2800000, guid: 10500816b814f8646a5a27a4bcd617f9, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: UV Texture 4_Metallic
+    second: {fileID: 2800000, guid: a8a643530b40e564e9491509e0d914da, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: UV Texture 4_Normal
+    second: {fileID: 2800000, guid: 863f9b1537780b14ba0b340c7c17a6ce, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: UV Texture 4_Roughness
+    second: {fileID: 2800000, guid: 99da5eef9b9dc6740b7a219ac4482d99, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: UV Texture 5_Alpha
+    second: {fileID: 2800000, guid: 677706f635696d345b1f8a13e975b474, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: UV Texture 5_BaseColor
+    second: {fileID: 2800000, guid: 43cea400566656441a7ee3db78f10136, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: UV Texture 5_Emission
+    second: {fileID: 2800000, guid: 958f11d2d99108d439dc29ae408d101b, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: UV Texture 5_Metallic
+    second: {fileID: 2800000, guid: 3368b54f39eb6a847aa168ceb5e34f46, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: UV Texture 5_Normal
+    second: {fileID: 2800000, guid: 2a3809d86d2ed804484cb770f440a129, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: UV Texture 5_Roughness
+    second: {fileID: 2800000, guid: 435e6de7a9a972649859ee4dd6145412, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: UV Texture 6 Low_Alpha
+    second: {fileID: 2800000, guid: 78189169f5bce0741b565f1ff67058c5, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: UV Texture 6 Low_BaseColor
+    second: {fileID: 2800000, guid: e2914eb95abce1845ac1bb27c6863a95, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: UV Texture 6 Low_Emission
+    second: {fileID: 2800000, guid: 8f33fd428c9f2a3499baece29fcdc075, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: UV Texture 6 Low_Metallic
+    second: {fileID: 2800000, guid: 5f1b93f048f47804f890b9419465bc7d, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: UV Texture 6 Low_Normal
+    second: {fileID: 2800000, guid: b197fd2b547108b4f9965da981919211, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: UV Texture 6 Low_Roughness
+    second: {fileID: 2800000, guid: 81f3fa22d113f824ca0e363cbfc13f68, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: UV Texture 7_Alpha
+    second: {fileID: 2800000, guid: 4893cdb2c42de9440b9b911e59e8505a, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: UV Texture 7_BaseColor
+    second: {fileID: 2800000, guid: 75ad9791a80e3ab42a4578ba27370e22, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: UV Texture 7_Emission
+    second: {fileID: 2800000, guid: 2128ee27d2618fb408937e5ccaf77ac8, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: UV Texture 7_Metallic
+    second: {fileID: 2800000, guid: 1528081cc4733df4ea25a455e83c7b88, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: UV Texture 7_Normal
+    second: {fileID: 2800000, guid: b5690319c8c14354eb2b0b584afd15d4, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: UV Texture 7_Roughness
+    second: {fileID: 2800000, guid: 16571da61111d0b49ae73f7bc50ac8eb, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: UV Texture 8_Alpha
+    second: {fileID: 2800000, guid: 6000e4ed7e6db1642bcb8eeeac3d033f, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: UV Texture 8_BaseColor
+    second: {fileID: 2800000, guid: b48d9c2cf9abc384c9c9a6a9ec3b1474, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: UV Texture 8_Emission
+    second: {fileID: 2800000, guid: 2486a939aa0ba984d9ccfcda8a5d5c32, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: UV Texture 8_Metallic
+    second: {fileID: 2800000, guid: f5ab2ac524526224cbf48fc64bd17f21, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: UV Texture 8_Normal
+    second: {fileID: 2800000, guid: 840af1fff7d25964db096a3c3500a4d3, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: UV Texture 8_Roughness
+    second: {fileID: 2800000, guid: 124c5796715c2ed43ade46d885d19f8c, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: UV Texture 9_Alpha
+    second: {fileID: 2800000, guid: ecd4c442dc8138243ae63907ced04a67, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: UV Texture 9_BaseColor
+    second: {fileID: 2800000, guid: e2306cac37e07b441a4d888737977aa3, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: UV Texture 9_Emission
+    second: {fileID: 2800000, guid: 1b5d699c5d1e7a2409fa5b7dc3c1ca6a, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: UV Texture 9_Metallic
+    second: {fileID: 2800000, guid: 308ae3d759034d84a829e54313c66321, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: UV Texture 9_Normal
+    second: {fileID: 2800000, guid: 3a3b40bafc03aa149a73803c9daa0394, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: UV Texture 9_Roughness
+    second: {fileID: 2800000, guid: cb3c1e35402ae6349aaf9e4a47a4e0ea, type: 3}
+  materials:
+    materialImportMode: 2
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    removeConstantScaleCurves: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 0
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importPhysicalCameras: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    nodeNameCollisionStrategy: 1
+    fileIdsGeneration: 2
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    keepQuads: 0
+    weldVertices: 1
+    bakeAxisConversion: 0
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    optimizeBones: 1
+    generateMeshLods: 0
+    meshLodGenerationFlags: 0
+    maximumMeshLod: -1
+    meshOptimizationFlags: -1
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 1
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    strictVertexDataChecks: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
+  importAnimation: 1
+  humanDescription:
+    serializedVersion: 3
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    globalScale: 1
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
+  animationType: 2
+  humanoidOversampling: 1
+  avatarSetup: 0
+  addHumanoidExtraRootOnlyWhenUsingAvatar: 1
+  importBlendShapeDeformPercent: 1
+  remapMaterialsIfMaterialImportModeIsNone: 0
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
