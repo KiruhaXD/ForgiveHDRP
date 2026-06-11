@@ -45,7 +45,6 @@ PlayerSettings:
   - logo: {fileID: 21300000, guid: 5e074e3a06f799043a3226352abb01c4, type: 3}
     duration: 2
   m_VirtualRealitySplashScreen: {fileID: 0}
-  m_HolographicTrackingLossScreen: {fileID: 0}
   defaultScreenWidth: 2560
   defaultScreenHeight: 1440
   defaultScreenWidthWeb: 960
@@ -118,6 +117,7 @@ PlayerSettings:
   xboxEnableGuest: 0
   xboxEnablePIXSampling: 0
   metalFramebufferOnly: 0
+  metalUseMetalDisplayLink: 0
   xboxOneResolution: 0
   xboxOneSResolution: 0
   xboxOneXResolution: 3
@@ -151,12 +151,10 @@ PlayerSettings:
   preloadedAssets: []
   metroInputSource: 0
   wsaTransparentSwapchain: 0
-  m_HolographicPauseOnTrackingLoss: 1
   xboxOneDisableKinectGpuReservation: 1
   xboxOneEnable7thCore: 1
   vrSettings:
     enable360StereoCapture: 0
-  isWsaHolographicRemotingEnabled: 0
   enableFrameTimingStats: 0
   enableOpenGLProfilerGPURecorders: 1
   allowHDRDisplaySupport: 0
@@ -845,24 +843,24 @@ PlayerSettings:
   webWasm2023: 0
   webEnableSubmoduleStrippingCompatibility: 0
   scriptingDefineSymbols:
-    Android: DOTWEEN
-    EmbeddedLinux: DOTWEEN
-    GameCoreScarlett: DOTWEEN
-    GameCoreXboxOne: DOTWEEN
-    Kepler: DOTWEEN
-    LinuxHeadlessSimulation: DOTWEEN
-    Nintendo Switch: DOTWEEN
-    Nintendo Switch 2: DOTWEEN
-    PS4: DOTWEEN
-    PS5: DOTWEEN
-    QNX: DOTWEEN
-    Standalone: INK_RUNTIME;INK_EDITOR;DOTWEEN
-    VisionOS: DOTWEEN
-    WebGL: DOTWEEN
+    Android: DOTWEEN;SORTIFY
+    EmbeddedLinux: DOTWEEN;SORTIFY
+    GameCoreScarlett: DOTWEEN;SORTIFY
+    GameCoreXboxOne: DOTWEEN;SORTIFY
+    Kepler: DOTWEEN;SORTIFY
+    LinuxHeadlessSimulation: DOTWEEN;SORTIFY
+    Nintendo Switch: DOTWEEN;SORTIFY
+    Nintendo Switch 2: DOTWEEN;SORTIFY
+    PS4: DOTWEEN;SORTIFY
+    PS5: DOTWEEN;SORTIFY
+    QNX: DOTWEEN;SORTIFY
+    Standalone: INK_RUNTIME;INK_EDITOR;DOTWEEN;SORTIFY
+    VisionOS: DOTWEEN;SORTIFY
+    WebGL: DOTWEEN;SORTIFY
     Windows Store Apps: DOTWEEN
-    XboxOne: DOTWEEN
+    XboxOne: DOTWEEN;SORTIFY
     iPhone: DOTWEEN
-    tvOS: DOTWEEN
+    tvOS: DOTWEEN;SORTIFY
   additionalCompilerArguments: {}
   platformArchitecture: {}
   scriptingBackend:
@@ -975,6 +973,7 @@ PlayerSettings:
   captureStartupLogs: {}
   activeInputHandler: 0
   windowsGamepadBackendHint: 0
+  enableDirectStorage: 0
   cloudProjectId: dba11178-ab65-4b67-bee3-e5de0de6ed47
   framebufferDepthMemorylessMode: 0
   qualitySettingsNames: []

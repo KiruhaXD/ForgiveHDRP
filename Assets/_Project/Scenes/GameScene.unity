@@ -2068,7 +2068,7 @@ GameObject:
   - component: {fileID: 83368392}
   - component: {fileID: 83368393}
   m_Layer: 0
-  m_Name: CheckpointsManager
+  m_Name: --CHECKPOINTS-MANAGER--
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3257,7 +3257,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0.000061035156, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &149663441
@@ -4936,7 +4936,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 221523056}
-  - component: {fileID: 221523055}
   - component: {fileID: 221523057}
   - component: {fileID: 221523061}
   - component: {fileID: 221523064}
@@ -4944,24 +4943,12 @@ GameObject:
   - component: {fileID: 221523067}
   - component: {fileID: 221523066}
   m_Layer: 0
-  m_Name: GameManager
+  m_Name: --GAME-MANAGER--
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &221523055
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 221523054}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: adffa6fbf4ae98e4eba339e553ce6aaf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &221523056
 Transform:
   m_ObjectHideFlags: 0
@@ -7355,9 +7342,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc765fc07b04a5f49ac7800d71806875, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SwitchCamerasController
-  cinemachineCameras:
-  - {fileID: 0}
-  - {fileID: 9001046709722635714}
 --- !u!4 &301251747
 Transform:
   m_ObjectHideFlags: 0
@@ -55496,40 +55480,12 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 9195043474674614022}
     - target: {fileID: 2484865448067179298, guid: 8dab4ac683c93504ea4fb2f41c6ed687, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2484865448067179298, guid: 8dab4ac683c93504ea4fb2f41c6ed687, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2484865448067179298, guid: 8dab4ac683c93504ea4fb2f41c6ed687, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 8945273311055929019}
-    - target: {fileID: 2484865448067179298, guid: 8dab4ac683c93504ea4fb2f41c6ed687, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 2484865448067179298, guid: 8dab4ac683c93504ea4fb2f41c6ed687, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: DisplayMenuClick
-      objectReference: {fileID: 0}
-    - target: {fileID: 2484865448067179298, guid: 8dab4ac683c93504ea4fb2f41c6ed687, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: MenuSettingsInGameMenu, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 2484865448067179298, guid: 8dab4ac683c93504ea4fb2f41c6ed687, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
     - target: {fileID: 2628828657873679723, guid: 8dab4ac683c93504ea4fb2f41c6ed687, type: 3}
       propertyPath: m_Name
       value: PanelSettings
-      objectReference: {fileID: 0}
-    - target: {fileID: 2628828657873679723, guid: 8dab4ac683c93504ea4fb2f41c6ed687, type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2664693230306963913, guid: 8dab4ac683c93504ea4fb2f41c6ed687, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -55551,18 +55507,6 @@ PrefabInstance:
       propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 9195043474674614024}
-    - target: {fileID: 4161488746810042916, guid: 8dab4ac683c93504ea4fb2f41c6ed687, type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4161488746810042916, guid: 8dab4ac683c93504ea4fb2f41c6ed687, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4161488746810042916, guid: 8dab4ac683c93504ea4fb2f41c6ed687, type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 4336151223857009393, guid: 8dab4ac683c93504ea4fb2f41c6ed687, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -55691,10 +55635,6 @@ PrefabInstance:
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 6324531054528972361}
-    - target: {fileID: 7214278556449648954, guid: 8dab4ac683c93504ea4fb2f41c6ed687, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 7461898998776150002, guid: 8dab4ac683c93504ea4fb2f41c6ed687, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -64895,7 +64835,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ae1ee4e08e3dbb4b9ca7f686709f5ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SensivityController
-  currentSensivity: 1000
+  currentSensivity: 500
   sliderSensivity: {fileID: 3467221968544701001}
 --- !u!4 &4876275757987012249
 Transform:
@@ -70782,7 +70722,7 @@ GameObject:
   - component: {fileID: 9195043474674614021}
   - component: {fileID: 9195043474674614027}
   m_Layer: 0
-  m_Name: Settings
+  m_Name: --SETTINGS--
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

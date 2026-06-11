@@ -65,8 +65,8 @@ namespace _Project.Scripts.CameraScripts
 
         public void InputMouse() 
         {
-            mouseX = Input.GetAxisRaw("Mouse X") * sensitivityController.currentSensivity * Time.smoothDeltaTime;
-            mouseY = Input.GetAxisRaw("Mouse Y") * sensitivityController.currentSensivity * Time.smoothDeltaTime;
+            mouseX = Input.GetAxis("Mouse X") * sensitivityController.currentSensivity * Time.deltaTime;
+            mouseY = Input.GetAxis("Mouse Y") * sensitivityController.currentSensivity * Time.deltaTime;
         }
 
         public void LimitsRotateCameraY()
