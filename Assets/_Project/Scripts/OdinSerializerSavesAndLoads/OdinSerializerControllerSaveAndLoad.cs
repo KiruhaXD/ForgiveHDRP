@@ -36,7 +36,7 @@ namespace Scripts.OdinSerializerSavesAndLoads
         //private static Vector3 _playerPosition;
         //private static Quaternion _playerRotation;
 
-        static string FilePath = "C:/Users/Impossible/AppData/LocalLow/Noise Wind/NewForgive/";
+        readonly string FilePath = "C:/Users/Impossible/AppData/LocalLow/Noise Wind/NewForgive/";
 
         /*public GameObject[] itemInteraction
         {
