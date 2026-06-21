@@ -1,48 +1,71 @@
+using System.Collections;
 using UnityEngine;
 
 namespace Scripts.InteractScripts
 {
-    public class PlayerInteraction : MonoCache
+    public class PlayerInteraction : MonoBehaviour
     {
-        [SerializeField] float interactionDistance = 3f;
+        [SerializeField] float interactionDistance = 1f;
         [SerializeField] Camera mainCamera;
 
-        [SerializeField] GameObject interactionUI;
+        [SerializeField] public GameObject interactionUI;
 
-        public int countPurchasesItemsFromShop = 0;
+        [SerializeField] LayerMask interactionMask;
 
-        public override void OnTick()
+        //public int countPurchasesItemsFromShop = 0;
+
+        bool hitSomething = false;
+
+        float interval = .01f;
+
+        Coroutine checkCoroutine;
+
+        private void Start()
         {
-            InteractionRay();
+            if(checkCoroutine == null)
+                checkCoroutine = StartCoroutine(CheckRaycastHitCoroutine());
+        }
+
+        IEnumerator CheckRaycastHitCoroutine()
+        {
+            while (true)
+            {
+                InteractionRay();
+                yield return new WaitForSeconds(interval);
+            }
         }
 
         public void InteractionRay()
         {
+            Ray ray = mainCamera.ViewportPointToRay(Vector3.one / 2f);
             RaycastHit hit;
 
-            bool hitSomething = false;
+            Debug.DrawRay(ray.origin, ray.direction * interactionDistance, Color.red);
 
-            Debug.DrawRay(mainCamera.transform.position, mainCamera.transform.forward, Color.red);
-
-            if (Physics.Raycast(mainCamera.transform.position, mainCamera.transform.forward, out hit, interactionDistance))
+            if (Physics.Raycast(ray, out hit, interactionDistance, interactionMask))
             {
-                IInteractable interactable = hit.collider.GetComponent<IInteractable>();
-
-                if (hit.collider != null &&
-                    hit.collider.tag == "ItemsInteractionForCarRepair" || hit.collider.tag == "Saler" || hit.collider.tag == "ItemsInteractionForSurvival" ||
-                    hit.collider.tag == "Car" || hit.collider.tag == "Door")
+                if (hit.collider.TryGetComponent(out IInteractable interactable)) 
                 {
-                    interactable.Description();
                     hitSomething = true;
+                    interactable.Description();
 
-                    Debug.Log(hit.collider.tag);
-
-                    if (Input.GetKeyDown(KeyCode.F))
+                    if(Input.GetKeyDown(KeyCode.F))
                         interactable.Interact();
                 }
+
+                else
+                    hitSomething = false;
             }
+            else
+                hitSomething = false;
+
             interactionUI.SetActive(hitSomething);
-        
+        }
+
+        private void OnDestroy()
+        {
+            if(checkCoroutine != null)
+                StopCoroutine(checkCoroutine);
         }
     }
 }

@@ -1,9 +1,10 @@
 using UnityEngine;
 using System.Collections.Generic;
+using Scripts.InteractScripts;
 
 public class MonoCache : MonoBehaviour
 {
-    public static List<MonoCache> allUpdate = new List<MonoCache>(1000);
+    public static List<MonoCache> allUpdate = new List<MonoCache>(10000);
 
     private void OnEnable() => allUpdate.Add(this);
 
