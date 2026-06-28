@@ -22,7 +22,6 @@ public class DrivingPlayer : MonoBehaviour
     public Image imageInteractHold;
 
     [SerializeField] RigBuilder rigBuilder;
-    public Rigidbody rbDriver;
 
     //[HideInInspector]
     public bool isInCar = false;

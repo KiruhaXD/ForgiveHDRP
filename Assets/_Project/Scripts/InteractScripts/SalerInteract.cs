@@ -13,12 +13,15 @@ namespace Scripts.InteractScripts
         [SerializeField] TypingText typingText;
         
         [SerializeField] TMP_Text tmpTextTalkWithSaler;
-        
-        public void Interact()
+
+        private void Awake()
         {
             if (PlayerPrefs.HasKey(CommonDialogueWithSaler.CurrentDialogueIndexKey))
                 DialogueWithSaler.currentDialogueIndex = CommonDialogueWithSaler.LoadCurrentDialogue(DialogueWithSaler.currentDialogueIndex);
+        }
 
+        public void Interact()
+        {
             // Dialogue system
             dialogue.StartDialogue();
 
