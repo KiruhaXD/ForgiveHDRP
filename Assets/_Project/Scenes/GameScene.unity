@@ -6857,8 +6857,8 @@ Transform:
   - {fileID: 588141616}
   - {fileID: 1218140819}
   - {fileID: 1725123309}
-  - {fileID: 543450652375897503}
   - {fileID: 641581672497925792}
+  - {fileID: 543450652375897503}
   - {fileID: 5176741175812619101}
   m_Father: {fileID: 1815832933}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -38772,7 +38772,7 @@ MonoBehaviour:
   m_text: 'SALER:'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 102749cd4e0c51349860239f3f59bd8e, type: 2}
-  m_sharedMaterial: {fileID: 4344090722116625088, guid: be6e032afaae2574a88156e4f54f078b, type: 2}
+  m_sharedMaterial: {fileID: -678431309695683520, guid: 102749cd4e0c51349860239f3f59bd8e, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -38838,7 +38838,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 1
+  m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &1697677245
@@ -50872,7 +50872,7 @@ Transform:
   m_GameObject: {fileID: 3655956167540923143}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: 0.99982446, z: -0, w: 0.018737346}
-  m_LocalPosition: {x: 99.781, y: 18.784645, z: 176.814}
+  m_LocalPosition: {x: 99.56, y: 18.784645, z: 176.806}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -60827,7 +60827,6 @@ GameObject:
   - component: {fileID: 8513904251422565104}
   - component: {fileID: 9073766142481002325}
   - component: {fileID: 4437983809129204243}
-  - component: {fileID: 9073766142481002326}
   m_Layer: 12
   m_Name: Player
   m_TagString: Player
@@ -64208,7 +64207,6 @@ MonoBehaviour:
   playerTransform: {fileID: 641581672497925792}
   imageInteractHold: {fileID: 261818053}
   rigBuilder: {fileID: 8513904251422565104}
-  rbDriver: {fileID: 9073766142481002326}
   isInCar: 0
   isHoldKeyF: 0
   rigBuilderCount: 0
@@ -68119,13 +68117,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Scripts.DialogueSystem.DialogueWithSalerScripts.DialogueWithSaler
   disableAndEnableMovementAndCursorController: {fileID: 221523065}
-  rbPlayer: {fileID: 9073766142481002326}
   typingText: {fileID: 6928399}
   imageInteract: {fileID: 1892844699}
   dialogueWindow: {fileID: 337671204}
   namePerson: {fileID: 1697677244}
   dialogueText: {fileID: 6928397}
   choiseAnswers: {fileID: 5866666020548906986}
+  isStartDialogue: 0
 --- !u!114 &5866666020548906986
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -79179,33 +79177,6 @@ CharacterController:
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 0.99, z: 0}
---- !u!54 &9073766142481002326
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3655956167540923143}
-  serializedVersion: 5
-  m_Mass: 1
-  m_LinearDamping: 0
-  m_AngularDamping: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 112
-  m_CollisionDetection: 0
 --- !u!114 &9073766142481002327
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -79224,6 +79195,7 @@ MonoBehaviour:
   interactionMask:
     serializedVersion: 2
     m_Bits: 64
+  dialogueWithSaler: {fileID: 5866666020548906985}
 --- !u!4 &9076532713854959631
 Transform:
   m_ObjectHideFlags: 0

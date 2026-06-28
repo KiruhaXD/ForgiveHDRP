@@ -34,6 +34,7 @@ namespace _Project.Scripts.DialogueSystem.DialogueWithSalerScripts
             StartCoroutine(dialogue.StopDialogueCoroutine());
 
             disableAndEnableMovementAndCursorController.isDialogueWithSalerActive = false;
+            disableAndEnableMovementAndCursorController.DisableMovementAndShowCursor();
         }
         
         public IEnumerator ChoiseFirstAnswerCoroutine()
@@ -78,6 +79,7 @@ namespace _Project.Scripts.DialogueSystem.DialogueWithSalerScripts
             dialogue.StopDialogue();
 
             disableAndEnableMovementAndCursorController.isDialogueWithSalerActive = false;
+            disableAndEnableMovementAndCursorController.EnableMovementAndHideCursor();
         }
     }
 }

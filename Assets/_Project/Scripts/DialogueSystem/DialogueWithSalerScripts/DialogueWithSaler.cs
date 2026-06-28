@@ -1,6 +1,6 @@
-using System;
 using System.Collections;
 using Scripts;
+using Scripts.InteractScripts;
 using Scripts.TextScripts;
 using TMPro;
 using UnityEngine;
@@ -12,31 +12,31 @@ namespace _Project.Scripts.DialogueSystem.DialogueWithSalerScripts
     {
         [Header("References")]
         [SerializeField] DisableAndEnableMovementAndCursorController disableAndEnableMovementAndCursorController;
-        [SerializeField] Rigidbody rbPlayer;
         [SerializeField] TypingText typingText;
         [SerializeField] Image imageInteract;
 
-        
         [Header("Dialogue Window")]
         [SerializeField] GameObject dialogueWindow;
         [SerializeField] TMP_Text namePerson;
         [SerializeField] public TMP_Text dialogueText;
 
         [SerializeField] private ChoiseAnswersController choiseAnswers;
-
-        internal bool isStartDialogue = false;
+        
+        [HideInInspector]
+        public bool isStartDialogue = false;
         public static int currentDialogueIndex = 1;
 
         // диалог начинается очень странно
 
         public void StartDialogue()
         {
-            rbPlayer.isKinematic = true;
-
             imageInteract.gameObject.SetActive(false);
 
             isStartDialogue = true;
             dialogueWindow.SetActive(true);
+
+            disableAndEnableMovementAndCursorController.isDialogueWithSalerActive = true;
+            disableAndEnableMovementAndCursorController.DisableMovementAndShowCursor();
 
             switch (currentDialogueIndex)
             {
@@ -74,7 +74,7 @@ namespace _Project.Scripts.DialogueSystem.DialogueWithSalerScripts
         {
             currentDialogueIndex = 1;
 
-            CurrentDialogue(disableAndEnableMovementAndCursorController, choiseAnswers, currentDialogueIndex, typingText, "SALER: ",
+            CurrentDialogue(choiseAnswers, currentDialogueIndex, typingText, "SALER: ",
     namePerson, "Здравствуй покупатель! Не ожидал что кто-то сюда приедет, в такое захолустье", dialogueText);
 
             StartCoroutine(choiseAnswers.ChoiseFirstAnswerCoroutine());
@@ -86,7 +86,7 @@ namespace _Project.Scripts.DialogueSystem.DialogueWithSalerScripts
         {
             currentDialogueIndex = 2;
 
-            CurrentDialogue(disableAndEnableMovementAndCursorController, choiseAnswers, currentDialogueIndex, typingText, "SALER: ",
+            CurrentDialogue(choiseAnswers, currentDialogueIndex, typingText, "SALER: ",
     namePerson, "Ну в прямом, здесь месяц назад начали происходить странные вещи в лесу, уже у всех это на слуху, даже полиция отказывается выяснять что здесь случилось", 
     dialogueText);
 
@@ -99,7 +99,7 @@ namespace _Project.Scripts.DialogueSystem.DialogueWithSalerScripts
         {
             currentDialogueIndex = 3;
 
-            CurrentDialogue(disableAndEnableMovementAndCursorController, choiseAnswers, currentDialogueIndex, typingText, "SALER: ",
+            CurrentDialogue(choiseAnswers, currentDialogueIndex, typingText, "SALER: ",
                 namePerson, "Нууууу, это долгая история, ты просто знай, я тебя предупредил, а ты уже сам решай идти ли тебе туда или нет",
                 dialogueText);
 
@@ -114,7 +114,7 @@ namespace _Project.Scripts.DialogueSystem.DialogueWithSalerScripts
 
             currentDialogueIndex = 3;
 
-            CurrentDialogue(disableAndEnableMovementAndCursorController, choiseAnswers, currentDialogueIndex, typingText, "SALER: ",
+            CurrentDialogue(choiseAnswers, currentDialogueIndex, typingText, "SALER: ",
                 namePerson, "хотя знаешь я могу тебе рассказать почему я тут до сих пор работаю",
                 dialogueText);
 
@@ -129,7 +129,7 @@ namespace _Project.Scripts.DialogueSystem.DialogueWithSalerScripts
 
             currentDialogueIndex = 3;
 
-            CurrentDialogue(disableAndEnableMovementAndCursorController, choiseAnswers, currentDialogueIndex, typingText, "SALER: ",
+            CurrentDialogue(choiseAnswers, currentDialogueIndex, typingText, "SALER: ",
                 namePerson, "но с тебя денюжки дружок",
                 dialogueText);
 
@@ -142,7 +142,7 @@ namespace _Project.Scripts.DialogueSystem.DialogueWithSalerScripts
         {
             currentDialogueIndex = 4;
 
-            CurrentDialogue(disableAndEnableMovementAndCursorController, choiseAnswers, currentDialogueIndex, typingText, "SALER: ",
+            CurrentDialogue(choiseAnswers, currentDialogueIndex, typingText, "SALER: ",
                             namePerson, "Не мало.",
                             dialogueText);
 
@@ -155,7 +155,7 @@ namespace _Project.Scripts.DialogueSystem.DialogueWithSalerScripts
         {
             currentDialogueIndex = 5;
 
-            CurrentDialogue(disableAndEnableMovementAndCursorController, choiseAnswers, currentDialogueIndex, typingText, "SALER: ",
+            CurrentDialogue(choiseAnswers, currentDialogueIndex, typingText, "SALER: ",
                             namePerson, "Нууу эм пятихатку давай и расскажу",
                             dialogueText);
 
@@ -168,7 +168,7 @@ namespace _Project.Scripts.DialogueSystem.DialogueWithSalerScripts
         {
             currentDialogueIndex = 6;
 
-            CurrentDialogue(disableAndEnableMovementAndCursorController, choiseAnswers, currentDialogueIndex, typingText, "SALER: ",
+            CurrentDialogue(choiseAnswers, currentDialogueIndex, typingText, "SALER: ",
                             namePerson, "Ну и все тогда, давай выкладывай все что взял и оплачивай",
                             dialogueText);
 
@@ -181,22 +181,13 @@ namespace _Project.Scripts.DialogueSystem.DialogueWithSalerScripts
         {
             currentDialogueIndex = 7;
 
-            CurrentDialogue(disableAndEnableMovementAndCursorController, choiseAnswers, currentDialogueIndex, typingText, "SALER: ",
+            CurrentDialogue(choiseAnswers, currentDialogueIndex, typingText, "SALER: ",
                             namePerson, "Благодарю",
                             dialogueText);
 
             StartCoroutine(choiseAnswers.StopAllDialogues());
 
             SaveCurrentDialogue(currentDialogueIndex);
-        }
-
-        public void StopDialogue()
-        {
-            dialogueWindow.SetActive(false);
-            
-            isStartDialogue = false;
-
-            disableAndEnableMovementAndCursorController.EnableMovementAndHideCursor();
         }
 
         public IEnumerator StopDialogueCoroutine()
@@ -211,8 +202,21 @@ namespace _Project.Scripts.DialogueSystem.DialogueWithSalerScripts
                 yield return new WaitForSeconds(2);
                 StopDialogue();
             }
-        }
 
             
+
+        }
+
+        public void StopDialogue()
+        {
+
+            dialogueWindow.SetActive(false);
+
+            isStartDialogue = false;
+
+            disableAndEnableMovementAndCursorController.isDialogueWithSalerActive = false;
+            disableAndEnableMovementAndCursorController.EnableMovementAndHideCursor();
+        }
+
     }
 }

@@ -1,4 +1,5 @@
 using System.Collections;
+using _Project.Scripts.DialogueSystem.DialogueWithSalerScripts;
 using UnityEngine;
 
 namespace Scripts.InteractScripts
@@ -19,6 +20,9 @@ namespace Scripts.InteractScripts
         float interval = .01f;
 
         Coroutine checkCoroutine;
+
+        [Header("References From Other Classes")]
+        [SerializeField] DialogueWithSaler dialogueWithSaler;
 
         private void Start()
         {
@@ -49,8 +53,11 @@ namespace Scripts.InteractScripts
                     hitSomething = true;
                     interactable.Description();
 
-                    if(Input.GetKeyDown(KeyCode.F))
+                    if (Input.GetKeyDown(KeyCode.F) && dialogueWithSaler.isStartDialogue == false)
+                    {
+                        Debug.Log("Key F was pressed");
                         interactable.Interact();
+                    }
                 }
 
                 else

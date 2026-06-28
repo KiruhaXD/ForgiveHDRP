@@ -1,4 +1,3 @@
-using Scripts;
 using Scripts.TextScripts;
 using TMPro;
 using UnityEngine;
@@ -11,14 +10,11 @@ namespace _Project.Scripts.DialogueSystem.DialogueWithSalerScripts
         public const string CurrentDialogueIndexKey = "current_dialogue_index";
 
         [ContextMenu("Delete Key Dialogue (Польз.)")]
-        public void DeleteKeysDialogue() => PlayerPrefs.DeleteKey(CurrentDialogueIndexKey);
+        protected void DeleteKeysDialogue() => PlayerPrefs.DeleteKey(CurrentDialogueIndexKey);
 
-        protected void CurrentDialogue(DisableAndEnableMovementAndCursorController disableAndEnableMovementAndCursorController,
-    ChoiseAnswersController choiseAnswers, int currentDialogueIndex, TypingText typingText, string namePerson, TMP_Text tmpNamePerson, string dialogueText, TMP_Text tmpDialogue)
+        protected void CurrentDialogue(ChoiseAnswersController choiseAnswers, int currentDialogueIndex, 
+            TypingText typingText, string namePerson, TMP_Text tmpNamePerson, string dialogueText, TMP_Text tmpDialogue)
         {
-            disableAndEnableMovementAndCursorController.isDialogueWithSalerActive = true;
-            disableAndEnableMovementAndCursorController.DisableMovementAndShowCursor();
-
             DisableButtonsForAnswers(choiseAnswers, currentDialogueIndex);
 
             Debug.Log(currentDialogueIndex);

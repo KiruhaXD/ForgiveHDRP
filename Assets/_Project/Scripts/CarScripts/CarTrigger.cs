@@ -22,7 +22,6 @@ namespace _Project.Scripts.CarScripts
                     drivingPlayer.isInCar = false;
                     player.transform.SetParent(parentObject.transform);
                     player.transform.localRotation = new Quaternion(0f, 180f, 0f, 0f);
-                    drivingPlayer.rbDriver.isKinematic = false;
                 }
             }
         }
