@@ -1,6 +1,5 @@
 using UnityEngine;
 using System.Collections.Generic;
-using Scripts.InteractScripts;
 
 public class MonoCache : MonoBehaviour
 {

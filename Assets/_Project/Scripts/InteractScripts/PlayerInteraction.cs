@@ -1,15 +1,16 @@
 using System.Collections;
 using _Project.Scripts.DialogueSystem.DialogueWithSalerScripts;
+using _Project.Scripts.InventoryScripts;
 using UnityEngine;
 
-namespace Scripts.InteractScripts
+namespace _Project.Scripts.InteractScripts
 {
     public class PlayerInteraction : MonoBehaviour
     {
         [SerializeField] float interactionDistance = 1f;
         [SerializeField] Camera mainCamera;
 
-        [SerializeField] public GameObject interactionUI;
+        public GameObject interactionUI;
 
         [SerializeField] LayerMask interactionMask;
 
@@ -46,22 +47,20 @@ namespace Scripts.InteractScripts
 
             Debug.DrawRay(ray.origin, ray.direction * interactionDistance, Color.red);
 
-            if (Physics.Raycast(ray, out hit, interactionDistance, interactionMask))
+            if (Physics.Raycast(ray, out hit, interactionDistance, interactionMask) &&
+                hit.collider.TryGetComponent(out IInteractable interactable))
             {
-                if (hit.collider.TryGetComponent(out IInteractable interactable)) 
+                hitSomething = true;
+                interactable.Description();
+
+                if (Input.GetKeyDown(KeyCode.F) && dialogueWithSaler.isStartDialogue == false)
                 {
-                    hitSomething = true;
-                    interactable.Description();
+                    Debug.Log("Key F was pressed");
+                    interactable.Interact();
 
-                    if (Input.GetKeyDown(KeyCode.F) && dialogueWithSaler.isStartDialogue == false)
-                    {
-                        Debug.Log("Key F was pressed");
-                        interactable.Interact();
-                    }
+                    // iteration items in notepad for check complete mission
+                    CounterAddItemsController.CounterAddSurvivalItems(hit);
                 }
-
-                else
-                    hitSomething = false;
             }
             else
                 hitSomething = false;

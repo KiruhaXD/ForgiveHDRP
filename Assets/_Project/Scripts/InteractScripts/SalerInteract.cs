@@ -3,7 +3,7 @@ using Scripts.TextScripts;
 using TMPro;
 using UnityEngine;
 
-namespace Scripts.InteractScripts
+namespace _Project.Scripts.InteractScripts
 {
     public class SalerInteract : MonoBehaviour, IInteractable
     {

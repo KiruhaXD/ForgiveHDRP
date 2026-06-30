@@ -45,4 +45,10 @@ public class PlayerAnimation : MonoBehaviour
         else
             animator.SetFloat("x", 0f, smoothTime, Time.deltaTime);
     }
+
+    public void CallIdleAnimation() 
+    {
+        animator.SetFloat("y", 0f);
+        animator.SetFloat("x", 0f);
+    }
 }

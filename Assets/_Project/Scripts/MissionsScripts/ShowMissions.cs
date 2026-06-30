@@ -1,11 +1,15 @@
+using _Project.Scripts.DialogueSystem.DialogueWithSalerScripts;
+using _Project.Scripts.InventoryScripts;
 using UnityEngine;
 
-namespace Scripts.MissionsScripts
+namespace _Project.Scripts.MissionsScripts
 {
     public class ShowMissions : MonoCache
     {
+        [Header("References From Other Classes")]
         [SerializeField] DrivingPlayer drivingPlayer;
         [SerializeField] CheckCompleteTasksNotepad checkCompleteTasksNotepad;
+        [SerializeField] DialogueWithSaler dialogueWithSaler;
 
         [Header("Window Mission For Buy Items For Survival")]
         [SerializeField] GameObject windowMissionBuyItemsForSurvival;
@@ -20,7 +24,8 @@ namespace Scripts.MissionsScripts
             if (drivingPlayer.isInCar == false) 
                 ShowMissionBuyItemsShopForSurvival();
 
-            if (checkCompleteTasksNotepad.completeMissionItemsForSurvival == true) 
+            if (checkCompleteTasksNotepad.completeMissionItemsForSurvival == true && 
+                dialogueWithSaler.hasBoughtItemsInShop == true) 
             {
                 ShowMissionSitInCar();
             }

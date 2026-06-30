@@ -2,7 +2,7 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
 
-namespace Scripts.InteractScripts.ItemsInteractionForSurvivalScripts
+namespace _Project.Scripts.InteractScripts.ItemsInteractionForSurvivalScripts
 {
     public class ItemShopInteraction : CommonInteractionItems, IInteractable
     {
