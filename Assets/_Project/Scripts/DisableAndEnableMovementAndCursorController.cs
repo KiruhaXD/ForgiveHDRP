@@ -2,7 +2,7 @@ using _Project.Scripts.CameraScripts;
 using Scripts.PlayerScripts;
 using UnityEngine;
 
-namespace Scripts
+namespace _Project.Scripts
 {
     public class DisableAndEnableMovementAndCursorController : MonoCache
     {
@@ -22,12 +22,7 @@ namespace Scripts
                 Time.timeScale = 1;
 
             if (isDialogueWithSalerActive == false)
-            {
-                playerMovement.enabled = true;
-                cameraController.enabled = true;
-                crouchController.enabled = true;
-                jumpController.enabled = true;
-            }
+                EnableScripts();
 
             HideCursor();
         }
@@ -38,12 +33,8 @@ namespace Scripts
                 Time.timeScale = 0;
 
             if (isDialogueWithSalerActive == true) 
-            {
-                playerMovement.enabled = false;
-                cameraController.enabled = false;
-                crouchController.enabled = false;
-                jumpController.enabled = false;
-            }
+                DisableScripts();
+            
 
             ShowCursor();
         }
@@ -58,6 +49,22 @@ namespace Scripts
         {
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
+        }
+
+        public void DisableScripts() 
+        {
+            playerMovement.enabled = false;
+            cameraController.enabled = false;
+            crouchController.enabled = false;
+            jumpController.enabled = false;
+        }
+
+        public void EnableScripts() 
+        {
+            playerMovement.enabled = true;
+            cameraController.enabled = true;
+            crouchController.enabled = true;
+            jumpController.enabled = true;
         }
     }
 }

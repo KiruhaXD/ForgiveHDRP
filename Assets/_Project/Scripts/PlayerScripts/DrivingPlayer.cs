@@ -31,6 +31,8 @@ public class DrivingPlayer : MonoBehaviour
 
     private void Awake()
     {
+        imageInteractHold.gameObject.SetActive(false);
+
         /*if (PlayerPrefs.HasKey(HoldKeyF)) 
         {
             isHoldKeyF = PlayerPrefs.GetInt(HoldKeyF); // here isHoldKeyF equals 1 and so Image with hold key f not be show
@@ -50,11 +52,6 @@ public class DrivingPlayer : MonoBehaviour
         if (isInCar == true) 
             playerAnimator.SetBool("isDriving", true);
         
-    }
-
-    private void Start()
-    {
-        imageInteractHold.gameObject.SetActive(false);
     }
 
     private void Update()

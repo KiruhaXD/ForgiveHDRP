@@ -1,6 +1,5 @@
 using System.Collections;
 using Scripts;
-using Scripts.InteractScripts;
 using Scripts.TextScripts;
 using TMPro;
 using UnityEngine;
@@ -25,6 +24,9 @@ namespace _Project.Scripts.DialogueSystem.DialogueWithSalerScripts
         [HideInInspector]
         public bool isStartDialogue = false;
         public static int currentDialogueIndex = 1;
+
+        [HideInInspector]
+        public bool hasBoughtItemsInShop = false;
 
         // диалог начинается очень странно
 
@@ -179,6 +181,8 @@ namespace _Project.Scripts.DialogueSystem.DialogueWithSalerScripts
 
         public void SeventhDialogue()
         {
+            hasBoughtItemsInShop = true;
+
             currentDialogueIndex = 7;
 
             CurrentDialogue(choiseAnswers, currentDialogueIndex, typingText, "SALER: ",

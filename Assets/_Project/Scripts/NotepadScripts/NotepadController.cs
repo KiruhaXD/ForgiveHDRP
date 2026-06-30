@@ -1,12 +1,11 @@
-using Scripts.PlayerScripts;
 using UnityEngine;
 
-namespace Scripts.NotepadScripts
+namespace _Project.Scripts.NotepadScripts
 {
-    public class NotepadController : MonoCache
+    public class NotepadController : DisableAndEnableMovementAndCursorController
     {
-        [SerializeField] CrouchController crouchController;
-        [SerializeField] JumpController jumpController;
+        [Header("Player Animation")]
+        [SerializeField] PlayerAnimation playerAnimation;
 
         [SerializeField] private GameObject itemsForCarRepair;
         [SerializeField] private GameObject itemsForSurvivalInNight;
@@ -29,9 +28,11 @@ namespace Scripts.NotepadScripts
                         keyPress = 1;
                         animator.SetBool("isOpenNotepad", true);
 
-                        crouchController.enabled = false;
-                        jumpController.enabled = false;
-                        
+                        DisableScripts();
+                        ShowCursor();
+
+                        playerAnimation.CallIdleAnimation();
+
                         itemsForCarRepair.SetActive(false);
                         itemsForSurvivalInNight.SetActive(true);
                         break;
@@ -40,9 +41,11 @@ namespace Scripts.NotepadScripts
                         keyPress = 0;
                         animator.SetBool("isOpenNotepad", false);
 
-                        crouchController.enabled = true;
-                        jumpController.enabled = true;
-                        
+                        EnableScripts();
+                        HideCursor();
+
+                        playerAnimation.CallIdleAnimation();
+
                         break;
                 }
             }

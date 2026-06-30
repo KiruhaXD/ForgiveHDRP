@@ -1,4 +1,4 @@
-namespace Scripts.InteractScripts
+namespace _Project.Scripts.InteractScripts
 {
     public interface IInteractable
     {

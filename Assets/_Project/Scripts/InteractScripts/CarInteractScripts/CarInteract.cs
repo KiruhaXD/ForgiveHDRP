@@ -1,98 +1,100 @@
 using System.Collections;
-using Scripts.InteractScripts;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class CarInteract : MonoCache, IInteractable
+namespace _Project.Scripts.InteractScripts.CarInteractScripts
 {
-    [SerializeField] TMP_Text interactWithCarText;
-    [SerializeField] Slider barProgressionForWriteInNotepad;
-    [SerializeField] TMP_Text textForSuccessfulAnalysis;
-
-    bool isHideSlider = false;
-    bool isStartProgressAnalysis = false;
-
-    int countStep = 0;
-    int countPressF = 0;
-
-    public override void OnTick()
+    public class CarInteract : MonoCache, IInteractable
     {
-        if (barProgressionForWriteInNotepad.value == 50 && isHideSlider == false) 
+        [SerializeField] TMP_Text interactWithCarText;
+        [SerializeField] Slider barProgressionForWriteInNotepad;
+        [SerializeField] TMP_Text textForSuccessfulAnalysis;
+
+        bool isHideSlider = false;
+        bool isStartProgressAnalysis = false;
+
+        int countStep = 0;
+        int countPressF = 0;
+
+        public override void OnTick()
         {
-            barProgressionForWriteInNotepad.gameObject.SetActive(false);
-            isHideSlider = true;
-            isStartProgressAnalysis = false;
-
-            StartCoroutine(ShowTextForAnalysisSuccessful());
-
-            Debug.Log("Анализ закончился");
-        }
-
-        if (isStartProgressAnalysis == true && countStep == 0)
-            StartCoroutine(IncreasedProgressAnalysisCororutineStepFirst());
-
-        if(countStep == 1)
-            StartCoroutine(IncreasedProgressAnalysisCororutineStepSecond());
-
-        if(countStep == 2)
-            StartCoroutine(IncreasedProgressAnalysisCororutineStepThird());
-
-    }
-
-    public void Interact() 
-    {
-        switch (countPressF)
-        {
-            case 0:
-                countPressF = 1;
-                isStartProgressAnalysis = true;
-                barProgressionForWriteInNotepad.gameObject.SetActive(true);
-                break;
-
-            case 1:
-                countPressF = 2;
+            if (barProgressionForWriteInNotepad.value == 50 && isHideSlider == false)
+            {
                 barProgressionForWriteInNotepad.gameObject.SetActive(false);
-                break;
+                isHideSlider = true;
+                isStartProgressAnalysis = false;
+
+                StartCoroutine(ShowTextForAnalysisSuccessful());
+
+                Debug.Log("Анализ закончился");
+            }
+
+            if (isStartProgressAnalysis == true && countStep == 0)
+                StartCoroutine(IncreasedProgressAnalysisCororutineStepFirst());
+
+            if (countStep == 1)
+                StartCoroutine(IncreasedProgressAnalysisCororutineStepSecond());
+
+            if (countStep == 2)
+                StartCoroutine(IncreasedProgressAnalysisCororutineStepThird());
+
         }
-    }
 
-    public string Description()
-    {
-        interactWithCarText.text = "Start analysis for repair a car";
-        return interactWithCarText.text;
-    }
+        public void Interact()
+        {
+            switch (countPressF)
+            {
+                case 0:
+                    countPressF = 1;
+                    isStartProgressAnalysis = true;
+                    barProgressionForWriteInNotepad.gameObject.SetActive(true);
+                    break;
 
-    IEnumerator ShowTextForAnalysisSuccessful() 
-    {
-        textForSuccessfulAnalysis.gameObject.SetActive(true);
-        textForSuccessfulAnalysis.text = "Analysis successful!";
+                case 1:
+                    countPressF = 2;
+                    barProgressionForWriteInNotepad.gameObject.SetActive(false);
+                    break;
+            }
+        }
 
-        yield return new WaitForSeconds(2);
-        textForSuccessfulAnalysis.gameObject.SetActive(false);
-    }
+        public string Description()
+        {
+            interactWithCarText.text = "Start analysis for repair a car";
+            return interactWithCarText.text;
+        }
 
-    IEnumerator IncreasedProgressAnalysisCororutineStepFirst() 
-    {
-        yield return new WaitForSeconds(2);
-        barProgressionForWriteInNotepad.value = 10;
+        IEnumerator ShowTextForAnalysisSuccessful()
+        {
+            textForSuccessfulAnalysis.gameObject.SetActive(true);
+            textForSuccessfulAnalysis.text = "Analysis successful!";
 
-        countStep = 1;
-    }
+            yield return new WaitForSeconds(2);
+            textForSuccessfulAnalysis.gameObject.SetActive(false);
+        }
 
-    IEnumerator IncreasedProgressAnalysisCororutineStepSecond()
-    {
-        yield return new WaitForSeconds(2);
-        barProgressionForWriteInNotepad.value = 30;
+        IEnumerator IncreasedProgressAnalysisCororutineStepFirst()
+        {
+            yield return new WaitForSeconds(2);
+            barProgressionForWriteInNotepad.value = 10;
 
-        countStep = 2;
-    }
+            countStep = 1;
+        }
 
-    IEnumerator IncreasedProgressAnalysisCororutineStepThird()
-    {
-        yield return new WaitForSeconds(3);
-        barProgressionForWriteInNotepad.value = 50;
+        IEnumerator IncreasedProgressAnalysisCororutineStepSecond()
+        {
+            yield return new WaitForSeconds(2);
+            barProgressionForWriteInNotepad.value = 30;
 
-        countStep = 3;
+            countStep = 2;
+        }
+
+        IEnumerator IncreasedProgressAnalysisCororutineStepThird()
+        {
+            yield return new WaitForSeconds(3);
+            barProgressionForWriteInNotepad.value = 50;
+
+            countStep = 3;
+        }
     }
 }

@@ -14,7 +14,7 @@ namespace Scripts.InterfaceScripts
         internal bool endStamina = false;
         int mediumCountStaminaForJumping = 50;
 
-        private void Start()
+        private void Awake()
         {
             sliderStamina.gameObject.SetActive(false);
         }
