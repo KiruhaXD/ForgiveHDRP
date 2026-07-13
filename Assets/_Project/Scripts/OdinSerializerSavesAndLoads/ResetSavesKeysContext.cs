@@ -1,27 +1,17 @@
 using _Project.Scripts.CheckpointsScripts;
-using Scripts.OdinSerializerSavesAndLoads;
 using UnityEngine;
 
-public class ResetSavesKeysContext : MonoBehaviour
+namespace _Project.Scripts.OdinSerializerSavesAndLoads
 {
-    [ContextMenu("Reset Saves Keys (Польз.)")]
-    public void DeleteKeys()
+    public class ResetSavesKeysContext : MonoBehaviour
     {
-        PlayerPrefs.DeleteKey(OdinSerializerControllerSaveAndLoad.CountFileKey);
+        [ContextMenu("Reset Saves Keys (Польз.)")]
+        public void DeleteKeys()
+        {
+            PlayerPrefs.DeleteKey(CheckpointController.CheckpointActiveKey);
+            PlayerPrefs.DeleteKey(CheckpointManager.CountTriggerCheckpointKey);
 
-        PlayerPrefs.DeleteKey(CheckpointController.CanContinueGameKey);
-        PlayerPrefs.DeleteKey(CheckpointController.CheckpointActiveKey);
-
-        PlayerPrefs.DeleteKey(CheckpointManager.NonActiveCheckpointKey);
-        //PlayerPrefs.DeleteKey(CheckpointManager.CheckpointListKey);
-        PlayerPrefs.DeleteKey(CheckpointManager.CheckpointsListCountKey);
-
-        //PlayerPrefs.DeleteKey(ShowTextLoadButtons.LoadButtonsKeys.DateTimeTextKey);
-        //PlayerPrefs.DeleteKey(ShowTextLoadButtons.LoadButtonsKeys.GameTimeTextKey);
-        //PlayerPrefs.DeleteKey(ShowTextLoadButtons.LoadButtonsKeys.LoadGameNameKey);
-
-        PlayerPrefs.DeleteKey(ILoadScene.HasButtonPressKey);
-
-        Debug.Log("Ключи СОХРАНЕНИЯ чекпоинтов УДАЛЕНЫ");
+            Debug.Log("Ключи СОХРАНЕНИЯ чекпоинтов УДАЛЕНЫ");
+        }
     }
 }

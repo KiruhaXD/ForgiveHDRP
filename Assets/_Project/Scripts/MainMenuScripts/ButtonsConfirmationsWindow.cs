@@ -1,5 +1,5 @@
 using DG.Tweening;
-using Scripts.MainMenuScripts;
+using _Project.Scripts.MainMenuScripts;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;

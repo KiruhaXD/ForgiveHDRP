@@ -3,9 +3,9 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-namespace Scripts.MainMenuScripts
+namespace _Project.Scripts.MainMenuScripts
 {
-    public class MainMenu : MonoBehaviour, ILoadScene
+    public class MainMenu : MonoBehaviour
     {
         [Header("UI")]
         [SerializeField] TMP_Text settingsTmpText;
@@ -116,13 +116,8 @@ namespace Scripts.MainMenuScripts
             HideMainMenu();
         }
 
-        public void LoadGameControlPanel()
+        public void LoadGameControlPoint()
         {
-            ILoadScene.hasButtonPress = 1;
-
-            PlayerPrefs.SetInt(ILoadScene.HasButtonPressKey, ILoadScene.hasButtonPress);
-            Debug.Log("Нажатие кнопки загрузки [СОХРАНИЛОСЬ]");
-
             SceneManager.LoadScene("GameScene");
         }
 

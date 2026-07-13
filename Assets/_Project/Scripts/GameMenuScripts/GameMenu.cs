@@ -1,16 +1,14 @@
 using _Project.Scripts.DialogueSystem.DialogueWithSalerScripts;
-using Scripts;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 
 namespace _Project.Scripts.GameMenuScripts
 {
-    public class GameMenu : DisableAndEnableMovementAndCursorController, ILoadScene
+    public class GameMenu : DisableAndEnableMovementAndCursorController
     {
         [Header("UI")]
         [SerializeField] GameObject panelMenuButtons;
-        //[SerializeField] GameObject panelMenuSavesGames;
         [SerializeField] GameObject panelSettings;
 
         [SerializeField] GameObject panelConfirmationWindowForSaves;
@@ -63,15 +61,6 @@ namespace _Project.Scripts.GameMenuScripts
                 }
             }
 
-            /*if (panelMenuSavesGames.activeSelf == true && Input.GetKeyDown(KeyCode.Escape))
-            {
-                pressKeyESC = 1;
-                panelMenuButtons.SetActive(true);
-                panelMenuSavesGames.SetActive(false);
-
-                DisableMovementAndShowCursor();
-            }*/
-
             if (panelSettings.activeSelf == true && Input.GetKeyDown(KeyCode.Escape))
             {
                 pressKeyESC = 1;
@@ -105,20 +94,10 @@ namespace _Project.Scripts.GameMenuScripts
             } 
         }
 
-        /*public void ShowLoadGameMenu()
+        public void LoadGameControlPoint()
         {
-            panelMenuButtons.SetActive(false);
-            panelMenuSavesGames.SetActive(true);
-        }*/
-
-        public void LoadGameControlPanel()
-        {
-            ILoadScene.hasButtonPress = 1;
-
-            PlayerPrefs.SetInt(ILoadScene.HasButtonPressKey, ILoadScene.hasButtonPress);
-            Debug.Log("Нажатие кнопки загрузки [СОХРАНИЛОСЬ]");
-
             SceneManager.LoadScene("GameScene");
+            Time.timeScale = 1; // при нажатии на кнопку загрузки последней контрольной точки игрок застревал из-за Time.timeScale = 0;
         }
 
         public void Settings() 
@@ -130,6 +109,7 @@ namespace _Project.Scripts.GameMenuScripts
         public void ExitGame()
         {
             SceneManager.LoadScene("MainMenuSceneDay");
+            Time.timeScale = 1;
         }
     }
 
