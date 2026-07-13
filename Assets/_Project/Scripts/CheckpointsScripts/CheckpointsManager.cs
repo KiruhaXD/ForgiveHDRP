@@ -1,75 +1,42 @@
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace _Project.Scripts.CheckpointsScripts
 {
-
     public class CheckpointManager : MonoBehaviour
     {
-        public const string NonActiveCheckpointKey = "non_active_checkpoint";
-        //public const string CheckpointListKey = "ckecpoints_list";
-        public const string CheckpointsListCountKey = "ckecpoints_list_count";
+        [SerializeField] GameObject[] activeCheckpointsArray;
 
-        [SerializeField] GameObject[] checkpointsObjects;
+        int countTriggerCheckpoint = -1; // т.к массив начинается с 0
 
-        int isNonActivateCheckpoint = 0;
-
-        public List<int> listNonActiveCheckpoint; // использую списки чтоб сохранять все скрытые чекпоинты, например не только чекпоинт (под индексом 0),
-                                                  // но и под индексом (0 и 1)
-        public int checkpointsListCount = 0;
-
+        public const string CountTriggerCheckpointKey = "count_trigger_ckecpoint";
 
         private void Awake()
         {
-            if (PlayerPrefs.HasKey(CheckpointController.CheckpointActiveKey) && PlayerPrefs.HasKey(NonActiveCheckpointKey)
-                /*&& PlayerPrefs.HasKey(CheckpointListKey)*/ && PlayerPrefs.HasKey(CheckpointsListCountKey))
+            if (PlayerPrefs.HasKey(CheckpointController.CheckpointActiveKey) && 
+                PlayerPrefs.HasKey(CountTriggerCheckpointKey) && SceneManager.GetActiveScene().name == "GameScene")
             {
                 CheckpointController.checkpointActive = PlayerPrefs.GetInt(CheckpointController.CheckpointActiveKey);
+                countTriggerCheckpoint = PlayerPrefs.GetInt(CountTriggerCheckpointKey);
 
-                checkpointsListCount = PlayerPrefs.GetInt(CheckpointsListCountKey);
-
-                if (CheckpointController.checkpointActive == 0)
+                if (CheckpointController.checkpointActive == 0 && countTriggerCheckpoint != -1) 
                 {
-                    Debug.Log("Проверка...");
-
-                    int checkpoint = 0;
-
-                    for (int i = checkpoint; i < checkpointsListCount; i++)
+                    for (int i = 0; i <= countTriggerCheckpoint && i < activeCheckpointsArray.Length; i++) 
                     {
-                        Debug.Log("Проходимся по циклу...");
-
-                        i = PlayerPrefs.GetInt(NonActiveCheckpointKey);
-                        checkpointsObjects[i].SetActive(false);
-
-                        Debug.Log("Чекпоинт под индексом: " + i + " ВЫКЛЮЧИЛСЯ");
+                        activeCheckpointsArray[i].gameObject.SetActive(false);
                     }
-
-                    CheckpointController.checkpointActive = 1;
                 }
             }
         }
 
-        private void Update()
+        private void OnTriggerEnter(Collider other)
         {
-            if (CheckpointController.checkpointActive == 0) // if checkpoint NON active
+            if (other.CompareTag("Checkpoint")) 
             {
-                listNonActiveCheckpoint.Add(isNonActivateCheckpoint);
-
-                isNonActivateCheckpoint++;
-
-                checkpointsObjects[isNonActivateCheckpoint].SetActive(true);
-
-                for (int i = 0; i < listNonActiveCheckpoint.Count; i++)
-                {
-                    PlayerPrefs.SetInt(NonActiveCheckpointKey, listNonActiveCheckpoint[i]);
-                    Debug.Log("Чекпоинт под индексом: " + listNonActiveCheckpoint[i] + " стал НЕ АКТИВНЫМ и СОХРАНИЛСЯ");
-                }
-
-                //PlayerPrefs.SetInt(CheckpointListKey, listNonActiveCheckpoint.Count);
-
-                CheckpointController.checkpointActive = 1;
-
+                countTriggerCheckpoint++;
+                PlayerPrefs.SetInt(CountTriggerCheckpointKey, countTriggerCheckpoint);
             }
+
         }
     }
 }

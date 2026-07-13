@@ -1,9 +1,8 @@
-using _Project.Scripts.CheckpointsScripts;
 using DG.Tweening;
 using TMPro;
 using UnityEngine;
 
-namespace Scripts.MainMenuScripts
+namespace _Project.Scripts.MainMenuScripts
 {
     public class CurrentMainMenuButton : MonoBehaviour
     {
@@ -13,14 +12,6 @@ namespace Scripts.MainMenuScripts
         [SerializeField] SpriteRenderer currentSpriteRenderer;
 
         [SerializeField] AudioSource audioSourceUI;
-
-        private void Awake()
-        {
-            if (PlayerPrefs.HasKey(CheckpointController.CanContinueGameKey))
-            {
-                CheckpointController.continueGame = PlayerPrefs.GetInt(CheckpointController.CanContinueGameKey);
-            }
-        }
 
         private void OnMouseDown()
         {
@@ -32,8 +23,7 @@ namespace Scripts.MainMenuScripts
                     break;
 
                 case "Text (TMP) CONTINUE":
-                    if (CheckpointController.continueGame == 1)
-                        mainMenu.LoadGameControlPanel();
+                    mainMenu.LoadGameControlPoint();
                     break;
 
                 /*case "Text (TMP) LOAD GAME":
@@ -63,7 +53,7 @@ namespace Scripts.MainMenuScripts
         {
             if (currentTmpText.name == "Text (TMP) NEW GAME" || currentTmpText.name == "Text (TMP) AUTHORS"
                 || currentTmpText.name == "Text (TMP) EXIT GAME" || currentTmpText.name == "Text (TMP) SETTINGS"
-                || currentTmpText.name == "Text (TMP) CONTINUE" && CheckpointController.continueGame == 1)
+                || currentTmpText.name == "Text (TMP) CONTINUE"/* && CheckpointController.continueGame == 1*/)
             {
                 EnterButton();
             }
@@ -73,7 +63,7 @@ namespace Scripts.MainMenuScripts
         {
             if (currentTmpText.name == "Text (TMP) NEW GAME" || currentTmpText.name == "Text (TMP) AUTHORS"
                 || currentTmpText.name == "Text (TMP) EXIT GAME" || currentTmpText.name == "Text (TMP) SETTINGS"
-                || currentTmpText.name == "Text (TMP) CONTINUE" && CheckpointController.continueGame == 1)
+                || currentTmpText.name == "Text (TMP) CONTINUE"/* && CheckpointController.continueGame == 1*/)
             {
                 ExitButton();
             }

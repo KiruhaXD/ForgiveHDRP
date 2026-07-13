@@ -76,7 +76,7 @@ namespace _Project.Scripts.DialogueSystem.DialogueWithSalerScripts
         {
             currentDialogueIndex = 1;
 
-            CurrentDialogue(choiseAnswers, currentDialogueIndex, typingText, "SALER: ",
+            CurrentDialogue(choiseAnswers, currentDialogueIndex, typingText, "SELLER: ",
     namePerson, "Здравствуй покупатель! Не ожидал что кто-то сюда приедет, в такое захолустье", dialogueText);
 
             StartCoroutine(choiseAnswers.ChoiseFirstAnswerCoroutine());
@@ -88,7 +88,7 @@ namespace _Project.Scripts.DialogueSystem.DialogueWithSalerScripts
         {
             currentDialogueIndex = 2;
 
-            CurrentDialogue(choiseAnswers, currentDialogueIndex, typingText, "SALER: ",
+            CurrentDialogue(choiseAnswers, currentDialogueIndex, typingText, "SELLER: ",
     namePerson, "Ну в прямом, здесь месяц назад начали происходить странные вещи в лесу, уже у всех это на слуху, даже полиция отказывается выяснять что здесь случилось", 
     dialogueText);
 
@@ -101,7 +101,7 @@ namespace _Project.Scripts.DialogueSystem.DialogueWithSalerScripts
         {
             currentDialogueIndex = 3;
 
-            CurrentDialogue(choiseAnswers, currentDialogueIndex, typingText, "SALER: ",
+            CurrentDialogue(choiseAnswers, currentDialogueIndex, typingText, "SELLER: ",
                 namePerson, "Нууууу, это долгая история, ты просто знай, я тебя предупредил, а ты уже сам решай идти ли тебе туда или нет",
                 dialogueText);
 
@@ -116,7 +116,7 @@ namespace _Project.Scripts.DialogueSystem.DialogueWithSalerScripts
 
             currentDialogueIndex = 3;
 
-            CurrentDialogue(choiseAnswers, currentDialogueIndex, typingText, "SALER: ",
+            CurrentDialogue(choiseAnswers, currentDialogueIndex, typingText, "SELLER: ",
                 namePerson, "хотя знаешь я могу тебе рассказать почему я тут до сих пор работаю",
                 dialogueText);
 
@@ -131,7 +131,7 @@ namespace _Project.Scripts.DialogueSystem.DialogueWithSalerScripts
 
             currentDialogueIndex = 3;
 
-            CurrentDialogue(choiseAnswers, currentDialogueIndex, typingText, "SALER: ",
+            CurrentDialogue(choiseAnswers, currentDialogueIndex, typingText, "SELLER: ",
                 namePerson, "но с тебя денюжки дружок",
                 dialogueText);
 
@@ -144,7 +144,7 @@ namespace _Project.Scripts.DialogueSystem.DialogueWithSalerScripts
         {
             currentDialogueIndex = 4;
 
-            CurrentDialogue(choiseAnswers, currentDialogueIndex, typingText, "SALER: ",
+            CurrentDialogue(choiseAnswers, currentDialogueIndex, typingText, "SELLER: ",
                             namePerson, "Не мало.",
                             dialogueText);
 
@@ -157,7 +157,7 @@ namespace _Project.Scripts.DialogueSystem.DialogueWithSalerScripts
         {
             currentDialogueIndex = 5;
 
-            CurrentDialogue(choiseAnswers, currentDialogueIndex, typingText, "SALER: ",
+            CurrentDialogue(choiseAnswers, currentDialogueIndex, typingText, "SELLER: ",
                             namePerson, "Нууу эм пятихатку давай и расскажу",
                             dialogueText);
 
@@ -170,7 +170,7 @@ namespace _Project.Scripts.DialogueSystem.DialogueWithSalerScripts
         {
             currentDialogueIndex = 6;
 
-            CurrentDialogue(choiseAnswers, currentDialogueIndex, typingText, "SALER: ",
+            CurrentDialogue(choiseAnswers, currentDialogueIndex, typingText, "SELLER: ",
                             namePerson, "Ну и все тогда, давай выкладывай все что взял и оплачивай",
                             dialogueText);
 
@@ -185,7 +185,7 @@ namespace _Project.Scripts.DialogueSystem.DialogueWithSalerScripts
 
             currentDialogueIndex = 7;
 
-            CurrentDialogue(choiseAnswers, currentDialogueIndex, typingText, "SALER: ",
+            CurrentDialogue(choiseAnswers, currentDialogueIndex, typingText, "SELLER: ",
                             namePerson, "Благодарю",
                             dialogueText);
 
@@ -196,7 +196,7 @@ namespace _Project.Scripts.DialogueSystem.DialogueWithSalerScripts
 
         public IEnumerator StopDialogueCoroutine()
         {
-            namePerson.text = "SALER:";
+            namePerson.text = "SELLER:";
             dialogueText.text = "Уже уходишь? ну ладно...";
             
             typingText.UpdateText();
