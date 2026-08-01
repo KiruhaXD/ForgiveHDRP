@@ -20,14 +20,14 @@ namespace _Project.Scripts.InteractScripts.DoorInteractionScripts
             isOpen = !isOpen;
         }
 
-        public string Description()
+        public void Description()
         {
             if (!isOpen)
                 tmpTextInteractDoor.text = "Open a door";
             else
                 tmpTextInteractDoor.text = "Close a door";
 
-            return tmpTextInteractDoor.text;
+            //return tmpTextInteractDoor.text;
         }
 
     }

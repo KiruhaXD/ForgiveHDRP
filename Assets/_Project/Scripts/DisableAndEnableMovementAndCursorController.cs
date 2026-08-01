@@ -1,5 +1,5 @@
 using _Project.Scripts.CameraScripts;
-using Scripts.PlayerScripts;
+using _Project.Scripts.PlayerScripts;
 using UnityEngine;
 
 namespace _Project.Scripts

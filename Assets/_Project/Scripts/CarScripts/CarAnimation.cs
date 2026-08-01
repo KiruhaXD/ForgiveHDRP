@@ -1,3 +1,4 @@
+using _Project.Scripts.PlayerScripts;
 using UnityEngine;
 
 namespace _Project.Scripts.CarScripts
@@ -7,6 +8,6 @@ namespace _Project.Scripts.CarScripts
     {
         [SerializeField] DrivingPlayer drivingPlayer;
 
-        public void StopAnimation() => drivingPlayer.imageInteractHold.gameObject.SetActive(true);
+        public void ExitFromCar() => drivingPlayer.imageInteractHold.gameObject.SetActive(true);
     }
 }

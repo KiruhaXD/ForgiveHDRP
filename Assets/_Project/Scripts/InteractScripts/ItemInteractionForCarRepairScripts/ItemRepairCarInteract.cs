@@ -18,10 +18,10 @@ namespace _Project.Scripts.InteractScripts.ItemInteractionForCarRepairScripts
             CommonInteractItem(toggleInNotepadItemRepairCarMission);
         }
 
-        public string Description()
+        public void Description()
         {
             CommonDescriptionItem(tmpTextTakeItem, $"Take a {nameItemRepair}");
-            return tmpTextTakeItem.text;
+            //return tmpTextTakeItem.text;
         }
     }
 }

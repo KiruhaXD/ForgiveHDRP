@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Scripts.PlayerScripts
+namespace _Project.Scripts.PlayerScripts
 {
     [RequireComponent(typeof(CharacterController))]
     public class GravityController : MonoBehaviour

@@ -28,10 +28,10 @@ namespace _Project.Scripts.InteractScripts
             Debug.Log("Interact with seller");
         }
 
-        public string Description() 
+        public void Description() 
         {
             tmpTextTalkWithSaler.text = "Talk with seller";
-            return tmpTextTalkWithSaler.text;
+            //return tmpTextTalkWithSaler.text;
         } 
     }
 }

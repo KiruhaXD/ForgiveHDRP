@@ -1,3 +1,4 @@
+using _Project.Scripts.PlayerScripts;
 using UnityEngine;
 
 namespace _Project.Scripts.CameraScripts 
