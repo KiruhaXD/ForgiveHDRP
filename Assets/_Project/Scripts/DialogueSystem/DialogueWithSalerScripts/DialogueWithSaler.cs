@@ -28,7 +28,6 @@ namespace _Project.Scripts.DialogueSystem.DialogueWithSalerScripts
         [HideInInspector]
         public bool hasBoughtItemsInShop = false;
 
-        // диалог начинается очень странно
 
         public void StartDialogue()
         {

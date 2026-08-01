@@ -4,7 +4,7 @@ namespace _Project.Scripts.InteractScripts
     {
         public void Interact();
 
-        public string Description();
+        public void Description();
     }
 }
 

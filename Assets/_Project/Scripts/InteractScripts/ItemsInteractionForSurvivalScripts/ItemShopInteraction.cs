@@ -18,10 +18,10 @@ namespace _Project.Scripts.InteractScripts.ItemsInteractionForSurvivalScripts
             CommonInteractItem(toggleInNotepadForItemMission);
         }
 
-        public string Description()
+        public void Description()
         {
             CommonDescriptionItem(tmpTextTakeItem, $"Take a {nameItem}");
-            return tmpTextTakeItem.text;
+            //return tmpTextTakeItem.text;
         }
     }
 }

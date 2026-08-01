@@ -1,10 +1,9 @@
-using System;
 using System.Collections;
 using _Project.Scripts.AudioScripts;
 using Scripts.InterfaceScripts;
 using UnityEngine;
 
-namespace Scripts.PlayerScripts
+namespace _Project.Scripts.PlayerScripts
 {
     public class JumpController : GravityController
     {

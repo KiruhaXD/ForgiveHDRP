@@ -25,7 +25,7 @@ namespace _Project.Scripts.InteractScripts
         [Header("References From Other Classes")]
         [SerializeField] DialogueWithSaler dialogueWithSaler;
 
-        private void Start()
+        /*private void Start()
         {
             if(checkCoroutine == null)
                 checkCoroutine = StartCoroutine(CheckRaycastHitCoroutine());
@@ -38,6 +38,11 @@ namespace _Project.Scripts.InteractScripts
                 InteractionRay();
                 yield return new WaitForSeconds(interval);
             }
+        }*/
+
+        private void Update()
+        {
+            InteractionRay();
         }
 
         public void InteractionRay()
@@ -68,11 +73,11 @@ namespace _Project.Scripts.InteractScripts
             interactionUI.SetActive(hitSomething);
         }
 
-        private void OnDestroy()
+        /*private void OnDestroy()
         {
             if(checkCoroutine != null)
                 StopCoroutine(checkCoroutine);
-        }
+        }*/
     }
 }
 

@@ -1,6 +1,8 @@
 using _Project.Scripts.DialogueSystem.DialogueWithSalerScripts;
 using _Project.Scripts.InventoryScripts;
+using _Project.Scripts.PlayerScripts;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace _Project.Scripts.MissionsScripts
 {
@@ -15,7 +17,10 @@ namespace _Project.Scripts.MissionsScripts
         [SerializeField] GameObject windowMissionBuyItemsForSurvival;
 
         [Header("Window Mission Sit In The Car")]
-        [SerializeField] GameObject windowNissionSitInCar;
+        [SerializeField] GameObject windowMissionSitInCar;
+
+        [Header("Mission Hint Sit In The Car")]
+        [SerializeField] Image imageHintMissionSitInCar;
 
         [SerializeField] GameObject panelMissions;
 
@@ -44,7 +49,8 @@ namespace _Project.Scripts.MissionsScripts
         {
             windowMissionBuyItemsForSurvival.SetActive(false);
 
-            windowNissionSitInCar.SetActive(true);
+            windowMissionSitInCar.SetActive(true);
+            imageHintMissionSitInCar.gameObject.SetActive(true);
         }
         
 

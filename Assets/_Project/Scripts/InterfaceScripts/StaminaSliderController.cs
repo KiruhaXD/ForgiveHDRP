@@ -1,4 +1,4 @@
-using Scripts.PlayerScripts;
+using _Project.Scripts.PlayerScripts;
 using UnityEngine;
 using UnityEngine.UI;
 
