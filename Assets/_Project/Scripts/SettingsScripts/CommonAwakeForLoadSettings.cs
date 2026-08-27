@@ -33,7 +33,7 @@ public class CommonAwakeForLoadSettings : MonoBehaviour
             settingsRain.LoadSettingsRainONAndOFF();
         }
 
-        else if (SceneManager.GetActiveScene().name == "MainMenuSceneDay")
+        if (SceneManager.GetActiveScene().name == "MainMenuSceneDay")
         {
             settingsGraphics.CheckKeysFPSForPlayerPrefs();
 

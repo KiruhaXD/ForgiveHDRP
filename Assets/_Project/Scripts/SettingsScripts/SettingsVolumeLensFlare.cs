@@ -49,7 +49,7 @@ public class SettingsVolumeLensFlare : MonoBehaviour
             PlayerPrefs.DeleteKey(CommonSettingsData.SettingsKeys.HideLensFlareKey);
         }
 
-        else if (toggleLensFlare.isOn == false && isShowLensFlare == 0)
+        if (toggleLensFlare.isOn == false && isShowLensFlare == 0)
         {
             PlayerPrefs.SetInt(CommonSettingsData.SettingsKeys.HideLensFlareKey, isShowLensFlare);
             PlayerPrefs.DeleteKey(CommonSettingsData.SettingsKeys.ShowLensFlareKey);
@@ -67,7 +67,7 @@ public class SettingsVolumeLensFlare : MonoBehaviour
             toggleLensFlare.isOn = true;
         }
 
-        else if (PlayerPrefs.HasKey(CommonSettingsData.SettingsKeys.HideLensFlareKey))
+        if (PlayerPrefs.HasKey(CommonSettingsData.SettingsKeys.HideLensFlareKey))
         {
             isShowLensFlare = PlayerPrefs.GetInt(CommonSettingsData.SettingsKeys.HideLensFlareKey);
             toggleLensFlare.isOn = false;

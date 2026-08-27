@@ -3,6 +3,7 @@ using UnityEngine.SceneManagement;
 
 namespace _Project.Scripts.CheckpointsScripts
 {
+    // скрипт отвечающий за общую работу всех чекпоинтов
     public class CheckpointManager : MonoBehaviour
     {
         [SerializeField] GameObject[] activeCheckpointsArray;

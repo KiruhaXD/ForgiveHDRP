@@ -4,6 +4,7 @@ using UnityEngine.UI;
 
 namespace _Project.Scripts.InteractScripts.ItemInteractionForCarRepairScripts
 {
+    // скрипт отвечающий за описание и взаимодействие с предметами для починки машины
     public class ItemRepairCarInteract : CommonInteractionItems, IInteractable
     {
         [SerializeField] string nameItemRepair;

@@ -1,4 +1,5 @@
 using System.Collections;
+using _Project.Scripts.InteractScripts.CarInteractScripts;
 using DG.Tweening;
 using UnityEngine;
 using UnityEngine.Animations.Rigging;
@@ -23,41 +24,34 @@ namespace _Project.Scripts.PlayerScripts
 
         [SerializeField] RigBuilder rigBuilder;
 
+        [SerializeField] SphereCollider sphereColliderLeftDoor;
+
+
         //[HideInInspector]
         public bool isInCar = false;
 
         public int isHoldKeyF = 0; // false
         public int rigBuilderCount = 0;
 
+        [Header("References From Other Classes")]
+        [SerializeField] InteractionDoorCar interactionDoorCar;
+
         private void Awake()
         {
             imageInteractHold.gameObject.SetActive(false);
 
-            /*if (PlayerPrefs.HasKey(HoldKeyF)) 
-            {
-                isHoldKeyF = PlayerPrefs.GetInt(HoldKeyF); // here isHoldKeyF equals 1 and so Image with hold key f not be show
-                imageInteractHold.gameObject.SetActive(false);
-            }
-
-            if (PlayerPrefs.HasKey(RigBuilderListCountKey))
-            {
-                rigBuilderCount = PlayerPrefs.GetInt(RigBuilderListCountKey);
-
-                for (int i = 0; i < rigBuilderCount; i++) 
-                {
-                    rigBuilder.layers[i].active = false;
-                }
-            }*/
-
             if (isInCar == true)
+            {
                 playerAnimator.SetBool("isDriving", true);
-
+            }
         }
 
         private void Update()
         {
+            sphereColliderLeftDoor.enabled = !isInCar; // off interaction UI icon
+
             if (Input.GetKey(KeyCode.F) && imageInteractHold.fillAmount < 1 && imageInteractHold.gameObject.activeSelf == true
-                && isHoldKeyF == 0)
+            && isHoldKeyF == 0)
             {
                 imageInteractHold.fillAmount += 0.4f * Time.deltaTime;
 
@@ -70,8 +64,6 @@ namespace _Project.Scripts.PlayerScripts
                     ExitingCar();
 
                     isHoldKeyF = 1; // hold key end
-
-                    //PlayerPrefs.SetInt(HoldKeyF, isHoldKeyF);
                 }
 
             }
@@ -89,7 +81,6 @@ namespace _Project.Scripts.PlayerScripts
             for (int i = 1; i < rigBuilder.layers.Count; i++)
             {
                 rigBuilder.layers[i].active = false;
-                //PlayerPrefs.SetInt(RigBuilderListCountKey, rigBuilder.layers.Count);
             }
 
             carAnimator.SetBool("isOpenDoor", true);
@@ -102,11 +93,10 @@ namespace _Project.Scripts.PlayerScripts
         {
             yield return new WaitForSeconds(7);
 
-            //playerTransform.localPosition = new Vector3(108.5f, 19f, 175.5f);
-            //playerTransform.localRotation = new Quaternion(0f, 90f, 0f, 90f);
-
             playerAnimator.SetBool("isIdle", true);
             playerAnimator.SetBool("isDriving", false);
+
+            carAnimator.SetBool("isOpenDoor", false);
 
             isInCar = false;
         }

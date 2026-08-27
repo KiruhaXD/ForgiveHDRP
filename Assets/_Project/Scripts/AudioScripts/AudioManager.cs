@@ -2,6 +2,7 @@ using UnityEngine;
 
 namespace _Project.Scripts.AudioScripts
 {
+    // скрипт отвечающий за общую работу звуков(не доделан)
     public class AudioManager : MonoBehaviour
     {
         [Header("Audio Grass")]

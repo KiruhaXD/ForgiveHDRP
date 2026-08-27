@@ -2,17 +2,23 @@ using _Project.Scripts.PlayerScripts;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace Scripts.InterfaceScripts 
+namespace _Project.Scripts.InterfaceScripts 
 {
+    // скрипт отвечающий за управлением слайдера для сынсы мыши (в настройках игры регулируется)
     public class StaminaSliderController : MonoCache
     {
         [SerializeField] PlayerMovement playerMovement;
 
         [SerializeField] public Slider sliderStamina;
-        [SerializeField] float speedStaminaSlider = 1;
+        [SerializeField] float speedDecreasedStaminaSlider = .1f;
+        [SerializeField] float speedIncreasedStaminaSlider = .1f;
+
+        float multiplier = 1.5f;
 
         internal bool endStamina = false;
-        int mediumCountStaminaForJumping = 50;
+        int mediumCountStaminaForJumping = 10;
+
+        int maxValueSlider = 100;
 
         private void Awake()
         {
@@ -26,13 +32,13 @@ namespace Scripts.InterfaceScripts
 
         public void CheckStaminaSlider()
         {
-            if (sliderStamina.value < 100 && playerMovement.IsKeyPressLeftShift == false) // is working!!!
-                IncreasedStamina(); // if player stay or walking
+            if (sliderStamina.value < maxValueSlider && playerMovement.IsKeyPressLeftShift == false) // is working!!!
+                IncreasedStaminaWalk(); // if player walking
 
             if (sliderStamina.value == 0) // if stamina the end
                 endStamina = true;
 
-            if (sliderStamina.value == 100)
+            if (sliderStamina.value == maxValueSlider)
             {
                 sliderStamina.gameObject.SetActive(false);
                 endStamina = false;
@@ -42,14 +48,21 @@ namespace Scripts.InterfaceScripts
         public void DecreasedStamina()
         {
             sliderStamina.gameObject.SetActive(true);
-            sliderStamina.value -= speedStaminaSlider / 2f;
+            sliderStamina.value -= speedDecreasedStaminaSlider;
         }
 
-        public void IncreasedStamina()
+        public void IncreasedStaminaIdle()
         {
             sliderStamina.gameObject.SetActive(true);
-            sliderStamina.value += speedStaminaSlider / 4f;
+            sliderStamina.value += speedIncreasedStaminaSlider * multiplier;
         }
+
+        public void IncreasedStaminaWalk()
+        {
+            sliderStamina.gameObject.SetActive(true);
+            sliderStamina.value += speedIncreasedStaminaSlider;
+        }
+
         public void DecreasedStaminaFromJump() => sliderStamina.value -= mediumCountStaminaForJumping;
     }
 }

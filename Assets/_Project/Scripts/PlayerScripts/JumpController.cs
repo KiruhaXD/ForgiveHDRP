@@ -1,6 +1,6 @@
 using System.Collections;
 using _Project.Scripts.AudioScripts;
-using Scripts.InterfaceScripts;
+using _Project.Scripts.InterfaceScripts;
 using UnityEngine;
 
 namespace _Project.Scripts.PlayerScripts

@@ -7,6 +7,7 @@ using UnityEngine.UI;
 
 namespace _Project.Scripts.DialogueSystem.DialogueWithSalerScripts
 {
+    // скрипт отвечающий за диалог с продавцом
     public class DialogueWithSaler : CommonDialogueWithSaler
     {
         [Header("References")]

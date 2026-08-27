@@ -3,14 +3,22 @@ using UnityEngine;
 
 namespace _Project.Scripts.CarScripts
 {
-
+    // скрипт отвечающий за проверку коллизии игрока и телепорта игрока в нужную позицию(не доделан)
     public class CarTrigger : MonoBehaviour
     {
         [Header("Parent Object")]
-        [SerializeField] GameObject parentObject;
+        [SerializeField] Transform parentObject;
 
         [Header("Child Object")]
-        [SerializeField] GameObject player;
+        [SerializeField] Transform player;
+
+        [SerializeField] DrivingPlayer drivingPlayer;
+
+        private void Update()
+        {
+            if (drivingPlayer.isInCar == false)
+                player.SetParent(parentObject);
+        }
 
         private void OnTriggerStay(Collider other)
         {
@@ -21,7 +29,7 @@ namespace _Project.Scripts.CarScripts
                 if (drivingPlayer.isHoldKeyF == 1)
                 {
                     drivingPlayer.isInCar = false;
-                    player.transform.SetParent(parentObject.transform);
+                    
                     player.transform.localRotation = new Quaternion(0f, 180f, 0f, 0f);
                 }
             }

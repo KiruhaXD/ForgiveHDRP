@@ -2,6 +2,7 @@ using UnityEngine;
 
 namespace _Project.Scripts.FPSScripts
 {
+    // скрипт отвечающий за счетсчик кадров в секунду(FPS)
     public class FPSCounter : MonoBehaviour
     {
         private int frameRange = 240;

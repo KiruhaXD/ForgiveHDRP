@@ -3,6 +3,7 @@ using UnityEngine;
 
 namespace _Project.Scripts.FPSScripts
 {
+    // скрипт отвечающий за отображение кадров в секунду
     public class FPSDisplay : MonoCache
     {
         public TMP_Text textFPS;

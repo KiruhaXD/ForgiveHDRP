@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 namespace _Project.Scripts.InteractScripts.CarInteractScripts
 {
+    // скрипт отвечающий за анализ и починку машины
     public class CarInteractRepair : MonoCache//, IInteractable
     {
         [SerializeField] TMP_Text interactWithCarText;
@@ -15,7 +16,7 @@ namespace _Project.Scripts.InteractScripts.CarInteractScripts
         bool isStartProgressAnalysis = false;
 
         int countStep = 0;
-        int countPressF = 0;
+        //int countPressF = 0;
 
         public override void OnTick()
         {

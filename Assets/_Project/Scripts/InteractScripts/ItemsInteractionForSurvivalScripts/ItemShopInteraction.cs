@@ -4,6 +4,7 @@ using UnityEngine.UI;
 
 namespace _Project.Scripts.InteractScripts.ItemsInteractionForSurvivalScripts
 {
+    // скрипт отвечающий за взаимодействия с предметами для покупки их в магазине
     public class ItemShopInteraction : CommonInteractionItems, IInteractable
     {
         [SerializeField] string nameItem;

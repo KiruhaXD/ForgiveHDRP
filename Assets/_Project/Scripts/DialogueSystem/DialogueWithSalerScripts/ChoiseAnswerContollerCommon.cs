@@ -4,6 +4,7 @@ using UnityEngine.UI;
 namespace _Project.Scripts.DialogueSystem.DialogueWithSalerScripts
 {
 
+    // скрипт отвечающий за выбор ответа(выведен как отдельный скрипт для одинаковых методов, сделано для удобства)
     public class ChoiseAnswerContollerCommon : MonoBehaviour
     {
         protected void ChoiseAnswer(GameObject windowChoise, Button[] arrayAnswersBtn,

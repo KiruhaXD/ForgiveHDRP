@@ -12,6 +12,8 @@ TagManager:
   - Door
   - ItemsInteractionForSurvival
   - Checkpoint
+  - LeftDoor
+  - PlacedObjects
   layers:
   - Default
   - TransparentFX
