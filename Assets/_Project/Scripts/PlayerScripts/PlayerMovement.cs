@@ -61,7 +61,7 @@ namespace _Project.Scripts.PlayerScripts
 
             }
 
-            // анимация ходьбы не работает!
+            // когда заканчивается стамина, почему то не переводится на более маленькую скорость для ходьбы и анимация ходьбы не работает! 
             if (staminaSliderController.endStamina == true)
             {
                 Walk();
