@@ -3,6 +3,7 @@ using UnityEngine;
 
 namespace _Project.Scripts.InteractScripts.DoorInteractionScripts
 {
+    // скрипт отвечающий за взаимодействие с дверью
     public class DoorInteraction : MonoBehaviour, IInteractable
     {
         [SerializeField] TMP_Text tmpTextInteractDoor;

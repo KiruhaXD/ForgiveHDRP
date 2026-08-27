@@ -1,5 +1,5 @@
 using _Project.Scripts.AudioScripts;
-using Scripts.InterfaceScripts;
+using _Project.Scripts.InterfaceScripts;
 using UnityEngine;
 
 namespace _Project.Scripts.PlayerScripts
@@ -20,7 +20,8 @@ namespace _Project.Scripts.PlayerScripts
 
         internal Vector3 MovePlayer;
 
-        Vector3 input;
+        [HideInInspector]
+        public Vector3 inputKeyboard;
 
         internal bool IsKeyPressLeftShift = false;
 
@@ -41,7 +42,7 @@ namespace _Project.Scripts.PlayerScripts
                 Walk();
                 
             IsKeyPressLeftShift = false;
-            
+
             if (Input.GetKey(KeyCode.W)) // here all working!!!
             {
                 if (Input.GetKey(KeyCode.LeftShift) && IsKeyPressLeftShift == false && crouchController.crouchActive == false && staminaSliderController.endStamina == false)
@@ -51,27 +52,39 @@ namespace _Project.Scripts.PlayerScripts
                     IsKeyPressLeftShift = true;
                     Run();
                 }
+
+
+                if (Input.GetKeyUp(KeyCode.LeftShift)) // is working!!!
+                    IsKeyPressLeftShift = false; // Stop running
+                
+                    
+
             }
-            
-            if (Input.GetKeyUp(KeyCode.LeftShift)) // is working!!!
+
+            // анимация ходьбы не работает!
+            if (staminaSliderController.endStamina == true)
             {
-                IsKeyPressLeftShift = false; // Stop running
+                Walk();
+                Debug.Log("End Stamina!");
             }
+
         }
 
         void InputKeyboard() => 
-            input = new Vector3(Input.GetAxisRaw("Horizontal"), 0f, Input.GetAxisRaw("Vertical")).normalized;
+            inputKeyboard = new Vector3(Input.GetAxisRaw("Horizontal"), 0f, Input.GetAxisRaw("Vertical")).normalized;
 
 
         public void Walk()
         {
             InputKeyboard();
 
-            MovePlayer = transform.TransformDirection(input.x, 0f, input.z);
+            MovePlayer = transform.TransformDirection(inputKeyboard.x, 0f, inputKeyboard.z);
 
             characterController.Move(MovePlayer * speedWalk * Time.deltaTime);
 
-            playerAnimation.ChangeAnimation(input.z, input.x);
+            playerAnimation.ChangeAnimation(inputKeyboard.z, inputKeyboard.x);
+
+            staminaSliderController.IncreasedStaminaWalk();
 
             audioManager.PlayAudioForGrassWalk();
         }
@@ -80,7 +93,7 @@ namespace _Project.Scripts.PlayerScripts
         {
             characterController.Move(MovePlayer * speedRun * Time.deltaTime);
 
-            playerAnimation.ChangeAnimation(input.z, input.x);
+            playerAnimation.ChangeAnimation(inputKeyboard.z, inputKeyboard.x);
 
             staminaSliderController.DecreasedStamina();
 

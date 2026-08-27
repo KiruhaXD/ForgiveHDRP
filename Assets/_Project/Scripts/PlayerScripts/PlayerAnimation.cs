@@ -1,9 +1,16 @@
+using _Project.Scripts.InterfaceScripts;
+using _Project.Scripts.CameraScripts;
 using UnityEngine;
+using _Project.Scripts.PlayerScripts;
 
 [RequireComponent(typeof(Animator))]
 public class PlayerAnimation : MonoBehaviour
 {
     [SerializeField] Animator animator;
+
+    [SerializeField] StaminaSliderController staminaSliderController;
+    [SerializeField] CameraController cameraController;
+    [SerializeField] PlayerMovement playerMovement;
 
     float smoothTime = 0.15f;
 
@@ -14,6 +21,9 @@ public class PlayerAnimation : MonoBehaviour
 
     public void ChangeAnimation(float verticalDirection, float horizontalDirection)
     {
+        if(verticalDirection == 0 && horizontalDirection == 0)
+            CallIdleAnimation();
+
         if (verticalDirection != 0)
         {
             if (verticalDirection > 0)
@@ -46,9 +56,36 @@ public class PlayerAnimation : MonoBehaviour
             animator.SetFloat("x", 0f, smoothTime, Time.deltaTime);
     }
 
+    public void ChangeTurnAnimation()
+    {
+        if (cameraController.mouseX != 0 && 
+            playerMovement.inputKeyboard.x == 0 && 
+            playerMovement.inputKeyboard.z == 0)
+        {
+            animator.SetBool("isTurn", true);
+
+            if (cameraController.mouseX > 0)
+            {
+                animator.SetFloat("xTurn", 1f, smoothTime, Time.deltaTime);
+            }
+
+            else
+            {
+                animator.SetFloat("xTurn", -1f, smoothTime, Time.deltaTime);
+            }
+        }
+
+        else
+        {
+            animator.SetBool("isTurn", false);
+        }
+    }
+
     public void CallIdleAnimation() 
     {
         animator.SetFloat("y", 0f);
         animator.SetFloat("x", 0f);
+
+        staminaSliderController.IncreasedStaminaIdle();
     }
 }

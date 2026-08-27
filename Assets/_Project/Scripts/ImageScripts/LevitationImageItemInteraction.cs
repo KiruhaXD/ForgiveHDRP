@@ -2,6 +2,7 @@ using UnityEngine;
 
 namespace _Project.Scripts.ImageScripts
 {
+    // скрипт отвечающий за левитацию картинок для предметов взаимодействия
     public class LevitationImageItemInteraction : MonoBehaviour
     {
         [SerializeField] Rigidbody rb;

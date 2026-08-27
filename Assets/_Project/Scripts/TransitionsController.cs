@@ -9,14 +9,19 @@ namespace _Project.Scripts
     public class TransitionsController : MonoBehaviour
     {
         [SerializeField] Image beginTransitionWindow;
+        [SerializeField] Image sleepTransitionWindow;
 
         [Header("References From Other Classes")]
         [SerializeField] TeleportCar teleportCar;
+        [SerializeField] SunController sunController;
 
-        int timeBeforeOnWindowTransition = 3;
-        int timeBeforeChangeAlphaValueForBeginWindow = 2;
+        float timeBeforeOnWindowTransition = 3f;
+        float timeBeforeChangeAlphaValueForBeginWindow = 2f;
 
-        float timerForBeginTransition = 15f;
+        float timerForBeginTransition = 5f;
+        float timerRestartWindowValue = .1f;
+
+        float timeDisableWindow = 7f;
 
         private void Awake()
         {
@@ -41,30 +46,35 @@ namespace _Project.Scripts
             yield return new WaitForSeconds(timeBeforeChangeAlphaValueForBeginWindow);
             ChangeAlphaValueForBeginWindowToWhite();
 
-            // restart change alpha value
-            yield return new WaitForSeconds(timerForBeginTransition);
-            beginTransitionWindow.gameObject.SetActive(false);
-            ChangeAlphaValueForBeginWindowToBlack();
         }
 
         public IEnumerator DrivingToNewLocationCoroutine() 
         {
-            yield return new WaitForSeconds(timeBeforeOnWindowTransition);
-            beginTransitionWindow.gameObject.SetActive(true);
+            // restart change alpha value
+            yield return new WaitForSeconds(timerRestartWindowValue);
+            ChangeAlphaValueForBeginWindowToBlack();
 
             teleportCar.TeleportToNewLocation();
 
-            yield return new WaitForSeconds(timeBeforeChangeAlphaValueForBeginWindow);
             ChangeAlphaValueForBeginWindowToWhite();
 
-
-            // restart change alpha value
-            yield return new WaitForSeconds(2f);
+            yield return new WaitForSeconds(timeDisableWindow);
             beginTransitionWindow.gameObject.SetActive(false);
+
+        }
+
+        public IEnumerator ChangeTimeDayToNightCoroutine() 
+        {
+            //sleepTransitionWindow.gameObject.SetActive(true);
             ChangeAlphaValueForBeginWindowToBlack();
+
+            yield return new WaitForSeconds(timerRestartWindowValue);
+            sunController.ChangeRotationSun();
+
+            ChangeAlphaValueForBeginWindowToWhite();
         }
 
         public void ChangeAlphaValueForBeginWindowToWhite() => beginTransitionWindow.DOColor(new Color(0, 0, 0, 0), timerForBeginTransition);
-        public void ChangeAlphaValueForBeginWindowToBlack() => beginTransitionWindow.DOColor(new Color(0, 0, 0, 255), .1f);
+        public void ChangeAlphaValueForBeginWindowToBlack() => beginTransitionWindow.DOColor(new Color(0, 0, 0, 255), .5f);
     }
 }

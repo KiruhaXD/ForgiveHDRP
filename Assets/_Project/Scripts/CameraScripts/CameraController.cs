@@ -3,13 +3,14 @@ using UnityEngine;
 
 namespace _Project.Scripts.CameraScripts 
 {
+    // скрипт отвечающий за управление камеры
     public class CameraController : MonoCache
     {
         [SerializeField] Transform _bodyPlayer;
         [SerializeField] Transform headPlayer;
         [SerializeField] SensivityController sensitivityController;
         [SerializeField] DrivingPlayer drivingPlayer;
-        [SerializeField] Animator playerAnimator;
+        [SerializeField] PlayerAnimation playerAnimation;
 
         float _yRotation = 0f;
         float _xRotation = 0f;
@@ -20,8 +21,10 @@ namespace _Project.Scripts.CameraScripts
         [SerializeField] Transform _headTarget;
         [SerializeField] Camera _mainCamera;
 
-        float mouseX;
-        float mouseY;
+        [HideInInspector]
+        public float mouseX;
+        [HideInInspector]
+        public float mouseY;
 
         public override void OnTick()
         {
@@ -52,6 +55,9 @@ namespace _Project.Scripts.CameraScripts
             }
 
             CreateRayForHeadRotate();
+
+            playerAnimation.ChangeTurnAnimation();
+
         }
 
         public void CreateRayForHeadRotate()
@@ -82,29 +88,7 @@ namespace _Project.Scripts.CameraScripts
             _xRotation = Mathf.Clamp(_xRotation, limitLeftX, limitRightX);
         }
 
-        public void AnimationRotateBody() 
-        {
-            if (mouseX != 0) 
-            {
-                if (mouseX > 0)
-                {
-                    playerAnimator.SetBool("isRotateRightX", true);
-                    playerAnimator.SetBool("isRotateLeftX", false);
-                }
 
-                else
-                {
-                    playerAnimator.SetBool("isRotateLeftX", true);
-                    playerAnimator.SetBool("isRotateRightX", false);
-                }
-            }
-
-            else if (mouseX == 0) 
-            {
-                playerAnimator.SetBool("isRotateRightX", false);
-                playerAnimator.SetBool("isRotateLeftX", false);
-            }
-        }
     }
 }
 

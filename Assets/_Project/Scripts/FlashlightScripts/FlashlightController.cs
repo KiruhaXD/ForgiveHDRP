@@ -2,6 +2,7 @@ using UnityEngine;
 
 namespace _Project.Scripts.FlashlightScripts 
 {
+    // скрипт отвечающий за управление фонариком
     public class FlashlightController : MonoCache
     {
         [SerializeField] Light _spotLight;

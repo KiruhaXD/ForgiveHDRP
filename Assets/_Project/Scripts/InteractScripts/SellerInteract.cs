@@ -5,6 +5,7 @@ using UnityEngine;
 
 namespace _Project.Scripts.InteractScripts
 {
+    // скрипт отвечающий за взаимодействие с продавцом
     public class SellerInteract : MonoBehaviour, IInteractable
     {
         [Header("Dialogue")]

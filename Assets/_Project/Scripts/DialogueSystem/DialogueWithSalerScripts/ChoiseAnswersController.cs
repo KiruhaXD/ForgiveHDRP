@@ -1,11 +1,11 @@
 using System.Collections;
-using Scripts;
 using Scripts.TextScripts;
 using UnityEngine;
 using UnityEngine.UI;
 
 namespace _Project.Scripts.DialogueSystem.DialogueWithSalerScripts
 {
+    // скрипт отвечающий за общую работу всех выборов ответов
     public class ChoiseAnswersController : ChoiseAnswerContollerCommon
     {
         [SerializeField] DialogueWithSaler dialogue;

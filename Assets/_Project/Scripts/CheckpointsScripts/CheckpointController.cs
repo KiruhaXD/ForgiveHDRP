@@ -4,6 +4,7 @@ using UnityEngine;
 namespace _Project.Scripts.CheckpointsScripts
 {
 
+    // скрипт отвечающий за отдельный пройденный игроком чекпоинт 
     public class CheckpointController : MonoBehaviour
     {
         SaveDataPlayer saveDataPlayer = new SaveDataPlayer();

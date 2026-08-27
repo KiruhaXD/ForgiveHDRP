@@ -3,6 +3,7 @@ using UnityEngine;
 namespace _Project.Scripts.GameMenuScripts
 {
 
+    // скрипт отвечающий за меню игровых настроек(окон)
     public class MenuSettingsInGameMenu : MonoBehaviour
     {
         [SerializeField] GameObject panelDisplayMenu;

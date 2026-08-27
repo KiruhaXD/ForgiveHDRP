@@ -3,6 +3,7 @@ using UnityEngine.UI;
 
 namespace _Project.Scripts.CameraScripts
 {
+    // скрипт отвечающий за сынсу мыши
     public class SensivityController : MonoBehaviour
     {
         public const string SensivitySliderValueKey = "sensivity_slider_value_settings";

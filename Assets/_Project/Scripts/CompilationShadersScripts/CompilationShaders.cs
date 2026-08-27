@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace _Project.Scripts.CompilationShadersScripts
 {
-
+    // скрипт отвечающий за компиляцию шейдеров(не доделан)
     public class CompilationShaders : MonoBehaviour
     {
         //[SerializeField] Image compilationShadersImage;

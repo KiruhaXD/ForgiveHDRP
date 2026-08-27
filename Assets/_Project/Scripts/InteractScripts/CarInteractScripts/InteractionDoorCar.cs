@@ -4,9 +4,11 @@ using _Project.Scripts.PlayerScripts;
 using EasyRoads3Dv3;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace _Project.Scripts.InteractScripts.CarInteractScripts
 {
+    // скрипт отвечающий за взаимодействие с дверью машины
     public class InteractionDoorCar : MonoBehaviour, IInteractable
     {
         [SerializeField] TMP_Text textInteractionDoorCar;
@@ -38,7 +40,11 @@ namespace _Project.Scripts.InteractScripts.CarInteractScripts
 
             playerAnimator.SetBool("isEnteringCar", true);
 
+            playerAnimator.SetBool("isExitingCar", false); // off transition to animation clip
+
             carAnimator.SetBool("isOpenDoor", true);
+
+            Debug.LogWarning("isEnteringCar = true");
 
             transitionsController.TransitionTeleportCar();
         }

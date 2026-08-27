@@ -5,6 +5,7 @@ using UnityEngine.Animations.Rigging;
 
 namespace _Project.Scripts.CarScripts
 {
+    // скрипт отвечающий за телепорт машины в нужные локации и места
     public class TeleportCar : MonoBehaviour
     {
         [Header("Transform Point For Teleport (Old First Location)")]
@@ -27,10 +28,10 @@ namespace _Project.Scripts.CarScripts
         [SerializeField] TransitionsController transitionsController;
 
         [Header("Parent Object")]
-        [SerializeField] GameObject parentObject;
+        [SerializeField] Transform parentCarObject;
 
         [Header("Child Object")]
-        [SerializeField] GameObject player;
+        [SerializeField] Transform childPlayerObject;
 
         [Header("Rig Builder")]
         [SerializeField] RigBuilder rigBuilder;
@@ -44,6 +45,9 @@ namespace _Project.Scripts.CarScripts
         [Header("New(Second) Location")]
         [SerializeField] GameObject secondLocation;
 
+        [HideInInspector]
+        public bool isHasNewLocation = false;
+
         Quaternion playerRotationInCar = new Quaternion(0f, 180f, 0f, 0f);
 
         public void TeleportToPointOldLocation()
@@ -54,7 +58,7 @@ namespace _Project.Scripts.CarScripts
 
             carTransform.position = pointTeleportCarForDriveToNextLocation.position;
 
-            player.transform.SetParent(parentObject.transform);
+            childPlayerObject.SetParent(parentCarObject);
 
             playerTransform.position = pointTeleportPlayerInCar.position;
             playerTransform.rotation = playerRotationInCar;
@@ -69,6 +73,7 @@ namespace _Project.Scripts.CarScripts
             StartCoroutine(EnableOldLocationCarAnimationDrivingCoroutine());
 
             Debug.Log("teleport complete");
+
         }
 
         public void TeleportToNewLocation() 
@@ -80,6 +85,10 @@ namespace _Project.Scripts.CarScripts
             secondLocation.SetActive(true);
 
             carTransform.position = pointTeleportCarInNextLocation.position;
+
+            childPlayerObject.SetParent(parentCarObject);
+
+            isHasNewLocation = true;
 
             StartCoroutine(EnableNewLocationCarAnimationDrivingCoroutine());
         }

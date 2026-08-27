@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 namespace _Project.Scripts.GameMenuScripts
 {
+    // скрипт отвечающий за игровое меню(в самой игре, а не в начальной сцене)
     public class GameMenu : DisableAndEnableMovementAndCursorController
     {
         [Header("UI")]
