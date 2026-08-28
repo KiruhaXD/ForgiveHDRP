@@ -18,12 +18,17 @@ namespace _Project.Scripts.PlayerScripts
         [SerializeField] float speedWalk = 2f;
         [SerializeField] float speedRun = 3f;
 
-        internal Vector3 MovePlayer;
+        [HideInInspector]
+        public Vector3 MovePlayer;
 
         [HideInInspector]
         public Vector3 inputKeyboard;
 
-        internal bool IsKeyPressLeftShift = false;
+        [HideInInspector]
+        public bool IsKeyPressLeftShift = false;
+
+        bool isHasWalking = false;
+        bool isHasRunning = false;
 
         private void Awake()
         {
@@ -45,29 +50,33 @@ namespace _Project.Scripts.PlayerScripts
 
             if (Input.GetKey(KeyCode.W)) // here all working!!!
             {
-                if (Input.GetKey(KeyCode.LeftShift) && IsKeyPressLeftShift == false && crouchController.crouchActive == false && staminaSliderController.endStamina == false)
+                if (Input.GetKey(KeyCode.LeftShift) 
+                    && IsKeyPressLeftShift == false 
+                    && crouchController.crouchActive == false 
+                    && staminaSliderController.endStamina == false
+                    && isHasWalking == true)
                 {
+                    isHasWalking = false;
+
                     audioManager.StopAudioForGrassWalk();
 
                     IsKeyPressLeftShift = true;
                     Run();
                 }
 
+                if (staminaSliderController.endStamina == true 
+                    && isHasRunning == true)
+                {
+                    isHasRunning = false;
+
+                    Walk();
+                }
+
 
                 if (Input.GetKeyUp(KeyCode.LeftShift)) // is working!!!
                     IsKeyPressLeftShift = false; // Stop running
-                
-                    
-
+ 
             }
-
-            // когда заканчивается стамина, почему то не переводится на более маленькую скорость для ходьбы и анимация ходьбы не работает! 
-            if (staminaSliderController.endStamina == true)
-            {
-                Walk();
-                Debug.Log("End Stamina!");
-            }
-
         }
 
         void InputKeyboard() => 
@@ -76,13 +85,15 @@ namespace _Project.Scripts.PlayerScripts
 
         public void Walk()
         {
+            isHasWalking = true;
+
             InputKeyboard();
 
             MovePlayer = transform.TransformDirection(inputKeyboard.x, 0f, inputKeyboard.z);
 
             characterController.Move(MovePlayer * speedWalk * Time.deltaTime);
 
-            playerAnimation.ChangeAnimation(inputKeyboard.z, inputKeyboard.x);
+            playerAnimation.ChangeAnimationWalk(inputKeyboard.z, inputKeyboard.x);
 
             staminaSliderController.IncreasedStaminaWalk();
 
@@ -91,9 +102,13 @@ namespace _Project.Scripts.PlayerScripts
 
         public void Run()
         {
+            isHasRunning = true;
+
+            MovePlayer = transform.TransformDirection(inputKeyboard.x, 0f, inputKeyboard.z);
+
             characterController.Move(MovePlayer * speedRun * Time.deltaTime);
 
-            playerAnimation.ChangeAnimation(inputKeyboard.z, inputKeyboard.x);
+            playerAnimation.ChangeAnimationRun(inputKeyboard.z);
 
             staminaSliderController.DecreasedStamina();
 

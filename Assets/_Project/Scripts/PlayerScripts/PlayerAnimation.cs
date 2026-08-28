@@ -19,7 +19,7 @@ public class PlayerAnimation : MonoBehaviour
         animator = GetComponent<Animator>();
     }
 
-    public void ChangeAnimation(float verticalDirection, float horizontalDirection)
+    public void ChangeAnimationWalk(float verticalDirection, float horizontalDirection)
     {
         if(verticalDirection == 0 && horizontalDirection == 0)
             CallIdleAnimation();
@@ -27,12 +27,7 @@ public class PlayerAnimation : MonoBehaviour
         if (verticalDirection != 0)
         {
             if (verticalDirection > 0)
-            {
-                animator.SetFloat("y", verticalDirection = 1f, smoothTime, Time.deltaTime);
-
-                if(Input.GetKey(KeyCode.LeftShift))
-                    animator.SetFloat("y", 1.5f, smoothTime, Time.deltaTime);
-            }
+                animator.SetFloat("y", verticalDirection = 1f, smoothTime, Time.deltaTime); 
 
             else
                 animator.SetFloat("y", verticalDirection = -1f, smoothTime, Time.deltaTime);
@@ -44,9 +39,7 @@ public class PlayerAnimation : MonoBehaviour
         if (horizontalDirection != 0)
         {
             if (horizontalDirection > 0)
-            {
                 animator.SetFloat("x", horizontalDirection = 1f, smoothTime, Time.deltaTime);
-            }
 
             else
                 animator.SetFloat("x", horizontalDirection = -1f, smoothTime, Time.deltaTime);
@@ -54,6 +47,12 @@ public class PlayerAnimation : MonoBehaviour
 
         else
             animator.SetFloat("x", 0f, smoothTime, Time.deltaTime);
+    }
+
+    public void ChangeAnimationRun(float verticalDirection)
+    {
+        if(verticalDirection > 0 && Input.GetKey(KeyCode.LeftShift))
+            animator.SetFloat("y", 1.5f, smoothTime, Time.deltaTime);
     }
 
     public void ChangeTurnAnimation()
