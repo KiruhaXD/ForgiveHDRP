@@ -10,18 +10,19 @@ namespace _Project.Scripts.InterfaceScripts
         [SerializeField] PlayerMovement playerMovement;
 
         [SerializeField] public Slider sliderStamina;
-        [SerializeField] float speedDecreasedStaminaSlider = .1f;
-        [SerializeField] float speedIncreasedStaminaSlider = .1f;
+        [SerializeField] float speedDecreasedStaminaSlider = 1f;
+        [SerializeField] float speedIncreasedStaminaSlider = 1f;
 
-        float multiplier = 1.5f;
+        float multiplier = 2f;
 
         internal bool endStamina = false;
         int mediumCountStaminaForJumping = 10;
 
-        int maxValueSlider = 100;
+        int maxValueSlider = 750;
 
         private void Awake()
         {
+            sliderStamina.value = maxValueSlider;
             sliderStamina.gameObject.SetActive(false);
         }
 
