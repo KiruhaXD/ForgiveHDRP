@@ -1,15 +1,15 @@
 using UnityEngine;
 
-// three types enemys: attacking, following, watching
-
-public enum EnemyType 
+enum EnemyType 
 {
-    Attacking,
-    Following,
-    Wathicng
+    Default,
+    WatcherEnemy,
+    AttackEnemy
 }
 
 public class Enemy : MonoBehaviour
 {
-    [SerializeField] EnemyType enemyType;
+    [SerializeField] internal EnemyType enemyType = EnemyType.Default;
+
+    [SerializeField] Animator animatorEnemy;
 }

@@ -10,7 +10,7 @@ namespace _Project.Scripts.PlayerScripts
         [SerializeField] CrouchController crouchController;
         [SerializeField] StaminaSliderController staminaSliderController;
         //[SerializeField] TerrainLayersController terrainLayersController;
-        [SerializeField] AudioManager audioManager;
+        [SerializeField] AudioMoveManager audioManager;
         [SerializeField] DrivingPlayer drivingPlayer;
         [SerializeField] PlayerAnimation playerAnimation;
 

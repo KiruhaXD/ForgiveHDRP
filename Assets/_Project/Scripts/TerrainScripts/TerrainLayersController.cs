@@ -9,7 +9,7 @@ public class TerrainLayersController : MonoBehaviour
     [SerializeField] Transform groundCheck;
     //[SerializeField] BoxCollider2D groundCheckCollider;
 
-    [SerializeField] AudioManager audioManager;
+    [SerializeField] AudioMoveManager audioManager;
 
     public void RayCheckLayer() 
     {

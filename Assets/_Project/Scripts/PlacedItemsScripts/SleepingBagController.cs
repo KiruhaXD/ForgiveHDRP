@@ -8,16 +8,14 @@ namespace _Project.Scripts.PlacedItemsScripts
         [SerializeField] TransitionsController transitionsController;
         [SerializeField] ShowMissionsManager showMissionsManager;
 
+        [HideInInspector]
+        public bool isChangeTimeDay = false; // поменялось время суток (нет/да)
+
         private void Update()
         {
             if (buildingManager.nameItemForBuilding == "SleepingBag" && buildingManager.isHasPlacedItem == true)
             {
                 showMissionsManager.ShowMissionGoSleep();
-            }
-
-            else
-            {
-                // Debug.LogError($" Имя предмета {nameItemForBuilding} ")
             }
         }
 
@@ -26,7 +24,9 @@ namespace _Project.Scripts.PlacedItemsScripts
             transitionsController.StartCoroutine(transitionsController.ChangeTimeDayToNightCoroutine());
             playerInteraction.isShowDescription = false;
 
-            if(playerInteraction.isShowDescription == false)
+            isChangeTimeDay = true;
+
+            if (playerInteraction.isShowDescription == false)
                 DisableLayer();
         }
 
