@@ -8,7 +8,7 @@ namespace _Project.Scripts.PlayerScripts
     public class JumpController : GravityController
     {
         [SerializeField] StaminaSliderController staminaSliderController;
-        [SerializeField] AudioManager audioManager;
+        [SerializeField] AudioMoveManager audioManager;
         [SerializeField] DrivingPlayer drivingPlayer;
         
         [SerializeField] Animator animator;
