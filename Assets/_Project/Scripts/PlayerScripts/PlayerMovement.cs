@@ -24,11 +24,19 @@ namespace _Project.Scripts.PlayerScripts
         [HideInInspector]
         public Vector3 inputKeyboard;
 
+
+
+        [HideInInspector]
+        public bool isHasKeyboardInput = false;
+
         [HideInInspector]
         public bool IsKeyPressLeftShift = false;
 
-        bool isHasWalking = false;
-        bool isHasRunning = false;
+        [HideInInspector]
+        public bool isHasWalking = false;
+
+        [HideInInspector]
+        public bool isHasRunning = false;
 
         private void Awake()
         {
@@ -43,7 +51,7 @@ namespace _Project.Scripts.PlayerScripts
 
         public void CheckMovementWalkAndRun()
         {
-            if(crouchController.countPressKeyC == 0 && crouchController.crouchActive == false) // dont touch this
+            if (crouchController.countPressKeyC == 0 && crouchController.crouchActive == false) // dont touch this
                 Walk();
                 
             IsKeyPressLeftShift = false;
@@ -79,9 +87,11 @@ namespace _Project.Scripts.PlayerScripts
             }
         }
 
-        void InputKeyboard() => 
+        void InputKeyboard() 
+        {
+            isHasKeyboardInput = true;
             inputKeyboard = new Vector3(Input.GetAxisRaw("Horizontal"), 0f, Input.GetAxisRaw("Vertical")).normalized;
-
+        }
 
         public void Walk()
         {

@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 158140447357913930}
   - component: {fileID: 2205437841421030203}
   - component: {fileID: 2646035467907775867}
-  - component: {fileID: 6123737025530607531}
+  - component: {fileID: 2717997324475256172}
   m_Layer: 0
   m_Name: dry_branches_medium_01_c
   m_TagString: Untagged
@@ -29,7 +29,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 88.06374, y: 12.818794, z: 164.88202}
-  m_LocalScale: {x: 534.49, y: 534.4902, z: 534.4902}
+  m_LocalScale: {x: 534.4901, y: 534.4901, z: 534.4903}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -91,8 +91,8 @@ MeshRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &6123737025530607531
-BoxCollider:
+--- !u!136 &2717997324475256172
+CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -109,6 +109,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.0013056897, y: 0.0077712606, z: 0.0014325986}
-  m_Center: {x: 0.000033645858, y: 0.00016167694, z: 0.00017673078}
+  serializedVersion: 2
+  m_Radius: 0.0007162992
+  m_Height: 0.0077712587
+  m_Direction: 1
+  m_Center: {x: 0.00003364588, y: 0.0001616769, z: 0.00017673074}
